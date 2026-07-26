@@ -15,6 +15,106 @@
     --swatch-size: {{ section.settings.swatches_mobile_size | divided_by: 10.0 }}rem;
   }
 
+  /* Collection Grid Luxury Gold Theme */
+  .template-collection,
+  #ProductGridContainer,
+  .product-grid-container {
+    background-color: #0d0e12 !important;
+  }
+
+  .card-wrapper.product-card-wrapper {
+    background: rgba(255, 255, 255, 0.04) !important;
+    border: 1px solid rgba(180, 137, 64, 0.3) !important;
+    border-radius: 14px !important;
+    padding: 1.2rem !important;
+    transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease !important;
+  }
+
+  .card-wrapper.product-card-wrapper:hover {
+    transform: translateY(-5px) !important;
+    border-color: rgba(180, 137, 64, 0.8) !important;
+    background: rgba(180, 137, 64, 0.08) !important;
+  }
+
+  .card__heading,
+  .card__heading a {
+    color: #ffffff !important;
+    font-size: 1.45rem !important;
+    font-weight: 800 !important;
+    line-height: 1.35 !important;
+    text-decoration: none !important;
+    transition: color 0.2s ease !important;
+  }
+
+  .card__heading a:hover {
+    color: #b48940 !important;
+  }
+
+  .price-item,
+  .price-item--regular,
+  .price-item--sale {
+    color: #b48940 !important;
+    font-size: 1.4rem !important;
+    font-weight: 800 !important;
+  }
+
+  s.price-item,
+  s.price-item--regular {
+    color: rgba(255, 255, 255, 0.5) !important;
+    text-decoration: line-through !important;
+    font-size: 1.15rem !important;
+    font-weight: 500 !important;
+  }
+
+  .badge,
+  .price__badge-sale {
+    background: linear-gradient(135deg, #b48940 0%, #8a6324 100%) !important;
+    color: #ffffff !important;
+    font-weight: 800 !important;
+    border: none !important;
+    border-radius: 50px !important;
+    padding: 6px 14px !important;
+    font-size: 0.9rem !important;
+    text-transform: uppercase !important;
+  }
+
+  .quick-add__submit,
+  .card .button,
+  .product-form__submit {
+    background: linear-gradient(135deg, #b48940 0%, #8a6324 100%) !important;
+    color: #ffffff !important;
+    font-size: 1.15rem !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    border-radius: 50px !important;
+    border: none !important;
+    transition: background 0.3s ease, transform 0.2s ease !important;
+  }
+
+  .quick-add__submit:hover,
+  .card .button:hover,
+  .product-form__submit:hover {
+    background: linear-gradient(135deg, #c59b4e 0%, #b48940 100%) !important;
+    transform: translateY(-2px) !important;
+  }
+
+  .facet-filters__label,
+  .facets__label,
+  .facets__summary,
+  .product-count__text {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+  }
+
+  .select__select,
+  .facet-filters__sort {
+    background-color: #1a1c23 !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(180, 137, 64, 0.4) !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+  }
+
   @media screen and (min-width: 750px) {
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top }}px;
