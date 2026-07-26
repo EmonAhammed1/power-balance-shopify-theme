@@ -87,103 +87,6 @@
         "padding_bottom": 50
       }
     },
-    "collection_list_gNKdDJ": {
-      "type": "collection-list",
-      "blocks": {
-        "featured_collection_DD7NCX": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "",
-            "custom_image": "shopify://shop_images/MEN_S_WORKOUT_PROGRAM.webp",
-            "custom_title": "MEN'S WORKOUT PROGRAM"
-          }
-        },
-        "featured_collection_8whP4Q": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "",
-            "custom_image": "shopify://shop_images/WOMEN_S_WORKOUT_PROGRAM.webp",
-            "custom_title": "WOMEN'S WORKOUT PROGRAM"
-          }
-        },
-        "featured_collection_CengCc": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "",
-            "custom_image": "shopify://shop_images/COUPLES_TRANSFORMATION_BUNDLE.webp",
-            "custom_title": "COUPLES TRANSFORMATION BUNDLE"
-          }
-        }
-      },
-      "block_order": [
-        "featured_collection_DD7NCX",
-        "featured_collection_8whP4Q",
-        "featured_collection_CengCc"
-      ],
-      "name": "t:sections.collection-list.presets.name",
-      "settings": {
-        "display_id": false,
-        "visibility": "always-display",
-        "title": "<strong>Programs Built for Real Results</strong>",
-        "sub_title": "Proven 16-week systems designed to help you build strength, confidence, and consistency.",
-        "title_highlight_color": "#FFFFFF",
-        "heading_size": "h1",
-        "color_scheme": "background-1",
-        "image_ratio": "square",
-        "show_view_all": false,
-        "custon_styling": false,
-        "card_style": "standard",
-        "cards_color_scheme": "background-1",
-        "card_text_alignment": "left",
-        "cards_corner_radius": 10,
-        "card_title_limited_lines": "unlimited",
-        "card_title_position": "over-bottom",
-        "cards_title_overlay_color": "#000000",
-        "cards_title_overlay_opacity": 40,
-        "cards_title_over_color": "#ffffff",
-        "cards_desktop_title_size": 24,
-        "cards_mobile_title_size": 20,
-        "cards_show_arrow": true,
-        "cards_cta_label": "",
-        "cards_cta_style": "secondary",
-        "cards_cta_full_width": false,
-        "cards_cta_color": "#6D388B",
-        "cards_desktop_cta_size": 16,
-        "cards_mobile_cta_size": 14,
-        "cards_cta_height": 220,
-        "cards_cta_padding": 200,
-        "cards_cta_top_margin": 100,
-        "type": "slide",
-        "autoplay": false,
-        "autoplay_speed": 5,
-        "arrows_color_scheme": "inverse",
-        "transparent_arrows": true,
-        "dots_color_scheme": "inverse",
-        "desktop_page_width": "normal",
-        "columns_desktop": 3,
-        "desktop_spacing": 40,
-        "slider_desktop": false,
-        "per_move_desktop": 1,
-        "desktop_side_padding": 0,
-        "desktop_padding_calc": true,
-        "desktop_adaptive_height": false,
-        "desktop_dots_position": "under",
-        "desktop_arrows_position": "sides",
-        "mobile_full_page": false,
-        "columns_mobile_int": 1,
-        "mobile_spacing": 15,
-        "slider_mobile": true,
-        "enable_mobile_preview": false,
-        "mobile_adaptive_height": false,
-        "mobile_dots_position": "under",
-        "mobile_arrows_position": "under",
-        "padding_top": 36,
-        "padding_bottom": 36,
-        "custom_colors_background": "#FFFFFF",
-        "custom_gradient_background": "",
-        "custom_colors_text": "#2E2A39"
-      }
-    },
     "hero_sub_ticker": {
       "type": "horizontal-ticker",
       "blocks": {
@@ -245,6 +148,103 @@
         "custom_colors_background": "#b48940",
         "custom_gradient_background": "",
         "custom_colors_text": "#111111"
+      }
+    },
+    "collection_list_gNKdDJ": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_DD7NCX": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "custom_image": "shopify://shop_images/MEN_S_WORKOUT_PROGRAM.webp",
+            "custom_title": "MEN'S WORKOUT PROGRAM"
+          }
+        },
+        "featured_collection_8whP4Q": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "custom_image": "shopify://shop_images/WOMEN_S_WORKOUT_PROGRAM.webp",
+            "custom_title": "WOMEN'S WORKOUT PROGRAM"
+          }
+        },
+        "featured_collection_CengCc": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "custom_image": "shopify://shop_images/COUPLES_TRANSFORMATION_BUNDLE.webp",
+            "custom_title": "COUPLES TRANSFORMATION BUNDLE"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_DD7NCX",
+        "featured_collection_8whP4Q",
+        "featured_collection_CengCc"
+      ],
+      "name": "t:sections.collection-list.presets.name",
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "title": "<strong>Programs Built for Real Results</strong>",
+        "title_highlight_color": "#ffffff",
+        "sub_title": "Proven 16-week systems designed to help you build strength, confidence, and consistency.",
+        "heading_size": "h1",
+        "color_scheme": "background-1",
+        "image_ratio": "square",
+        "show_view_all": false,
+        "custon_styling": false,
+        "card_style": "standard",
+        "cards_color_scheme": "background-1",
+        "card_text_alignment": "left",
+        "cards_corner_radius": 10,
+        "card_title_limited_lines": "unlimited",
+        "card_title_position": "over-bottom",
+        "cards_title_overlay_color": "#000000",
+        "cards_title_overlay_opacity": 40,
+        "cards_title_over_color": "#ffffff",
+        "cards_desktop_title_size": 24,
+        "cards_mobile_title_size": 20,
+        "cards_show_arrow": true,
+        "cards_cta_label": "",
+        "cards_cta_style": "secondary",
+        "cards_cta_full_width": false,
+        "cards_cta_color": "#6d388b",
+        "cards_desktop_cta_size": 16,
+        "cards_mobile_cta_size": 14,
+        "cards_cta_height": 220,
+        "cards_cta_padding": 200,
+        "cards_cta_top_margin": 100,
+        "type": "slide",
+        "autoplay": false,
+        "autoplay_speed": 5,
+        "arrows_color_scheme": "inverse",
+        "transparent_arrows": true,
+        "dots_color_scheme": "inverse",
+        "desktop_page_width": "normal",
+        "columns_desktop": 3,
+        "desktop_spacing": 40,
+        "slider_desktop": false,
+        "per_move_desktop": 1,
+        "desktop_side_padding": 0,
+        "desktop_padding_calc": true,
+        "desktop_adaptive_height": false,
+        "desktop_dots_position": "under",
+        "desktop_arrows_position": "sides",
+        "mobile_full_page": false,
+        "columns_mobile_int": 1,
+        "mobile_spacing": 15,
+        "slider_mobile": true,
+        "enable_mobile_preview": false,
+        "mobile_adaptive_height": false,
+        "mobile_dots_position": "under",
+        "mobile_arrows_position": "under",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "custom_colors_background": "#ffffff",
+        "custom_gradient_background": "",
+        "custom_colors_text": "#2e2a39"
       }
     },
     "d2d3417b-e92f-428c-b221-5bceffb552be": {
@@ -585,8 +585,8 @@
   },
   "order": [
     "cfca4268-6358-426c-98ab-d292aeef11e5",
-    "collection_list_gNKdDJ",
     "hero_sub_ticker",
+    "collection_list_gNKdDJ",
     "d2d3417b-e92f-428c-b221-5bceffb552be",
     "6aa09428-a417-429d-9159-a4e8afd49590",
     "0f1fc9e4-bc4c-4052-9747-62d1f8472caa",
