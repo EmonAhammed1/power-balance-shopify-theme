@@ -266,7 +266,28 @@
         "button_label": "VIEW BUNDLE",
         "product_link": "shopify://products/couples-transformation-bundle",
         "padding_top": 48,
-        "padding_bottom": 84
+        "padding_bottom": 48
+      }
+    },
+    "philosophy_banner": {
+      "type": "philosophy-banner",
+      "settings": {
+        "title": "THE POWER BALANCE PHILOSOPHY",
+        "description": "It's not about more workouts. It's about the right workouts. Power Balance teaches you how to train with purpose, focus on what matters, and progress in strength, muscle, and performance while saving time.",
+        "button_label": "LEARN MORE",
+        "button_link": "",
+        "pillar1_title": "FOCUS",
+        "pillar1_sub": "Master the basics.",
+        "pillar2_title": "OVERLOAD",
+        "pillar2_sub": "Progress with purpose.",
+        "pillar3_title": "INTENSITY",
+        "pillar3_sub": "Push what matters.",
+        "pillar4_title": "BALANCE",
+        "pillar4_sub": "Train body. Live life.",
+        "quote_text": "PERFECT FORM. PROGRESSIVE OVERLOAD. REAL RESULTS.",
+        "quote_author": "Fawwaz Alli",
+        "padding_top": 36,
+        "padding_bottom": 64
       }
     },
     "d2d3417b-e92f-428c-b221-5bceffb552be": {
@@ -610,6 +631,7 @@
     "hero_sub_ticker",
     "collection_list_gNKdDJ",
     "video_with_product_programs",
+    "philosophy_banner",
     "d2d3417b-e92f-428c-b221-5bceffb552be",
     "6aa09428-a417-429d-9159-a4e8afd49590",
     "0f1fc9e4-bc4c-4052-9747-62d1f8472caa",
