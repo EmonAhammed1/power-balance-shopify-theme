@@ -15,6 +15,8 @@
         "template--21507361505575__cfca4268-6358-426c-98ab-d292aeef11e5-slide-1": {
           "type": "slide",
           "settings": {
+            "desktop_bg_image": "shopify://shop_images/hero_bg.webp",
+            "mobile_bg_image": "shopify://shop_images/hero_bg.webp",
             "desktop_overlay_color": "#000000",
             "desktop_overlay_opacity": 35,
             "mobile_overlay_color": "#000000",
