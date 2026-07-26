@@ -91,6 +91,20 @@
   .footer__content-bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
   }
+
+  .footer-block-image {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+  }
+
+  .footer-brand-mission-text {
+    display: block !important;
+    clear: both !important;
+    width: 100% !important;
+    margin-top: 1.2rem !important;
+  }
 {%- endstyle -%}
 
 <footer class="footer color-scheme-{{ section.id }} color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding animate-section animate--hidden" data-animations='{{ section.settings.display_animations }}' data-type='{{ settings.animations_type }}'> 
