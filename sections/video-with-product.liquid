@@ -325,9 +325,32 @@
       <div class="vwp-video-col">
         <div class="vwp-video-wrapper">
           <span class="vwp-video-tag">SALES PITCH VIDEO</span>
-          {% if section.settings.video_url != blank %}
+          {% assign raw_url = section.settings.video_url %}
+          {% assign embed_src = '' %}
+
+          {% if section.settings.video_url.type == 'youtube' %}
+            {% assign embed_src = 'https://www.youtube.com/embed/' | append: section.settings.video_url.id %}
+          {% elsif section.settings.video_url.type == 'vimeo' %}
+            {% assign embed_src = 'https://player.vimeo.com/video/' | append: section.settings.video_url.id %}
+          {% elsif raw_url contains 'youtu.be/' %}
+            {% assign yt_id = raw_url | split: 'youtu.be/' | last | split: '?' | first | split: '&' | first %}
+            {% assign embed_src = 'https://www.youtube.com/embed/' | append: yt_id %}
+          {% elsif raw_url contains 'youtube.com/watch' %}
+            {% assign yt_id = raw_url | split: 'v=' | last | split: '&' | first | split: '?' | first %}
+            {% assign embed_src = 'https://www.youtube.com/embed/' | append: yt_id %}
+          {% elsif raw_url contains 'youtube.com/embed/' %}
+            {% assign yt_id = raw_url | split: 'youtube.com/embed/' | last | split: '?' | first | split: '&' | first %}
+            {% assign embed_src = 'https://www.youtube.com/embed/' | append: yt_id %}
+          {% elsif raw_url contains 'vimeo.com/' %}
+            {% assign vm_id = raw_url | split: 'vimeo.com/' | last | split: '?' | first | split: '&' | first %}
+            {% assign embed_src = 'https://player.vimeo.com/video/' | append: vm_id %}
+          {% else %}
+            {% assign embed_src = raw_url %}
+          {% endif %}
+
+          {% if embed_src != blank %}
             <iframe
-              src="{{ section.settings.video_url }}"
+              src="{{ embed_src }}"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen
             ></iframe>
@@ -502,8 +525,12 @@
       "label": "MP4 Video URL"
     },
     {
-      "type": "text",
+      "type": "video_url",
       "id": "video_url",
+      "accept": [
+        "youtube",
+        "vimeo"
+      ],
       "label": "Embed Video URL (YouTube / Vimeo)"
     },
     {
