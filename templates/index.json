@@ -87,31 +87,127 @@
         "padding_bottom": 50
       }
     },
+    "collection_list_gNKdDJ": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_DD7NCX": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "custom_image": "shopify://shop_images/MEN_S_WORKOUT_PROGRAM.webp",
+            "custom_title": "MEN'S WORKOUT PROGRAM"
+          }
+        },
+        "featured_collection_8whP4Q": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "custom_image": "shopify://shop_images/WOMEN_S_WORKOUT_PROGRAM.webp",
+            "custom_title": "WOMEN'S WORKOUT PROGRAM"
+          }
+        },
+        "featured_collection_CengCc": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "custom_image": "shopify://shop_images/COUPLES_TRANSFORMATION_BUNDLE.webp",
+            "custom_title": "COUPLES TRANSFORMATION BUNDLE"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_DD7NCX",
+        "featured_collection_8whP4Q",
+        "featured_collection_CengCc"
+      ],
+      "name": "t:sections.collection-list.presets.name",
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "title": "<strong>Programs Built for Real Results</strong>",
+        "title_highlight_color": "#FFFFFF",
+        "heading_size": "h1",
+        "color_scheme": "background-1",
+        "image_ratio": "square",
+        "show_view_all": false,
+        "custon_styling": false,
+        "card_style": "standard",
+        "cards_color_scheme": "background-1",
+        "card_text_alignment": "left",
+        "cards_corner_radius": 10,
+        "card_title_limited_lines": "unlimited",
+        "card_title_position": "over-bottom",
+        "cards_title_overlay_color": "#000000",
+        "cards_title_overlay_opacity": 40,
+        "cards_title_over_color": "#ffffff",
+        "cards_desktop_title_size": 24,
+        "cards_mobile_title_size": 20,
+        "cards_show_arrow": true,
+        "cards_cta_label": "",
+        "cards_cta_style": "secondary",
+        "cards_cta_full_width": false,
+        "cards_cta_color": "#6D388B",
+        "cards_desktop_cta_size": 16,
+        "cards_mobile_cta_size": 14,
+        "cards_cta_height": 220,
+        "cards_cta_padding": 200,
+        "cards_cta_top_margin": 100,
+        "type": "slide",
+        "autoplay": false,
+        "autoplay_speed": 5,
+        "arrows_color_scheme": "inverse",
+        "transparent_arrows": true,
+        "dots_color_scheme": "inverse",
+        "desktop_page_width": "normal",
+        "columns_desktop": 3,
+        "desktop_spacing": 40,
+        "slider_desktop": false,
+        "per_move_desktop": 1,
+        "desktop_side_padding": 0,
+        "desktop_padding_calc": true,
+        "desktop_adaptive_height": false,
+        "desktop_dots_position": "under",
+        "desktop_arrows_position": "sides",
+        "mobile_full_page": false,
+        "columns_mobile_int": 1,
+        "mobile_spacing": 15,
+        "slider_mobile": true,
+        "enable_mobile_preview": false,
+        "mobile_adaptive_height": false,
+        "mobile_dots_position": "under",
+        "mobile_arrows_position": "under",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "custom_colors_background": "#FFFFFF",
+        "custom_gradient_background": "",
+        "custom_colors_text": "#2E2A39"
+      }
+    },
     "hero_sub_ticker": {
       "type": "horizontal-ticker",
       "blocks": {
         "badge-1": {
           "type": "text",
           "settings": {
-            "title": "<span class=\"ticker-badge-item\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"><rect x=\"5\" y=\"11\" width=\"14\" height=\"10\" rx=\"2\"/><path d=\"M8 11V7a4 4 0 0 1 8 0v4\"/><path d=\"m10 16 1.5 1.5 3-3\"/></svg> INSTANT DOWNLOAD</span> <span class=\"ticker-badge-divider\">|</span>"
+            "title": "<span class=\"ticker-badge-item\"><svg viewbox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"><rect x=\"5\" y=\"11\" width=\"14\" height=\"10\" rx=\"2\"></rect><path d=\"M8 11V7a4 4 0 0 1 8 0v4\"></path><path d=\"m10 16 1.5 1.5 3-3\"></path></svg> INSTANT DOWNLOAD</span> <span class=\"ticker-badge-divider\">|</span>"
           }
         },
         "badge-2": {
           "type": "text",
           "settings": {
-            "title": "<span class=\"ticker-badge-item\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"><path d=\"M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z\"/><circle cx=\"12\" cy=\"10\" r=\"3\"/></svg> TRAIN ANYWHERE</span> <span class=\"ticker-badge-divider\">|</span>"
+            "title": "<span class=\"ticker-badge-item\"><svg viewbox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"><path d=\"M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z\"></path><circle cx=\"12\" cy=\"10\" r=\"3\"></circle></svg> TRAIN ANYWHERE</span> <span class=\"ticker-badge-divider\">|</span>"
           }
         },
         "badge-3": {
           "type": "text",
           "settings": {
-            "title": "<span class=\"ticker-badge-item\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"><circle cx=\"12\" cy=\"12\" r=\"2\"/><path d=\"M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83\"/></svg> BUILT ON SCIENCE</span> <span class=\"ticker-badge-divider\">|</span>"
+            "title": "<span class=\"ticker-badge-item\"><svg viewbox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"><circle cx=\"12\" cy=\"12\" r=\"2\"></circle><path d=\"M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83\"></path></svg> BUILT ON SCIENCE</span> <span class=\"ticker-badge-divider\">|</span>"
           }
         },
         "badge-4": {
           "type": "text",
           "settings": {
-            "title": "<span class=\"ticker-badge-item\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"><path d=\"M12 15a6 6 0 1 0 0-12 6 6 0 0 0 0 12z\"/><path d=\"m8.21 13.89-2.21 7.11 6-3 6 3-2.21-7.11\"/></svg> RESULTS THAT LAST</span> <span class=\"ticker-badge-divider\">|</span>"
+            "title": "<span class=\"ticker-badge-item\"><svg viewbox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"><path d=\"M12 15a6 6 0 1 0 0-12 6 6 0 0 0 0 12z\"></path><path d=\"m8.21 13.89-2.21 7.11 6-3 6 3-2.21-7.11\"></path></svg> RESULTS THAT LAST</span> <span class=\"ticker-badge-divider\">|</span>"
           }
         }
       },
@@ -125,6 +221,7 @@
         "visibility": "always-display",
         "speed": 1,
         "direction": "normal",
+        "stop_on_hover": false,
         "mobile_spacing": 40,
         "desktop_spacing": 60,
         "color_scheme": "custom",
@@ -133,11 +230,19 @@
         "italic_text": false,
         "uppercase_text": true,
         "bold_text": true,
+        "mobile_image_height": 26,
+        "desktop_image_height": 40,
+        "mobile_reviews_width": 300,
+        "desktop_reviews_width": 400,
+        "hidden_products": "",
+        "enable_specific_display": false,
+        "displayed_products": "",
         "mobile_padding_top": 12,
         "mobile_padding_bottom": 12,
         "desktop_padding_top": 16,
         "desktop_padding_bottom": 16,
         "custom_colors_background": "#b48940",
+        "custom_gradient_background": "",
         "custom_colors_text": "#111111"
       }
     },
@@ -479,6 +584,7 @@
   },
   "order": [
     "cfca4268-6358-426c-98ab-d292aeef11e5",
+    "collection_list_gNKdDJ",
     "hero_sub_ticker",
     "d2d3417b-e92f-428c-b221-5bceffb552be",
     "6aa09428-a417-429d-9159-a4e8afd49590",
