@@ -4,27 +4,6 @@
       padding-bottom: calc({{ settings.media_shadow_vertical_offset | at_least: 0 }}px + 2rem);
     }
   }
-
-  .collection-hero {
-    background-color: #0d0e12 !important;
-    padding: 3rem 0 2rem 0 !important;
-    border-bottom: 1px solid rgba(180, 137, 64, 0.2) !important;
-  }
-
-  .collection-hero__title {
-    color: #ffffff !important;
-    font-size: clamp(2.2rem, 4vw, 3.2rem) !important;
-    font-weight: 900 !important;
-    text-transform: uppercase !important;
-    letter-spacing: 0.05em !important;
-    margin: 0 !important;
-  }
-
-  .collection-hero__description {
-    color: rgba(255, 255, 255, 0.85) !important;
-    font-size: 1.25rem !important;
-    margin-top: 0.8rem !important;
-  }
 {%- endstyle -%}
 
 <div class="collection-hero{% if section.settings.show_collection_image and collection.image %} collection-hero--with-image{% endif %} color-{{ section.settings.color_scheme }} gradient">

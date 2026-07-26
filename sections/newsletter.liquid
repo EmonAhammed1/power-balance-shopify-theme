@@ -32,47 +32,6 @@
       }
     }
   {% endif %}
-  .newsletter,
-  .newsletter__wrapper,
-  .newsletter .content-container,
-  .newsletter .newsletter__wrapper.content-container,
-  #shopify-section-newsletter {
-    background-color: #0d0e12 !important;
-    background: #0d0e12 !important;
-    color: #ffffff !important;
-  }
-  .newsletter h2,
-  .newsletter p,
-  .newsletter span,
-  .newsletter .title-with-highlight,
-  .newsletter .newsletter__subheading,
-  .newsletter .newsletter__subheading p {
-    color: #ffffff !important;
-  }
-  .newsletter .field__input,
-  .newsletter input[type="email"] {
-    background-color: rgba(255, 255, 255, 0.08) !important;
-    background: rgba(255, 255, 255, 0.08) !important;
-    color: #ffffff !important;
-    border: 1px solid rgba(180, 137, 64, 0.4) !important;
-    border-radius: 8px !important;
-  }
-  .newsletter .field__input::placeholder {
-    color: rgba(255, 255, 255, 0.55) !important;
-  }
-  .newsletter button.button,
-  .newsletter .newsletter-form__button,
-  .newsletter input[type="submit"],
-  .newsletter .button {
-    background: linear-gradient(135deg, #b48940 0%, #8a6324 100%) !important;
-    background-color: #b48940 !important;
-    color: #ffffff !important;
-    border: none !important;
-    border-radius: 8px !important;
-  }
-  .newsletter .field__label {
-    color: rgba(255, 255, 255, 0.7) !important;
-  }
 {%- endstyle -%}
 
 <div class="newsletter center {% if section.settings.full_width == false %}newsletter--narrow page-width{% endif %} content-for-grouping animate-section animate--hidden {{ section.settings.visibility }}">
