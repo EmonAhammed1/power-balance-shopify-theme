@@ -142,16 +142,16 @@
   {% endif %}
   <div class="collection-list-wrapper page-width{% if section.settings.desktop_page_width != 'normal' %} {{ section.settings.desktop_page_width }}{% endif %}{% if has_mobile_slider or section.settings.mobile_full_page %} mobile-full-page{% endif %} isolate{% if section.settings.title == blank %} no-heading{% endif %}{% if section.settings.show_view_all == false or section.blocks.size > collections.size %} no-mobile-link{% endif %} section-{{ section.id }}-padding">
     {%- unless section.settings.title == blank -%}
-      <div class="title-wrapper-with-link{% if has_mobile_slider or section.settings.mobile_full_page %} title-wrapper--self-padded-mobile{% endif %} title-wrapper--no-top-margin animate-item animate-item--child index-0">
+      <div class="title-wrapper-with-link{% if has_mobile_slider or section.settings.mobile_full_page %} title-wrapper--self-padded-mobile{% endif %} title-wrapper--no-top-margin animate-item animate-item--child index-0" style="display: flex !important; flex-direction: column !important; align-items: center !important; justify-content: center !important; text-align: center !important; margin-bottom: 2.5rem !important;">
         <h2
           id="SectionHeading-{{ section.id }}"
           class="collection-list-title {{ section.settings.heading_size }} title-with-highlight"
-          style="--hightlight-color:{{ section.settings.title_highlight_color }}"
+          style="--hightlight-color:{{ section.settings.title_highlight_color }}; text-align: center;"
         >
           {{ section.settings.title }}
         </h2>
         {%- if section.settings.sub_title != blank -%}
-          <p class="collection-list-sub-title">
+          <p class="collection-list-sub-title" style="font-size: 1.25rem !important; color: rgba(255, 255, 255, 0.78) !important; margin-top: 0.8rem !important; margin-bottom: 0.5rem !important; text-align: center !important; font-weight: 400 !important; width: 100% !important; display: block !important; line-height: 1.5 !important;">
             {{ section.settings.sub_title }}
           </p>
         {%- endif -%}
