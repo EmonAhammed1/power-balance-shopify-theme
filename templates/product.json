@@ -276,43 +276,91 @@
           "type": "reviews",
           "settings": {
             "color_scheme": "background-1",
-            "show_custom_bg": false,
-            "custom_bg_color": "#f2f2f2",
-            "corner_radius": 12,
-            "border_width": 0,
-            "border_color": "#b7b7b7",
-            "avatar_alignment": "top",
+            "show_custom_bg": true,
+            "custom_bg_color": "#0e0f14",
+            "corner_radius": 14,
+            "border_width": 1,
+            "border_color": "rgba(180, 137, 64, 0.35)",
+            "avatar_alignment": "left",
             "avatar_corner_radius": 40,
             "star_color": "#ffcc00",
             "stars_translate": 0,
-            "checkmark_color": "#6d388b",
+            "checkmark_color": "#22c55e",
             "checkmark_icon_color": "#ffffff",
             "slider_type": "slide",
-            "autoplay": false,
-            "autoplay_speed": 5,
+            "autoplay": true,
+            "autoplay_speed": 4,
             "display_arrows": false,
             "display_dots": true,
-            "author_1": "<em>Author</em> [stars]",
-            "text_1": "<p>Share positive thoughts and feedback from your customer.</p>",
-            "author_2": "<em>Author</em> [stars]",
-            "text_2": "<p>Share positive thoughts and feedback from your customer.</p>",
-            "author_3": "<em>Author</em> [stars]",
-            "text_3": "<p>Share positive thoughts and feedback from your customer.</p>",
+            "author_1": "<strong>Marcus T.</strong> [checkmark] [stars]",
+            "text_1": "<p>\"Lost 16 lbs of fat and gained unbelievable strength in just 12 weeks! The structured 16-week progression system actually works.\"</p>",
+            "author_2": "<strong>Sarah & Alex L.</strong> [checkmark] [stars]",
+            "text_2": "<p>\"My partner and I started the Couples Bundle together. Best fitness investment we've ever made. Super easy to follow with lifetime access!\"</p>",
+            "author_3": "<strong>David K.</strong> [checkmark] [stars]",
+            "text_3": "<p>\"Instant PDF download with complete exercise form guides. Built real lean muscle and consistency without guessing.\"</p>",
             "margin_top": 24,
             "margin_bottom": 24
           }
         },
-        "de158e68-5d0d-4819-a625-e2dabdff87d1": {
+        "collapsible_whats_included": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "What's Included in the Program?",
             "heading_size": "medium",
             "icon": "check_box",
             "filled_icon": false,
             "collapse_icon": "carret",
             "display_top_border": true,
+            "open": true,
+            "content": "<p>• Complete 16-Week Men's Workout Guide (PDF)<br>• Complete 16-Week Women's Workout Guide (PDF)<br>• Step-by-Step Exercise Execution & Form Guide<br>• Progressive Overload Tracking System<br>• Instant Digital Download with Lifetime Access</p>",
+            "page": "",
+            "margin_top": 24,
+            "margin_bottom": 0
+          }
+        },
+        "collapsible_who_for": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Who is the Power Balance System For?",
+            "heading_size": "medium",
+            "icon": "fitness_center",
+            "filled_icon": false,
+            "collapse_icon": "carret",
+            "display_top_border": true,
             "open": false,
-            "content": "",
+            "content": "<p>Designed for both beginners building proper technique and experienced lifters aiming to break strength plateaus. Provides structured progressive overload paths tailored for both men and women.</p>",
+            "page": "",
+            "margin_top": 24,
+            "margin_bottom": 0
+          }
+        },
+        "collapsible_instant_access": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "How Do I Access My Files After Purchase?",
+            "heading_size": "medium",
+            "icon": "local_shipping",
+            "filled_icon": false,
+            "collapse_icon": "carret",
+            "display_top_border": true,
+            "open": false,
+            "content": "<p>Immediately upon completing checkout, you will receive an instant download link on screen and via email. You can save the PDF files to your mobile phone, tablet, or computer for unlimited lifetime access.</p>",
+            "page": "",
+            "margin_top": 24,
+            "margin_bottom": 0
+          }
+        },
+        "collapsible_support": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "100% Satisfaction & Support Guarantee",
+            "heading_size": "medium",
+            "icon": "shield",
+            "filled_icon": false,
+            "collapse_icon": "carret",
+            "display_top_border": true,
+            "open": false,
+            "content": "<p>We stand 100% behind the Power Balance System. If you have any questions or need guidance during your 16-week journey, our customer support team is available 24/7 to assist you.</p>",
             "page": "",
             "margin_top": 24,
             "margin_bottom": 0
@@ -328,9 +376,11 @@
         "04ba004e-2f54-4936-8b1c-8bcadf6573f6",
         "buy_buttons",
         "e0a0b690-50df-4ca4-acfd-ce2980696cce",
-        "e7a28cbe-03cb-4c9d-a2c4-0e3e76ffb3e5",
         "reviews_8UgFbe",
-        "de158e68-5d0d-4819-a625-e2dabdff87d1"
+        "collapsible_whats_included",
+        "collapsible_who_for",
+        "collapsible_instant_access",
+        "collapsible_support"
       ],
       "custom_css": [],
       "settings": {

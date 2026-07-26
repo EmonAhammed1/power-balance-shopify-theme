@@ -88,17 +88,27 @@
   {% endif %}
   {% for i in (1..items_count) %}
     {% liquid
+      assign avatar_asset = ''
       if i == 1
         assign author = block.settings.author_1
         assign image = block.settings.image_1
+        if image == blank
+          assign avatar_asset = 'review_avatar_1.png' | asset_url
+        endif
         assign text = block.settings.text_1
       elsif i == 2
         assign author = block.settings.author_2
         assign image = block.settings.image_2
+        if image == blank
+          assign avatar_asset = 'review_avatar_2.png' | asset_url
+        endif
         assign text = block.settings.text_2
       else
         assign author = block.settings.author_3
         assign image = block.settings.image_3
+        if image == blank
+          assign avatar_asset = 'review_avatar_3.png' | asset_url
+        endif
         assign text = block.settings.text_3
       endif
     %}
@@ -107,17 +117,18 @@
           <div class="splide__slide__container">
       {% endif %}
           <div class="review-item review-item--{{ block.settings.avatar_alignment }}{{ padding_class }} custom-border-radius custom-border-hex{% if block.settings.show_custom_bg %} custom-bg{% endif %} color-{{ block.settings.color_scheme }}">
-            {%- unless image == blank -%}
-              <div class="review-item__image media media--transparent custom-border-radius" style='--border-radius: {{ block.settings.avatar_corner_radius | divided_by: 10.0 }}rem;'>
+            {%- if image != blank or avatar_asset != blank -%}
+              <div class="review-item__image media media--transparent custom-border-radius" style='--border-radius: {{ block.settings.avatar_corner_radius | divided_by: 10.0 }}rem; width: 50px; height: 50px; flex-shrink: 0; border-radius: 50%; overflow: hidden;'>
                 <img
-                  src="{{ image | image_url }}"
-                  alt="{{ image }}"
-                  width="auto"
-                  height="auto"
+                  src="{% if image != blank %}{{ image | image_url }}{% else %}{{ avatar_asset }}{% endif %}"
+                  alt="Customer Review Avatar"
+                  width="50"
+                  height="50"
                   loading="lazy"
+                  style="width: 50px; height: 50px; object-fit: cover; border-radius: 50%;"
                 >
               </div>
-            {%- endunless -%}
+            {%- endif -%}
             <div class="review-item__right">
               <div class="review-item__text">
                 {{ text }}
