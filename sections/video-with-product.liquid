@@ -366,60 +366,75 @@
 
       <!-- Right Column: Featured Product Card -->
       <div class="vwp-product-col">
-        <div class="vwp-product-card">
-          {% if section.settings.product_badge != blank %}
-            <span class="vwp-product-badge">{{ section.settings.product_badge }}</span>
-          {% endif %}
-
-          <div class="vwp-product-image">
-            {% if section.settings.product_image != blank %}
-              <img
-                src="{{ section.settings.product_image | image_url: width: 800 }}"
-                alt="{{ section.settings.product_title }}"
-                loading="lazy"
-              >
-            {% else %}
-              <img
-                src="{{ 'COUPLES_TRANSFORMATION_BUNDLE.webp' | shopify_asset_url }}"
-                alt="The Complete Bundle"
-                loading="lazy"
-              >
-            {% endif %}
+        {% assign sel_product = section.settings.featured_product %}
+        {% if sel_product != blank %}
+          <div class="vwp-real-product-card">
+            {% render 'card-product',
+              card_product: sel_product,
+              media_aspect_ratio: 'square',
+              show_secondary_image: false,
+              show_vendor: false,
+              show_rating: false,
+              show_quick_add: true,
+              section_id: section.id
+            %}
           </div>
+        {% else %}
+          <div class="vwp-product-card">
+            {% if section.settings.product_badge != blank %}
+              <span class="vwp-product-badge">{{ section.settings.product_badge }}</span>
+            {% endif %}
 
-          <div class="vwp-product-content">
-            <h3 class="vwp-product-title">
-              {% if section.settings.product_title != blank %}
-                {{ section.settings.product_title }}
+            <div class="vwp-product-image">
+              {% if section.settings.product_image != blank %}
+                <img
+                  src="{{ section.settings.product_image | image_url: width: 800 }}"
+                  alt="{{ section.settings.product_title }}"
+                  loading="lazy"
+                >
               {% else %}
-                THE COMPLETE BUNDLE
-              {% endif %}
-            </h3>
-
-            <p class="vwp-product-desc">
-              {% if section.settings.product_desc != blank %}
-                {{ section.settings.product_desc }}
-              {% else %}
-                Get both Men's & Women's 16-week transformation programs and save big. Proven system designed for results.
-              {% endif %}
-            </p>
-
-            <div class="vwp-product-price">
-              {% if section.settings.product_price != blank %}
-                {{ section.settings.product_price }}
-              {% else %}
-                $79.99
+                <img
+                  src="{{ 'COUPLES_TRANSFORMATION_BUNDLE.webp' | shopify_asset_url }}"
+                  alt="The Complete Bundle"
+                  loading="lazy"
+                >
               {% endif %}
             </div>
 
-            <a
-              href="{{ section.settings.product_link | default: '/collections/couples-transformation-bundle' }}"
-              class="vwp-product-btn"
-            >
-              {{ section.settings.button_label | default: 'VIEW BUNDLE' }}
-            </a>
+            <div class="vwp-product-content">
+              <h3 class="vwp-product-title">
+                {% if section.settings.product_title != blank %}
+                  {{ section.settings.product_title }}
+                {% else %}
+                  THE COMPLETE BUNDLE
+                {% endif %}
+              </h3>
+
+              <p class="vwp-product-desc">
+                {% if section.settings.product_desc != blank %}
+                  {{ section.settings.product_desc }}
+                {% else %}
+                  Get both Men's & Women's 16-week transformation programs and save big. Proven system designed for results.
+                {% endif %}
+              </p>
+
+              <div class="vwp-product-price">
+                {% if section.settings.product_price != blank %}
+                  {{ section.settings.product_price }}
+                {% else %}
+                  $79.99
+                {% endif %}
+              </div>
+
+              <a
+                href="{{ section.settings.product_link | default: '/collections/couples-transformation-bundle' }}"
+                class="vwp-product-btn"
+              >
+                {{ section.settings.button_label | default: 'VIEW BUNDLE' }}
+              </a>
+            </div>
           </div>
-        </div>
+        {% endif %}
       </div>
     </div>
   </div>
@@ -494,6 +509,11 @@
     {
       "type": "header",
       "content": "Product Card Settings"
+    },
+    {
+      "type": "product",
+      "id": "featured_product",
+      "label": "Featured Product (Select Couples Bundle)"
     },
     {
       "type": "text",
