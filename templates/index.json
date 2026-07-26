@@ -497,6 +497,8 @@
         "title": "REAL RESULTS FROM REAL MEMBERS",
         "title_highlight_color": "#b48940",
         "heading_size": "h1",
+        "desktop_slide_height": 580,
+        "mobile_slide_height": 500,
         "color_scheme": "inverse",
         "type": "loop",
         "drag": "enabled",

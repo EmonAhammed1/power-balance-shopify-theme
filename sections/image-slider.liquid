@@ -29,13 +29,14 @@
     --color-foreground: {{ section.settings.custom_colors_text.red }}, {{ section.settings.custom_colors_text.green }}, {{ section.settings.custom_colors_text.blue }};
   }
 
-  /* Tall Video & Image Slide Height for Shorts/Reels */
+  /* Dynamic Configurable Video & Image Slide Height */
   .section-{{ section.id }}-padding .image-slide__image,
   .section-{{ section.id }}-padding .image-slide__image video,
   .section-{{ section.id }}-padding .image-slide__image iframe,
   .section-{{ section.id }}-padding .image-slide__image img,
   .section-{{ section.id }}-padding .internal-video {
-    max-height: 580px !important;
+    max-height: {{ section.settings.desktop_slide_height | default: 580 }}px !important;
+    height: {{ section.settings.desktop_slide_height | default: 580 }}px !important;
     object-fit: cover !important;
     border-radius: 14px !important;
     overflow: hidden !important;
@@ -46,7 +47,8 @@
     .section-{{ section.id }}-padding .image-slide__image iframe,
     .section-{{ section.id }}-padding .image-slide__image img,
     .section-{{ section.id }}-padding .internal-video {
-      max-height: 500px !important;
+      max-height: {{ section.settings.mobile_slide_height | default: 500 }}px !important;
+      height: {{ section.settings.mobile_slide_height | default: 500 }}px !important;
       object-fit: cover !important;
       border-radius: 12px !important;
     }
@@ -279,6 +281,30 @@
       ],
       "default": "h1",
       "label": "Heading size"
+    },
+    {
+      "type": "header",
+      "content": "Slide Height Settings"
+    },
+    {
+      "type": "range",
+      "id": "desktop_slide_height",
+      "min": 300,
+      "max": 800,
+      "step": 10,
+      "unit": "px",
+      "label": "Desktop slide height",
+      "default": 580
+    },
+    {
+      "type": "range",
+      "id": "mobile_slide_height",
+      "min": 250,
+      "max": 700,
+      "step": 10,
+      "unit": "px",
+      "label": "Mobile slide height",
+      "default": 500
     },
     {
       "type": "select",
