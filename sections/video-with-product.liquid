@@ -39,8 +39,6 @@
   .vwp-video-wrapper {
     position: relative;
     width: 100%;
-    height: 100%;
-    min-height: 380px;
     border-radius: 10px;
     overflow: hidden;
     background: #000000;
@@ -51,6 +49,56 @@
     align-items: center;
     justify-content: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  @media screen and (min-width: 990px) {
+    .vwp-video-wrapper {
+      height: 100%;
+      min-height: 380px;
+    }
+  }
+
+  @media screen and (max-width: 989px) {
+    .vwp-video-wrapper {
+      height: auto;
+      min-height: auto;
+    }
+    .vwp-play-btn {
+      width: 60px !important;
+      height: 60px !important;
+    }
+    .vwp-play-btn svg {
+      width: 24px !important;
+      height: 24px !important;
+    }
+    .vwp-video-label {
+      font-size: 1.15rem !important;
+      margin-top: 0.8rem !important;
+      padding: 5px 14px !important;
+    }
+    .vwp-video-tag,
+    .vwp-product-badge {
+      font-size: 1.0rem !important;
+      padding: 4px 10px !important;
+      top: 10px !important;
+    }
+    .vwp-product-title {
+      font-size: 1.8rem !important;
+    }
+    .vwp-product-desc {
+      font-size: 1.25rem !important;
+    }
+    .vwp-product-price {
+      font-size: 2.2rem !important;
+      margin-bottom: 1.4rem !important;
+    }
+    .vwp-product-btn {
+      font-size: 1.35rem !important;
+      padding: 1.1rem !important;
+    }
+    .vwp-product-image img {
+      max-height: 200px !important;
+    }
   }
 
   .vwp-video-wrapper:hover {
