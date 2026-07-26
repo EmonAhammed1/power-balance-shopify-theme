@@ -31,6 +31,63 @@
         --slide-inner-percentage-width: {{ section.settings.mobile_slides_inner_width }}%;
       }
     }
+
+    /* Ultra-Clear & Modern Collapsible Rows */
+    .product__accordion {
+      background: rgba(18, 19, 24, 0.7) !important;
+      border: 1px solid rgba(180, 137, 64, 0.3) !important;
+      border-radius: 12px !important;
+      padding: 0.6rem 1.2rem !important;
+      margin-bottom: 0.9rem !important;
+      transition: border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease !important;
+    }
+
+    .product__accordion:hover {
+      border-color: #b48940 !important;
+      background: rgba(18, 19, 24, 0.95) !important;
+      box-shadow: 0 4px 18px rgba(180, 137, 64, 0.2) !important;
+    }
+
+    .product__accordion .summary__title {
+      display: flex !important;
+      align-items: center !important;
+      gap: 1rem !important;
+    }
+
+    .product__accordion .summary__title .material-icon,
+    .product__accordion .summary__title svg {
+      color: #b48940 !important;
+      font-size: 2.2rem !important;
+      flex-shrink: 0 !important;
+    }
+
+    .product__accordion .accordion__title {
+      font-size: 1.55rem !important;
+      font-weight: 700 !important;
+      font-family: inherit !important;
+      color: #ffffff !important;
+      text-transform: none !important;
+      letter-spacing: 0.02em !important;
+      word-spacing: 0.08em !important;
+      line-height: 1.4 !important;
+      margin: 0 !important;
+    }
+
+    .product__accordion summary .icon-caret,
+    .product__accordion summary svg.icon-plus,
+    .product__accordion summary .material-icon:last-child {
+      color: #b48940 !important;
+    }
+
+    .product__accordion .accordion__content {
+      font-size: 1.4rem !important;
+      color: rgba(255, 255, 255, 0.88) !important;
+      line-height: 1.65 !important;
+      padding-top: 0.8rem !important;
+      padding-bottom: 1rem !important;
+      border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+      margin-top: 0.6rem !important;
+    }
   {%- endstyle -%}
 
   {% if section.settings.image_zoom == 'hover' %}
