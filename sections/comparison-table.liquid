@@ -67,28 +67,30 @@
     --color-foreground: {{ section.settings.custom_colors_others_text.red }}, {{ section.settings.custom_colors_others_text.green }}, {{ section.settings.custom_colors_others_text.blue }};
   }
 
-  /* Transparent Glassmorphism for Highlighted Column */
-  .comparison-table-{{ section.id }} .highlighted-cell {
-    background: rgba(255, 255, 255, 0.08) !important;
-    backdrop-filter: blur(16px) !important;
-    -webkit-backdrop-filter: blur(16px) !important;
-    border-left: 1px solid rgba(255, 255, 255, 0.15) !important;
-    border-right: 1px solid rgba(255, 255, 255, 0.15) !important;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.35) !important;
-  }
-  .comparison-table-{{ section.id }} th.highlighted-cell,
-  .comparison-table-{{ section.id }} th.comparison-table__logo.highlighted-cell {
-    background: rgba(255, 255, 255, 0.14) !important;
-    backdrop-filter: blur(16px) !important;
-    -webkit-backdrop-filter: blur(16px) !important;
-    border: 1px solid rgba(255, 255, 255, 0.22) !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
-    border-radius: 16px 16px 0 0 !important;
+  /* Original Golden Pill Card Style with Dark Body */
+  .comparison-table-{{ section.id }} th.comparison-table__logo.highlighted-cell,
+  .comparison-table-{{ section.id }} th.highlighted-cell {
+    background: #B48940 !important;
     color: #ffffff !important;
+    font-weight: 800 !important;
+    border-radius: 16px 16px 0 0 !important;
+    padding: 1.4rem 1rem !important;
+    letter-spacing: 0.05em !important;
+    border: none !important;
+    box-shadow: 0 -4px 15px rgba(180, 137, 64, 0.3) !important;
   }
-  .comparison-table-{{ section.id }} tr:last-child .highlighted-cell {
+
+  .comparison-table-{{ section.id }} td.highlighted-cell {
+    background: #141416 !important;
+    border-left: 3px solid #B48940 !important;
+    border-right: 3px solid #B48940 !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+  }
+
+  .comparison-table-{{ section.id }} tr:last-child td.highlighted-cell {
     border-radius: 0 0 16px 16px !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-bottom: 6px solid #B48940 !important;
+    box-shadow: 0 8px 20px rgba(180, 137, 64, 0.4) !important;
   }
 
   /* Green Checkmarks & Red Crosses */
@@ -98,12 +100,12 @@
   .comparison-table-{{ section.id }} td .comparison-table__icon svg[viewBox="0 0 448 512"] {
     color: #22c55e !important;
     fill: #22c55e !important;
-    filter: drop-shadow(0 0 6px rgba(34, 197, 94, 0.5));
+    filter: drop-shadow(0 0 6px rgba(34, 197, 94, 0.6));
   }
   .comparison-table-{{ section.id }} td .comparison-table__icon svg[viewBox="0 0 384 512"] {
     color: #ef4444 !important;
     fill: #ef4444 !important;
-    filter: drop-shadow(0 0 6px rgba(239, 68, 68, 0.4));
+    filter: drop-shadow(0 0 6px rgba(239, 68, 68, 0.5));
   }
 {%- endstyle -%}
 
