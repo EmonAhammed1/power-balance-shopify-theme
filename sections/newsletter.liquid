@@ -32,6 +32,27 @@
       }
     }
   {% endif %}
+  .newsletter,
+  .newsletter__wrapper {
+    background-color: #0d0e12 !important;
+    color: #ffffff !important;
+  }
+  .newsletter h2,
+  .newsletter p,
+  .newsletter .title-with-highlight {
+    color: #ffffff !important;
+  }
+  .newsletter .field__input {
+    background-color: rgba(255, 255, 255, 0.08) !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(180, 137, 64, 0.4) !important;
+  }
+  .newsletter button.button,
+  .newsletter .newsletter-form__button {
+    background: linear-gradient(135deg, #b48940 0%, #8a6324 100%) !important;
+    color: #ffffff !important;
+    border: none !important;
+  }
 {%- endstyle -%}
 
 <div class="newsletter center {% if section.settings.full_width == false %}newsletter--narrow page-width{% endif %} content-for-grouping animate-section animate--hidden {{ section.settings.visibility }}">
