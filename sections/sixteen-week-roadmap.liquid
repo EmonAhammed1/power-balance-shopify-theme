@@ -88,6 +88,7 @@
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+    cursor: pointer;
   }
 
   .roadmap-node-label {
@@ -100,6 +101,7 @@
     background: #08090d;
     padding: 0.2rem 0.8rem;
     border-radius: 6px;
+    transition: color 0.3s ease;
   }
 
   .roadmap-node-dot {
@@ -111,6 +113,7 @@
     box-shadow: 0 0 14px rgba(180, 137, 64, 0.9);
     position: relative;
     z-index: 3;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
   }
 
   /* 5 Pillars Cards Grid */
@@ -118,7 +121,7 @@
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 1.4rem;
-    margin-bottom: 3.5rem;
+    margin-bottom: 2rem;
   }
 
   .roadmap-card {
@@ -295,6 +298,7 @@
     border: 1px solid rgba(180, 137, 64, 0.35);
     border-radius: 18px;
     padding: 2.5rem 2rem;
+    margin-top: 3rem;
     margin-bottom: 2rem;
     box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
   }
@@ -377,20 +381,92 @@
     flex-shrink: 0;
   }
 
-  /* 📱 MOBILE RESPONSIVENESS */
-  @media screen and (max-width: 1100px) {
+  /* 📱 MOBILE RESPONSIVE SLIDER */
+  @media screen and (max-width: 768px) {
     .roadmap-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.2rem;
+      display: flex !important;
+      overflow-x: auto !important;
+      scroll-snap-type: x mandatory !important;
+      scroll-behavior: smooth !important;
+      gap: 1.2rem !important;
+      padding-bottom: 1rem !important;
+      -webkit-overflow-scrolling: touch !important;
+      scrollbar-width: none !important;
+    }
+    
+    .roadmap-grid::-webkit-scrollbar {
+      display: none !important;
+    }
+    
+    .roadmap-card {
+      min-width: 88% !important;
+      max-width: 88% !important;
+      flex: 0 0 88% !important;
+      scroll-snap-align: center !important;
     }
 
-    .roadmap-benefits-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.8rem 1.2rem;
+    .roadmap-mobile-controls {
+      display: flex !important;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 1rem;
+      padding: 0 0.5rem;
     }
 
-    .roadmap-benefit-col {
-      border-right: none;
+    .roadmap-slider-arrow {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(180, 137, 64, 0.18);
+      border: 1.5px solid #b48940;
+      color: #b48940;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .roadmap-slider-arrow svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    .roadmap-slider-arrow:active {
+      transform: scale(0.92);
+      background: #b48940;
+      color: #000000;
+    }
+
+    .roadmap-slider-dots {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .roadmap-slider-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.25);
+      border: 1px solid rgba(180, 137, 64, 0.5);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .roadmap-slider-dot.active {
+      width: 24px;
+      border-radius: 12px;
+      background: #b48940;
+      box-shadow: 0 0 12px rgba(180, 137, 64, 0.9);
+    }
+  }
+
+  @media screen and (min-width: 769px) {
+    .roadmap-mobile-controls {
+      display: none !important;
     }
   }
 
@@ -412,10 +488,6 @@
       overflow-x: auto;
       padding-bottom: 0.8rem;
       justify-content: space-between;
-    }
-
-    .roadmap-grid {
-      grid-template-columns: 1fr;
     }
 
     .roadmap-benefits-grid {
@@ -445,150 +517,171 @@
     <!-- Timeline Track Line -->
     <div class="roadmap-timeline-wrapper">
       <div class="roadmap-timeline-track">
-        <div class="roadmap-timeline-node">
+        <div class="roadmap-timeline-node" data-index="0">
           <span class="roadmap-node-label">WEEK 1</span>
           <div class="roadmap-node-dot"></div>
         </div>
-        <div class="roadmap-timeline-node">
+        <div class="roadmap-timeline-node" data-index="1">
           <span class="roadmap-node-label">WEEK 4</span>
           <div class="roadmap-node-dot"></div>
         </div>
-        <div class="roadmap-timeline-node">
+        <div class="roadmap-timeline-node" data-index="2">
           <span class="roadmap-node-label">WEEK 8</span>
           <div class="roadmap-node-dot"></div>
         </div>
-        <div class="roadmap-timeline-node">
+        <div class="roadmap-timeline-node" data-index="3">
           <span class="roadmap-node-label">WEEK 12</span>
           <div class="roadmap-node-dot"></div>
         </div>
-        <div class="roadmap-timeline-node">
+        <div class="roadmap-timeline-node" data-index="4">
           <span class="roadmap-node-label">WEEK 16</span>
           <div class="roadmap-node-dot"></div>
         </div>
       </div>
     </div>
 
-    <!-- 5 Pillars Cards Grid -->
-    <div class="roadmap-grid">
-      <!-- Pillar 1: Week 1 -->
-      <div class="roadmap-card">
-        <div>
-          <div class="roadmap-card__icon-wrap">
-            <!-- Dumbbell Icon -->
-            <svg viewBox="0 0 24 24"><path d="M6 5v14M18 5v14M3 8v8M21 8v8M6 12h12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
-          </div>
-          <h3 class="roadmap-card__title">BUILD THE FOUNDATION</h3>
-          <ul class="roadmap-card__list">
-            <li class="roadmap-card__item"><span class="roadmap-card__check">✔</span> Learn proper exercise technique</li>
-            <li class="roadmap-card__item"><span class="roadmap-card__check">✔</span> Establish training consistency</li>
-            <li class="roadmap-card__item"><span class="roadmap-card__check">✔</span> Improve mobility and movement</li>
-            <li class="roadmap-card__item"><span class="roadmap-card__check">✔</span> Develop healthy habits</li>
-          </ul>
-        </div>
-        <div class="roadmap-card__media">
-          <img src="{{ 'roadmap_pushup.png' | asset_url }}" alt="Build Foundation" loading="lazy" width="300" height="130">
-        </div>
-      </div>
-
-      <!-- Pillar 2: Week 4 -->
-      <div class="roadmap-card">
-        <div>
-          <div class="roadmap-card__icon-wrap">
-            <!-- Trending Up Chart Icon -->
-            <svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8M14 7h7v7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
-          </div>
-          <h3 class="roadmap-card__title">STRENGTH STARTS GROWING</h3>
-          <ul class="roadmap-card__list">
-            <li class="roadmap-card__item"><span class="roadmap-card__check">✔</span> Lift heavier with better control</li>
-            <li class="roadmap-card__item"><span class="roadmap-card__check">✔</span> Notice increased energy</li>
-            <li class="roadmap-card__item"><span class="roadmap-card__check">✔</span> Better workout performance</li>
-            <li class="roadmap-card__item"><span class="roadmap-card__check">✔</span> Improved recovery routine</li>
-          </ul>
-        </div>
-        <div class="roadmap-card__media">
-          <svg viewBox="0 0 200 100" style="width:100%; height:110px; padding:10px;">
-            <defs>
-              <linearGradient id="chartG2" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0%" stop-color="#b48940" />
-                <stop offset="100%" stop-color="#f59e0b" />
-              </linearGradient>
-            </defs>
-            <path d="M 10 85 Q 40 75, 70 65 T 130 35 T 190 15" fill="none" stroke="url(#chartG2)" stroke-width="5" stroke-linecap="round"/>
-            <circle cx="190" cy="15" r="6" fill="#f59e0b"/>
-          </svg>
-        </div>
-      </div>
-
-      <!-- Pillar 3: Week 8 -->
-      <div class="roadmap-card">
-        <div>
-          <div class="roadmap-card__icon-wrap">
-            <!-- Target Focus Icon -->
-            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" fill="none"/><circle cx="12" cy="12" r="4" fill="currentColor"/></svg>
-          </div>
-          <h3 class="roadmap-card__title">PERFORMANCE UPGRADE</h3>
-          <ul class="roadmap-card__list">
-            <li class="roadmap-card__item"><span class="roadmap-card__check">✔</span> Progressive overload kicks in</li>
-            <li class="roadmap-card__item"><span class="roadmap-card__check">✔</span> Improved endurance</li>
-            <li class="roadmap-card__item"><span class="roadmap-card__check">✔</span> Better muscle engagement</li>
-            <li class="roadmap-card__item"><span class="roadmap-card__check">✔</span> Increased training confidence</li>
-          </ul>
-        </div>
-        <div class="roadmap-card__media">
-          <img src="{{ 'roadmap_battlerope.png' | asset_url }}" alt="Performance Upgrade" loading="lazy" width="300" height="130">
-        </div>
-      </div>
-
-      <!-- Pillar 4: Week 12 -->
-      <div class="roadmap-card">
-        <div>
-          <div class="roadmap-card__icon-wrap">
-            <!-- Shield Star Icon -->
-            <svg viewBox="0 0 24 24"><path d="M12 2L4 5v6c0 5.5 3.8 10.7 8 12 4.2-1.3 8-6.5 8-12V5l-8-3z" stroke="currentColor" stroke-width="2" fill="none"/><polygon points="12 8 13.2 10.5 16 10.9 14 12.8 14.5 15.5 12 14.2 9.5 15.5 10 12.8 8 10.9 10.8 10.5" fill="currentColor"/></svg>
-          </div>
-          <h3 class="roadmap-card__title">VISIBLE PROGRESS</h3>
-          <ul class="roadmap-card__list">
-            <li class="roadmap-card__item"><span class="roadmap-card__check">✔</span> Stronger physique</li>
-            <li class="roadmap-card__item"><span class="roadmap-card__check">✔</span> Better movement quality</li>
-            <li class="roadmap-card__item"><span class="roadmap-card__check">✔</span> Higher work capacity</li>
-            <li class="roadmap-card__item"><span class="roadmap-card__check">✔</span> Consistent weekly routine</li>
-          </ul>
-        </div>
-        <div class="roadmap-card__media">
-          <div class="roadmap-ring-meter">
-            <div class="roadmap-ring-wrap">
-              <svg width="90" height="90" viewBox="0 0 100 100">
-                <circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="8"/>
-                <circle cx="50" cy="50" r="40" fill="none" stroke="#b48940" stroke-width="8" stroke-dasharray="251" stroke-dashoffset="62" stroke-linecap="round" transform="rotate(-90 50 50)"/>
-              </svg>
-              <div class="roadmap-ring-val">75%</div>
+    <!-- 5 Pillars Cards Grid / Mobile Slider -->
+    <div class="roadmap-slider-wrapper">
+      <div class="roadmap-grid">
+        <!-- Pillar 1: Week 1 -->
+        <div class="roadmap-card" data-index="0">
+          <div>
+            <div class="roadmap-card__icon-wrap">
+              <!-- Dumbbell Icon -->
+              <svg viewBox="0 0 24 24"><path d="M6 5v14M18 5v14M3 8v8M21 8v8M6 12h12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
             </div>
-            <div class="roadmap-ring-label">Program Completion</div>
+            <h3 class="roadmap-card__title">BUILD THE FOUNDATION</h3>
+            <ul class="roadmap-card__list">
+              <li class="roadmap-card__item"><span class="roadmap-card__check">✔</span> Learn proper exercise technique</li>
+              <li class="roadmap-card__item"><span class="roadmap-card__check">✔</span> Establish training consistency</li>
+              <li class="roadmap-card__item"><span class="roadmap-card__check">✔</span> Improve mobility and movement</li>
+              <li class="roadmap-card__item"><span class="roadmap-card__check">✔</span> Develop healthy habits</li>
+            </ul>
+          </div>
+          <div class="roadmap-card__media">
+            <img src="{{ 'roadmap_pushup.png' | asset_url }}" alt="Build Foundation" loading="lazy" width="300" height="130">
+          </div>
+        </div>
+
+        <!-- Pillar 2: Week 4 -->
+        <div class="roadmap-card" data-index="1">
+          <div>
+            <div class="roadmap-card__icon-wrap">
+              <!-- Trending Up Chart Icon -->
+              <svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8M14 7h7v7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+            </div>
+            <h3 class="roadmap-card__title">STRENGTH STARTS GROWING</h3>
+            <ul class="roadmap-card__list">
+              <li class="roadmap-card__item"><span class="roadmap-card__check">✔</span> Lift heavier with better control</li>
+              <li class="roadmap-card__item"><span class="roadmap-card__check">✔</span> Notice increased energy</li>
+              <li class="roadmap-card__item"><span class="roadmap-card__check">✔</span> Better workout performance</li>
+              <li class="roadmap-card__item"><span class="roadmap-card__check">✔</span> Improved recovery routine</li>
+            </ul>
+          </div>
+          <div class="roadmap-card__media">
+            <svg viewBox="0 0 200 100" style="width:100%; height:110px; padding:10px;">
+              <defs>
+                <linearGradient id="chartG3" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#b48940" />
+                  <stop offset="100%" stop-color="#f59e0b" />
+                </linearGradient>
+              </defs>
+              <path d="M 10 85 Q 40 75, 70 65 T 130 35 T 190 15" fill="none" stroke="url(#chartG3)" stroke-width="5" stroke-linecap="round"/>
+              <circle cx="190" cy="15" r="6" fill="#f59e0b"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Pillar 3: Week 8 -->
+        <div class="roadmap-card" data-index="2">
+          <div>
+            <div class="roadmap-card__icon-wrap">
+              <!-- Target Focus Icon -->
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" fill="none"/><circle cx="12" cy="12" r="4" fill="currentColor"/></svg>
+            </div>
+            <h3 class="roadmap-card__title">PERFORMANCE UPGRADE</h3>
+            <ul class="roadmap-card__list">
+              <li class="roadmap-card__item"><span class="roadmap-card__check">✔</span> Progressive overload kicks in</li>
+              <li class="roadmap-card__item"><span class="roadmap-card__check">✔</span> Improved endurance</li>
+              <li class="roadmap-card__item"><span class="roadmap-card__check">✔</span> Better muscle engagement</li>
+              <li class="roadmap-card__item"><span class="roadmap-card__check">✔</span> Increased training confidence</li>
+            </ul>
+          </div>
+          <div class="roadmap-card__media">
+            <img src="{{ 'roadmap_battlerope.png' | asset_url }}" alt="Performance Upgrade" loading="lazy" width="300" height="130">
+          </div>
+        </div>
+
+        <!-- Pillar 4: Week 12 -->
+        <div class="roadmap-card" data-index="3">
+          <div>
+            <div class="roadmap-card__icon-wrap">
+              <!-- Shield Star Icon -->
+              <svg viewBox="0 0 24 24"><path d="M12 2L4 5v6c0 5.5 3.8 10.7 8 12 4.2-1.3 8-6.5 8-12V5l-8-3z" stroke="currentColor" stroke-width="2" fill="none"/><polygon points="12 8 13.2 10.5 16 10.9 14 12.8 14.5 15.5 12 14.2 9.5 15.5 10 12.8 8 10.9 10.8 10.5" fill="currentColor"/></svg>
+            </div>
+            <h3 class="roadmap-card__title">VISIBLE PROGRESS</h3>
+            <ul class="roadmap-card__list">
+              <li class="roadmap-card__item"><span class="roadmap-card__check">✔</span> Stronger physique</li>
+              <li class="roadmap-card__item"><span class="roadmap-card__check">✔</span> Better movement quality</li>
+              <li class="roadmap-card__item"><span class="roadmap-card__check">✔</span> Higher work capacity</li>
+              <li class="roadmap-card__item"><span class="roadmap-card__check">✔</span> Consistent weekly routine</li>
+            </ul>
+          </div>
+          <div class="roadmap-card__media">
+            <div class="roadmap-ring-meter">
+              <div class="roadmap-ring-wrap">
+                <svg width="90" height="90" viewBox="0 0 100 100">
+                  <circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="8"/>
+                  <circle cx="50" cy="50" r="40" fill="none" stroke="#b48940" stroke-width="8" stroke-dasharray="251" stroke-dashoffset="62" stroke-linecap="round" transform="rotate(-90 50 50)"/>
+                </svg>
+                <div class="roadmap-ring-val">75%</div>
+              </div>
+              <div class="roadmap-ring-label">Program Completion</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pillar 5: Week 16 -->
+        <div class="roadmap-card" data-index="4">
+          <div>
+            <div class="roadmap-card__icon-wrap">
+              <!-- Trophy Icon -->
+              <svg viewBox="0 0 24 24"><path d="M6 4h12v4a6 6 0 01-12 0V4zM4 6H2a3 3 0 003 3M20 6h2a3 3 0 01-3 3M12 14v4M8 20h8" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="roadmap-card__title">TRANSFORMATION COMPLETE</h3>
+            <ul class="roadmap-card__list">
+              <li class="roadmap-card__item"><span class="roadmap-card__check">✔</span> Complete the full program</li>
+              <li class="roadmap-card__item"><span class="roadmap-card__check">✔</span> Improved strength</li>
+              <li class="roadmap-card__item"><span class="roadmap-card__check">✔</span> Better fitness habits</li>
+              <li class="roadmap-card__item"><span class="roadmap-card__check">✔</span> Ready for the next challenge</li>
+            </ul>
+          </div>
+          <div>
+            <div class="roadmap-card__media">
+              <img src="{{ 'roadmap_flexing.png' | asset_url }}" alt="Transformation Complete" loading="lazy" width="300" height="130">
+            </div>
+            <a href="#SectionAtcBtn-{{ section.id }}" class="roadmap-cta-btn">START YOUR TRANSFORMATION</a>
           </div>
         </div>
       </div>
 
-      <!-- Pillar 5: Week 16 -->
-      <div class="roadmap-card">
-        <div>
-          <div class="roadmap-card__icon-wrap">
-            <!-- Trophy Icon -->
-            <svg viewBox="0 0 24 24"><path d="M6 4h12v4a6 6 0 01-12 0V4zM4 6H2a3 3 0 003 3M20 6h2a3 3 0 01-3 3M12 14v4M8 20h8" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
-          </div>
-          <h3 class="roadmap-card__title">TRANSFORMATION COMPLETE</h3>
-          <ul class="roadmap-card__list">
-            <li class="roadmap-card__item"><span class="roadmap-card__check">✔</span> Complete the full program</li>
-            <li class="roadmap-card__item"><span class="roadmap-card__check">✔</span> Improved strength</li>
-            <li class="roadmap-card__item"><span class="roadmap-card__check">✔</span> Better fitness habits</li>
-            <li class="roadmap-card__item"><span class="roadmap-card__check">✔</span> Ready for the next challenge</li>
-          </ul>
+      <!-- Mobile Navigation Arrows & Dots -->
+      <div class="roadmap-mobile-controls">
+        <button class="roadmap-slider-arrow roadmap-arrow-prev" aria-label="Previous slide">
+          <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+        </button>
+
+        <div class="roadmap-slider-dots">
+          <span class="roadmap-slider-dot active" data-index="0"></span>
+          <span class="roadmap-slider-dot" data-index="1"></span>
+          <span class="roadmap-slider-dot" data-index="2"></span>
+          <span class="roadmap-slider-dot" data-index="3"></span>
+          <span class="roadmap-slider-dot" data-index="4"></span>
         </div>
-        <div>
-          <div class="roadmap-card__media">
-            <img src="{{ 'roadmap_flexing.png' | asset_url }}" alt="Transformation Complete" loading="lazy" width="300" height="130">
-          </div>
-          <a href="#SectionAtcBtn-{{ section.id }}" class="roadmap-cta-btn">START YOUR TRANSFORMATION</a>
-        </div>
+
+        <button class="roadmap-slider-arrow roadmap-arrow-next" aria-label="Next slide">
+          <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+        </button>
       </div>
     </div>
 
@@ -646,6 +739,129 @@
     </div>
   </div>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const section = document.querySelector('.roadmap-section-{{ section.id }}');
+    if (!section) return;
+
+    const grid = section.querySelector('.roadmap-grid');
+    const cards = section.querySelectorAll('.roadmap-card');
+    const prevBtn = section.querySelector('.roadmap-arrow-prev');
+    const nextBtn = section.querySelector('.roadmap-arrow-next');
+    const dots = section.querySelectorAll('.roadmap-slider-dot');
+    const nodes = section.querySelectorAll('.roadmap-timeline-node');
+
+    if (!grid || cards.length === 0) return;
+
+    let currentIndex = 0;
+    let autoplayTimer = null;
+
+    function goToSlide(index) {
+      if (index < 0) index = cards.length - 1;
+      if (index >= cards.length) index = 0;
+      currentIndex = index;
+
+      const card = cards[currentIndex];
+      if (card && window.innerWidth <= 768) {
+        const scrollLeft = card.offsetLeft - (grid.clientWidth - card.clientWidth) / 2;
+        grid.scrollTo({ left: scrollLeft, behavior: 'smooth' });
+      }
+
+      // Update dots
+      dots.forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === currentIndex);
+      });
+
+      // Update timeline nodes highlight
+      nodes.forEach((node, idx) => {
+        const dotElem = node.querySelector('.roadmap-node-dot');
+        const labelElem = node.querySelector('.roadmap-node-label');
+        if (dotElem) {
+          if (idx === currentIndex) {
+            dotElem.style.borderColor = '#f59e0b';
+            dotElem.style.boxShadow = '0 0 16px rgba(245, 158, 11, 1)';
+            if (labelElem) labelElem.style.color = '#f59e0b';
+          } else {
+            dotElem.style.borderColor = '#b48940';
+            dotElem.style.boxShadow = '0 0 14px rgba(180, 137, 64, 0.9)';
+            if (labelElem) labelElem.style.color = '#b48940';
+          }
+        }
+      });
+    }
+
+    function startAutoplay() {
+      if (window.innerWidth <= 768) {
+        stopAutoplay();
+        autoplayTimer = setInterval(function() {
+          goToSlide(currentIndex + 1);
+        }, 3500);
+      }
+    }
+
+    function stopAutoplay() {
+      if (autoplayTimer) {
+        clearInterval(autoplayTimer);
+        autoplayTimer = null;
+      }
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', function() {
+        stopAutoplay();
+        goToSlide(currentIndex - 1);
+        startAutoplay();
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function() {
+        stopAutoplay();
+        goToSlide(currentIndex + 1);
+        startAutoplay();
+      });
+    }
+
+    dots.forEach((dot, idx) => {
+      dot.addEventListener('click', function() {
+        stopAutoplay();
+        goToSlide(idx);
+        startAutoplay();
+      });
+    });
+
+    nodes.forEach((node, idx) => {
+      node.addEventListener('click', function() {
+        stopAutoplay();
+        goToSlide(idx);
+        startAutoplay();
+      });
+    });
+
+    grid.addEventListener('scroll', function() {
+      if (window.innerWidth > 768) return;
+      const scrollPos = grid.scrollLeft + grid.clientWidth / 2;
+      cards.forEach((card, idx) => {
+        const cardStart = card.offsetLeft;
+        const cardEnd = cardStart + card.clientWidth;
+        if (scrollPos >= cardStart && scrollPos <= cardEnd) {
+          if (currentIndex !== idx) {
+            currentIndex = idx;
+            dots.forEach((d, i) => d.classList.toggle('active', i === currentIndex));
+          }
+        }
+      });
+    });
+
+    grid.addEventListener('touchstart', stopAutoplay);
+    grid.addEventListener('touchend', function() {
+      setTimeout(startAutoplay, 2000);
+    });
+
+    startAutoplay();
+  });
+</script>
 
 {% schema %}
 {
