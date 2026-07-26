@@ -148,22 +148,33 @@
   }
   .hero__features-row {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
-    gap: 2rem 3.5rem;
+    justify-content: flex-start;
+    gap: 1.5rem 2.4rem;
     margin-top: 4rem;
     padding-top: 2.5rem;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     animation-delay: 0.55s;
+    width: 100%;
+    max-width: 100%;
+  }
+  @media screen and (max-width: 989px) {
+    .hero__features-row {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.4rem 2rem;
+    }
   }
   .hero__feature-box {
     display: flex;
     align-items: center;
-    gap: 1.2rem;
+    gap: 1.0rem;
+    flex-shrink: 0;
   }
   .hero__feature-icon-wrapper {
-    width: 3.8rem;
-    height: 3.8rem;
+    width: 3.2rem;
+    height: 3.2rem;
     flex-shrink: 0;
     color: var(--hightlight-color, #B48940);
     display: inline-flex;
@@ -179,21 +190,24 @@
     flex-direction: column;
     text-align: left;
     text-transform: uppercase;
+    white-space: nowrap;
   }
   .hero__feature-top {
-    font-size: 1.38rem;
+    font-size: 1.25rem;
     font-weight: 800;
-    letter-spacing: 0.06rem;
+    letter-spacing: 0.05rem;
     color: #ffffff;
     line-height: 1.1;
     margin-bottom: 0.15rem;
+    white-space: nowrap;
   }
   .hero__feature-sub {
-    font-size: 1.08rem;
+    font-size: 1.0rem;
     font-weight: 700;
     letter-spacing: 0.04rem;
     color: rgba(255, 255, 255, 0.78);
     line-height: 1.1;
+    white-space: nowrap;
   }
   @media screen and (max-width: 749px) {
     .hero-{{ section.id }} .hero-slide {
