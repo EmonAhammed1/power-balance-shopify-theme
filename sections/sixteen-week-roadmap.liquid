@@ -12,48 +12,53 @@
   }
 
   .roadmap-section-{{ section.id }} {
-    background-color: #000000;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.90) 0%, rgba(8, 9, 13, 0.94) 100%), url('{{ "roadmap_bg.png" | asset_url }}') center center / cover no-repeat;
     color: #ffffff;
     overflow: hidden;
+    position: relative;
   }
 
   .roadmap-container {
-    max-width: 1320px;
+    max-width: 1420px;
     margin: 0 auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 
   .roadmap-header {
     text-align: center;
-    max-width: 900px;
+    max-width: 950px;
     margin: 0 auto 3.5rem auto;
   }
 
   .roadmap-title {
-    font-size: 3.6rem;
+    font-size: 4.2rem;
     font-weight: 900;
     color: #ffffff;
     text-transform: uppercase;
     letter-spacing: 0.04em;
-    line-height: 1.1;
-    margin-bottom: 0.6rem;
+    line-height: 1.15;
+    margin-bottom: 0.8rem;
   }
 
   .roadmap-title span {
     color: #b48940;
     display: block;
-    font-size: 3.8rem;
+    font-size: 4.5rem;
+    text-shadow: 0 0 20px rgba(180, 137, 64, 0.4);
   }
 
   .roadmap-subtitle {
-    font-size: 1.7rem;
-    color: rgba(255, 255, 255, 0.75);
-    line-height: 1.5;
+    font-size: 1.95rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.88);
+    line-height: 1.45;
   }
 
   /* Timeline Top Track Line */
   .roadmap-timeline-wrapper {
     position: relative;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
   }
 
   .roadmap-timeline-track {
@@ -69,10 +74,11 @@
     top: 50%;
     left: 8%;
     right: 8%;
-    height: 2px;
-    background: linear-gradient(90deg, #b48940 0%, #d4af37 50%, #b48940 100%);
+    height: 3px;
+    background: linear-gradient(90deg, #b48940 0%, #f59e0b 50%, #b48940 100%);
     transform: translateY(-50%);
     z-index: 1;
+    box-shadow: 0 0 12px rgba(180, 137, 64, 0.6);
   }
 
   .roadmap-timeline-node {
@@ -81,43 +87,45 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.8rem;
+    gap: 0.9rem;
   }
 
   .roadmap-node-label {
-    font-size: 1.35rem;
-    font-weight: 800;
+    font-size: 1.6rem;
+    font-weight: 900;
     color: #b48940;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.06em;
   }
 
   .roadmap-node-dot {
-    width: 18px;
-    height: 18px;
+    width: 22px;
+    height: 22px;
     border-radius: 50%;
     background: #000000;
-    border: 3px solid #b48940;
-    box-shadow: 0 0 10px rgba(180, 137, 64, 0.8);
+    border: 4px solid #b48940;
+    box-shadow: 0 0 14px rgba(180, 137, 64, 0.9);
   }
 
   /* 5 Pillars Cards Grid */
   .roadmap-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 1.2rem;
-    margin-bottom: 3rem;
+    gap: 1.4rem;
+    margin-bottom: 3.5rem;
   }
 
   .roadmap-card {
-    background: rgba(18, 19, 24, 0.95);
-    border: 1px solid rgba(180, 137, 64, 0.25);
-    border-radius: 16px;
-    padding: 1.8rem 1.4rem 1.4rem 1.4rem;
+    background: rgba(14, 15, 20, 0.94);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(180, 137, 64, 0.35);
+    border-radius: 18px;
+    padding: 2rem 1.6rem 1.6rem 1.6rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.7);
     transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     overflow: hidden;
@@ -125,39 +133,40 @@
 
   .roadmap-card:hover {
     border-color: #b48940;
-    transform: translateY(-4px);
-    box-shadow: 0 16px 45px rgba(180, 137, 64, 0.22);
+    transform: translateY(-5px);
+    box-shadow: 0 18px 50px rgba(180, 137, 64, 0.28);
   }
 
   .roadmap-card__icon-wrap {
-    width: 54px;
-    height: 54px;
+    width: 62px;
+    height: 62px;
     border-radius: 50%;
     border: 2px solid #b48940;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 1.2rem auto;
-    background: rgba(180, 137, 64, 0.1);
+    margin: 0 auto 1.4rem auto;
+    background: rgba(180, 137, 64, 0.15);
     color: #b48940;
+    box-shadow: 0 0 15px rgba(180, 137, 64, 0.3);
   }
 
   .roadmap-card__icon-wrap svg {
-    width: 26px;
-    height: 26px;
+    width: 30px;
+    height: 30px;
     fill: currentColor;
   }
 
   .roadmap-card__title {
-    font-size: 1.4rem;
-    font-weight: 800;
+    font-size: 1.65rem;
+    font-weight: 900;
     color: #ffffff;
     text-transform: uppercase;
     text-align: center;
     letter-spacing: 0.03em;
     line-height: 1.25;
-    margin-bottom: 1.2rem;
-    min-height: 3.5rem;
+    margin-bottom: 1.4rem;
+    min-height: 4.2rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -166,25 +175,26 @@
   .roadmap-card__list {
     list-style: none;
     padding: 0;
-    margin: 0 0 1.5rem 0;
+    margin: 0 0 1.8rem 0;
     display: flex;
     flex-direction: column;
-    gap: 0.8rem;
+    gap: 1rem;
   }
 
   .roadmap-card__item {
-    font-size: 1.2rem;
-    color: rgba(255, 255, 255, 0.85);
-    line-height: 1.35;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.4;
     display: flex;
     align-items: flex-start;
-    gap: 0.6rem;
+    gap: 0.7rem;
   }
 
   .roadmap-card__check {
     color: #22c55e;
-    font-size: 1.2rem;
-    font-weight: bold;
+    font-size: 1.45rem;
+    font-weight: 900;
     flex-shrink: 0;
     margin-top: 1px;
   }
@@ -192,19 +202,20 @@
   .roadmap-card__media {
     margin-top: auto;
     width: 100%;
-    border-radius: 10px;
+    border-radius: 12px;
     overflow: hidden;
     position: relative;
-    min-height: 110px;
+    min-height: 130px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .roadmap-card__media img {
     width: 100%;
-    height: 110px;
+    height: 130px;
     object-fit: cover;
     display: block;
   }
@@ -215,13 +226,13 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 0.8rem 0;
+    padding: 1rem 0;
   }
 
   .roadmap-ring-wrap {
     position: relative;
-    width: 90px;
-    height: 90px;
+    width: 100px;
+    height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -229,18 +240,18 @@
 
   .roadmap-ring-val {
     position: absolute;
-    font-size: 2rem;
-    font-weight: 800;
+    font-size: 2.3rem;
+    font-weight: 900;
     color: #ffffff;
   }
 
   .roadmap-ring-label {
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.85);
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    margin-top: 0.4rem;
+    margin-top: 0.6rem;
     text-align: center;
   }
 
@@ -250,47 +261,50 @@
     width: 100%;
     background: linear-gradient(135deg, #d4af37 0%, #b48940 100%);
     color: #000000 !important;
-    font-size: 1.2rem;
-    font-weight: 800;
+    font-size: 1.35rem;
+    font-weight: 900;
     text-transform: uppercase;
     text-align: center;
-    padding: 1.1rem 0.6rem;
-    border-radius: 10px;
+    padding: 1.2rem 0.8rem;
+    border-radius: 12px;
     text-decoration: none;
     letter-spacing: 0.03em;
-    box-shadow: 0 6px 20px rgba(180, 137, 64, 0.4);
+    box-shadow: 0 8px 24px rgba(180, 137, 64, 0.5);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    margin-top: 0.8rem;
+    margin-top: 1rem;
   }
 
   .roadmap-cta-btn:hover {
-    transform: scale(1.02);
-    box-shadow: 0 8px 25px rgba(180, 137, 64, 0.6);
+    transform: scale(1.03);
+    box-shadow: 0 10px 30px rgba(180, 137, 64, 0.7);
   }
 
   /* Bottom Benefits Bar (WHAT YOU'LL BUILD OVER 16 WEEKS) */
   .roadmap-benefits-bar {
-    background: rgba(14, 15, 20, 0.9);
-    border: 1px solid rgba(180, 137, 64, 0.25);
-    border-radius: 16px;
-    padding: 2.2rem 1.8rem;
-    margin-bottom: 1.5rem;
+    background: rgba(12, 13, 18, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(180, 137, 64, 0.35);
+    border-radius: 18px;
+    padding: 2.5rem 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
   }
 
   .roadmap-benefits-title {
-    font-size: 1.45rem;
-    font-weight: 800;
+    font-size: 1.7rem;
+    font-weight: 900;
     color: #b48940;
     text-transform: uppercase;
     text-align: center;
     letter-spacing: 0.12em;
-    margin-bottom: 2rem;
+    margin-bottom: 2.2rem;
   }
 
   .roadmap-benefits-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 1rem;
+    gap: 1.2rem;
     text-align: center;
   }
 
@@ -298,9 +312,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.6rem;
-    padding: 0 0.4rem;
-    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    gap: 0.8rem;
+    padding: 0 0.5rem;
+    border-right: 1px solid rgba(255, 255, 255, 0.12);
   }
 
   .roadmap-benefit-col:last-child {
@@ -308,8 +322,8 @@
   }
 
   .roadmap-benefit-icon {
-    width: 36px;
-    height: 36px;
+    width: 42px;
+    height: 42px;
     color: #b48940;
   }
 
@@ -320,33 +334,34 @@
   }
 
   .roadmap-benefit-name {
-    font-size: 1.3rem;
-    font-weight: 800;
+    font-size: 1.5rem;
+    font-weight: 900;
     color: #ffffff;
     text-transform: uppercase;
     letter-spacing: 0.04em;
   }
 
   .roadmap-benefit-desc {
-    font-size: 1.15rem;
-    color: rgba(255, 255, 255, 0.7);
-    line-height: 1.35;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.4;
   }
 
   /* Disclaimer Footer Note */
   .roadmap-disclaimer {
-    background: rgba(10, 11, 15, 0.7);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 12px;
-    padding: 1.2rem 1.8rem;
+    background: rgba(8, 9, 13, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    padding: 1.4rem 2rem;
     text-align: center;
-    font-size: 1.2rem;
-    color: rgba(255, 255, 255, 0.65);
-    line-height: 1.5;
+    font-size: 1.35rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.8rem;
+    gap: 1rem;
   }
 
   .roadmap-disclaimer-icon {
@@ -355,15 +370,15 @@
   }
 
   /* 📱 MOBILE RESPONSIVENESS */
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1100px) {
     .roadmap-grid {
       grid-template-columns: repeat(2, 1fr);
-      gap: 1rem;
+      gap: 1.2rem;
     }
 
     .roadmap-benefits-grid {
       grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem 1rem;
+      gap: 1.8rem 1.2rem;
     }
 
     .roadmap-benefit-col {
@@ -373,15 +388,15 @@
 
   @media screen and (max-width: 640px) {
     .roadmap-title {
-      font-size: 2.4rem;
+      font-size: 2.8rem;
     }
 
     .roadmap-title span {
-      font-size: 2.6rem;
+      font-size: 3.0rem;
     }
 
     .roadmap-subtitle {
-      font-size: 1.35rem;
+      font-size: 1.5rem;
     }
 
     .roadmap-timeline-track {
@@ -463,7 +478,7 @@
           </ul>
         </div>
         <div class="roadmap-card__media">
-          <img src="{{ 'fawwaz_alli_philosophy_bg.png' | asset_url }}" alt="Build Foundation" loading="lazy" width="300" height="110">
+          <img src="{{ 'roadmap_pushup.png' | asset_url }}" alt="Build Foundation" loading="lazy" width="300" height="130">
         </div>
       </div>
 
@@ -483,15 +498,15 @@
           </ul>
         </div>
         <div class="roadmap-card__media">
-          <svg viewBox="0 0 200 100" style="width:100%; height:90px; padding:10px;">
+          <svg viewBox="0 0 200 100" style="width:100%; height:110px; padding:10px;">
             <defs>
-              <linearGradient id="chartG" x1="0" y1="0" x2="1" y2="0">
+              <linearGradient id="chartG2" x1="0" y1="0" x2="1" y2="0">
                 <stop offset="0%" stop-color="#b48940" />
                 <stop offset="100%" stop-color="#f59e0b" />
               </linearGradient>
             </defs>
-            <path d="M 10 80 Q 40 70, 70 60 T 130 35 T 190 15" fill="none" stroke="url(#chartG)" stroke-width="4.5" stroke-linecap="round"/>
-            <circle cx="190" cy="15" r="5" fill="#f59e0b"/>
+            <path d="M 10 85 Q 40 75, 70 65 T 130 35 T 190 15" fill="none" stroke="url(#chartG2)" stroke-width="5" stroke-linecap="round"/>
+            <circle cx="190" cy="15" r="6" fill="#f59e0b"/>
           </svg>
         </div>
       </div>
@@ -512,7 +527,7 @@
           </ul>
         </div>
         <div class="roadmap-card__media">
-          <img src="{{ 'fawwaz_alli_philosophy_bg.png' | asset_url }}" alt="Performance Upgrade" loading="lazy" width="300" height="110">
+          <img src="{{ 'roadmap_battlerope.png' | asset_url }}" alt="Performance Upgrade" loading="lazy" width="300" height="130">
         </div>
       </div>
 
@@ -534,8 +549,8 @@
         <div class="roadmap-card__media">
           <div class="roadmap-ring-meter">
             <div class="roadmap-ring-wrap">
-              <svg width="80" height="80" viewBox="0 0 100 100">
-                <circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="8"/>
+              <svg width="90" height="90" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="8"/>
                 <circle cx="50" cy="50" r="40" fill="none" stroke="#b48940" stroke-width="8" stroke-dasharray="251" stroke-dashoffset="62" stroke-linecap="round" transform="rotate(-90 50 50)"/>
               </svg>
               <div class="roadmap-ring-val">75%</div>
@@ -562,7 +577,7 @@
         </div>
         <div>
           <div class="roadmap-card__media">
-            <img src="{{ 'fawwaz_alli_philosophy_bg.png' | asset_url }}" alt="Transformation Complete" loading="lazy" width="300" height="110">
+            <img src="{{ 'roadmap_flexing.png' | asset_url }}" alt="Transformation Complete" loading="lazy" width="300" height="130">
           </div>
           <a href="#SectionAtcBtn-{{ section.id }}" class="roadmap-cta-btn">START YOUR TRANSFORMATION</a>
         </div>
@@ -614,11 +629,11 @@
     <!-- Disclaimer Note -->
     <div class="roadmap-disclaimer">
       <div class="roadmap-disclaimer-icon">
-        <svg width="20" height="20" viewBox="0 0 24 24"><path d="M12 2L4 5v6c0 5.5 3.8 10.7 8 12 4.2-1.3 8-6.5 8-12V5l-8-3z" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+        <svg width="22" height="22" viewBox="0 0 24 24"><path d="M12 2L4 5v6c0 5.5 3.8 10.7 8 12 4.2-1.3 8-6.5 8-12V5l-8-3z" stroke="currentColor" stroke-width="2" fill="none"/></svg>
       </div>
       <div>
         Results vary based on consistency, nutrition, recovery, and individual effort.<br>
-        <strong>The Power Balance System provides the structure to help you train with purpose and build lasting habits.</strong>
+        <strong style="color:#ffffff;">The Power Balance System provides the structure to help you train with purpose and build lasting habits.</strong>
       </div>
     </div>
   </div>
