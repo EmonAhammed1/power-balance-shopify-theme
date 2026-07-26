@@ -247,6 +247,130 @@
         "custom_colors_text": "#2e2a39"
       }
     },
+    "pricing_table_programs": {
+      "type": "pricing-table",
+      "blocks": {
+        "plan_mens": {
+          "type": "plan",
+          "settings": {
+            "displayed_image": "custom",
+            "custom_image": "shopify://shop_images/MEN_S_WORKOUT_PROGRAM.webp",
+            "title": "MEN'S 16-WEEK PROGRAM",
+            "price": "$49.99",
+            "price_text": "",
+            "icon": "none",
+            "description": "Build muscle, burn fat and get stronger with our complete 16-week system.",
+            "desc_alignment": "center",
+            "benefits": "",
+            "button_function": "link",
+            "button_label": "VIEW PROGRAM",
+            "link": "/collections/mens-workout-program",
+            "button_style_secondary": false,
+            "button_full_width": true,
+            "color_scheme": "custom",
+            "custom_colors_background": "#f2f2f2",
+            "custom_colors_text": "#111111",
+            "custom_colors_solid_button_background": "#000000",
+            "custom_colors_solid_button_text": "#ffffff"
+          }
+        },
+        "plan_womens": {
+          "type": "plan",
+          "settings": {
+            "displayed_image": "custom",
+            "custom_image": "shopify://shop_images/WOMEN_S_WORKOUT_PROGRAM.webp",
+            "title": "WOMEN'S 16-WEEK PROGRAM",
+            "price": "$49.99",
+            "price_text": "",
+            "icon": "none",
+            "description": "Sculpt, tone and transform with a program designed for women.",
+            "desc_alignment": "center",
+            "benefits": "",
+            "button_function": "link",
+            "button_label": "VIEW PROGRAM",
+            "link": "/collections/womens-workout-program",
+            "button_style_secondary": false,
+            "button_full_width": true,
+            "color_scheme": "custom",
+            "custom_colors_background": "#f2f2f2",
+            "custom_colors_text": "#111111",
+            "custom_colors_solid_button_background": "#000000",
+            "custom_colors_solid_button_text": "#ffffff"
+          }
+        },
+        "plan_bundle": {
+          "type": "plan",
+          "settings": {
+            "badge": "BEST VALUE",
+            "badge_color_scheme": "accent-1",
+            "displayed_image": "custom",
+            "custom_image": "shopify://shop_images/COUPLES_TRANSFORMATION_BUNDLE.webp",
+            "title": "THE COMPLETE BUNDLE",
+            "price": "$79.99",
+            "price_text": "",
+            "icon": "none",
+            "description": "Get both Men's & Women's 16-week programs and save.",
+            "desc_alignment": "center",
+            "benefits": "",
+            "button_function": "link",
+            "button_label": "VIEW BUNDLE",
+            "link": "/collections/couples-transformation-bundle",
+            "button_style_secondary": false,
+            "button_full_width": true,
+            "color_scheme": "custom",
+            "custom_colors_background": "#f2f2f2",
+            "custom_colors_text": "#111111",
+            "custom_colors_solid_button_background": "#000000",
+            "custom_colors_solid_button_text": "#ffffff"
+          }
+        },
+        "plan_nutrition": {
+          "type": "plan",
+          "settings": {
+            "displayed_image": "custom",
+            "custom_image": "shopify://shop_images/MEN_S_WORKOUT_PROGRAM.webp",
+            "title": "NUTRITION GUIDE",
+            "price": "$19.99",
+            "price_text": "",
+            "icon": "none",
+            "description": "Simple nutrition strategies that fuel your results.",
+            "desc_alignment": "center",
+            "benefits": "",
+            "button_function": "link",
+            "button_label": "VIEW GUIDE",
+            "link": "/collections/all",
+            "button_style_secondary": false,
+            "button_full_width": true,
+            "color_scheme": "custom",
+            "custom_colors_background": "#f2f2f2",
+            "custom_colors_text": "#111111",
+            "custom_colors_solid_button_background": "#000000",
+            "custom_colors_solid_button_text": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "plan_mens",
+        "plan_womens",
+        "plan_bundle",
+        "plan_nutrition"
+      ],
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "title": "<strong>PROGRAMS BUILT FOR REAL LIFE</strong>",
+        "title_highlight_color": "#b48940",
+        "heading_size": "h1",
+        "text": "<p>Proven 16-week systems designed to fit your lifestyle and get results.</p>",
+        "color_scheme": "custom",
+        "custom_colors_background": "#ffffff",
+        "custom_colors_text": "#111111",
+        "cards_alignment": "stretch",
+        "desktop_spacing": 20,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
     "d2d3417b-e92f-428c-b221-5bceffb552be": {
       "type": "comparison-table",
       "blocks": {
@@ -587,6 +711,7 @@
     "cfca4268-6358-426c-98ab-d292aeef11e5",
     "hero_sub_ticker",
     "collection_list_gNKdDJ",
+    "pricing_table_programs",
     "d2d3417b-e92f-428c-b221-5bceffb552be",
     "6aa09428-a417-429d-9159-a4e8afd49590",
     "0f1fc9e4-bc4c-4052-9747-62d1f8472caa",
