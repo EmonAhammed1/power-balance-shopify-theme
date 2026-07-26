@@ -657,27 +657,6 @@
         "custom_colors_solid_button_background": "#dd1d1d",
         "custom_colors_solid_button_text": "#ffffff"
       }
-    },
-    "sixteen_day_progression": {
-      "type": "sixteen-day-progression",
-      "settings": {
-        "title": "16-DAY PROGRESSION MATRIX",
-        "subtitle": "Trackable, science-backed performance metrics and physiological adaptations across your 16-day overload cycle.",
-        "card1_title": "Strength & Load Gains",
-        "card1_subtext": "16-Day Load Increase",
-        "card1_badge": "+4.33%",
-        "card1_value": "+269%",
-        "card2_title": "Hypertrophy & Activation",
-        "card2_subtext": "Target Muscle Stimulation",
-        "card2_badge": "Peak Index",
-        "card2_value": "76%",
-        "card3_title": "Form & Movement Mastery",
-        "card3_value": "76%",
-        "card4_title": "Neural Recovery Rate",
-        "card4_value": "64%",
-        "padding_top": 48,
-        "padding_bottom": 48
-      }
     }
   },
   "order": [
@@ -687,7 +666,6 @@
     "video_with_product_programs",
     "philosophy_banner",
     "d2d3417b-e92f-428c-b221-5bceffb552be",
-    "sixteen_day_progression",
     "6aa09428-a417-429d-9159-a4e8afd49590",
     "0f1fc9e4-bc4c-4052-9747-62d1f8472caa",
     "contact_form_WHP8G7"
