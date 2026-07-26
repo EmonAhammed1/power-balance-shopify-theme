@@ -125,31 +125,34 @@
 
   @media screen and (max-width: 989px) {
     .footer__blocks-wrapper {
-      display: grid !important;
-      grid-template-columns: 1fr !important;
+      display: flex !important;
+      flex-direction: column !important;
       gap: 2.2rem !important;
     }
     .footer-block {
       width: 100% !important;
       max-width: 100% !important;
-      text-align: center !important;
+      text-align: left !important;
     }
     .footer-block-image {
       align-items: center !important;
       text-align: center !important;
+      width: 100% !important;
     }
     .footer-brand-mission-text {
       text-align: center !important;
       margin: 1.2rem auto 0 auto !important;
     }
     .footer-block__heading {
-      text-align: center !important;
+      text-align: left !important;
     }
     .footer-block__details-content {
-      text-align: center !important;
+      text-align: left !important;
     }
     .footer-block__details-content .list-menu__item {
-      justify-content: center !important;
+      justify-content: flex-start !important;
+      padding-left: 0 !important;
+      text-align: left !important;
     }
   }
 {%- endstyle -%}
