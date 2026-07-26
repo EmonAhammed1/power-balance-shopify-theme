@@ -162,8 +162,8 @@
     gap: 1.2rem;
   }
   .hero__feature-icon-wrapper {
-    width: 3.4rem;
-    height: 3.4rem;
+    width: 3.8rem;
+    height: 3.8rem;
     flex-shrink: 0;
     color: var(--hightlight-color, #B48940);
     display: inline-flex;
@@ -175,14 +175,25 @@
     height: 100%;
   }
   .hero__feature-label {
-    font-size: 1.25rem;
-    font-weight: 800;
-    line-height: 1.22;
-    letter-spacing: 0.06rem;
-    text-transform: uppercase;
-    color: #ffffff;
-    white-space: pre-line;
+    display: flex;
+    flex-direction: column;
     text-align: left;
+    text-transform: uppercase;
+  }
+  .hero__feature-top {
+    font-size: 1.38rem;
+    font-weight: 800;
+    letter-spacing: 0.06rem;
+    color: #ffffff;
+    line-height: 1.1;
+    margin-bottom: 0.15rem;
+  }
+  .hero__feature-sub {
+    font-size: 1.08rem;
+    font-weight: 700;
+    letter-spacing: 0.04rem;
+    color: rgba(255, 255, 255, 0.78);
+    line-height: 1.1;
   }
   @media screen and (max-width: 749px) {
     .hero-{{ section.id }} .hero-slide {
@@ -508,7 +519,15 @@
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
                               {% endif %}
                             </span>
-                            <span class="hero__feature-label">{{ block.settings.feature_1_text | newline_to_br }}</span>
+                            <span class="hero__feature-label">
+                              {% assign f1_parts = block.settings.feature_1_text | newline_to_br | split: '<br />' %}
+                              {% if f1_parts.size > 1 %}
+                                <span class="hero__feature-top">{{ f1_parts[0] | strip }}</span>
+                                <span class="hero__feature-sub">{{ f1_parts[1] | strip }}</span>
+                              {% else %}
+                                <span class="hero__feature-top">{{ block.settings.feature_1_text }}</span>
+                              {% endif %}
+                            </span>
                           </div>
                         {% endif %}
                         {% if block.settings.feature_2_text != blank %}
@@ -520,7 +539,15 @@
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5"/><path d="M10 2h4"/></svg>
                               {% endif %}
                             </span>
-                            <span class="hero__feature-label">{{ block.settings.feature_2_text | newline_to_br }}</span>
+                            <span class="hero__feature-label">
+                              {% assign f2_parts = block.settings.feature_2_text | newline_to_br | split: '<br />' %}
+                              {% if f2_parts.size > 1 %}
+                                <span class="hero__feature-top">{{ f2_parts[0] | strip }}</span>
+                                <span class="hero__feature-sub">{{ f2_parts[1] | strip }}</span>
+                              {% else %}
+                                <span class="hero__feature-top">{{ block.settings.feature_2_text }}</span>
+                              {% endif %}
+                            </span>
                           </div>
                         {% endif %}
                         {% if block.settings.feature_3_text != blank %}
@@ -528,7 +555,15 @@
                             <span class="hero__feature-icon-wrapper">
                               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v8"/><path d="m9 13 3 3 3-3"/></svg>
                             </span>
-                            <span class="hero__feature-label">{{ block.settings.feature_3_text | newline_to_br }}</span>
+                            <span class="hero__feature-label">
+                              {% assign f3_parts = block.settings.feature_3_text | newline_to_br | split: '<br />' %}
+                              {% if f3_parts.size > 1 %}
+                                <span class="hero__feature-top">{{ f3_parts[0] | strip }}</span>
+                                <span class="hero__feature-sub">{{ f3_parts[1] | strip }}</span>
+                              {% else %}
+                                <span class="hero__feature-top">{{ block.settings.feature_3_text }}</span>
+                              {% endif %}
+                            </span>
                           </div>
                         {% endif %}
                         {% if block.settings.feature_4_text != blank %}
@@ -536,7 +571,15 @@
                             <span class="hero__feature-icon-wrapper">
                               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
                             </span>
-                            <span class="hero__feature-label">{{ block.settings.feature_4_text | newline_to_br }}</span>
+                            <span class="hero__feature-label">
+                              {% assign f4_parts = block.settings.feature_4_text | newline_to_br | split: '<br />' %}
+                              {% if f4_parts.size > 1 %}
+                                <span class="hero__feature-top">{{ f4_parts[0] | strip }}</span>
+                                <span class="hero__feature-sub">{{ f4_parts[1] | strip }}</span>
+                              {% else %}
+                                <span class="hero__feature-top">{{ block.settings.feature_4_text }}</span>
+                              {% endif %}
+                            </span>
                           </div>
                         {% endif %}
                       </div>
