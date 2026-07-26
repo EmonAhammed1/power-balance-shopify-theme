@@ -19,29 +19,43 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 2.5rem;
-    align-items: center;
+    align-items: stretch;
   }
 
   @media screen and (min-width: 990px) {
     .video-product-grid-{{ section.id }} {
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 3.5rem;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 3rem;
     }
   }
 
   /* Video Wrapper */
+  .vwp-video-col {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
   .vwp-video-wrapper {
     position: relative;
     width: 100%;
-    border-radius: 12px;
+    height: 100%;
+    min-height: 380px;
+    border-radius: 10px;
     overflow: hidden;
-    background: #0d0d0d;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-    border: 1px solid #e0e0e0;
+    background: #000000;
+    box-shadow: 0 10px 28px -4px rgba(180, 137, 64, 0.22), 0 0 20px 0 rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(180, 137, 64, 0.25);
     aspect-ratio: 16 / 9;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .vwp-video-wrapper:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 36px -2px rgba(180, 137, 64, 0.38), 0 0 25px 0 rgba(0, 0, 0, 0.6);
   }
 
   .vwp-video-wrapper video,
@@ -68,7 +82,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.35);
+    background: rgba(0, 0, 0, 0.45);
     z-index: 3;
     display: flex;
     flex-direction: column;
@@ -79,7 +93,7 @@
   }
 
   .vwp-video-wrapper:hover .vwp-video-overlay {
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.25);
   }
 
   .vwp-play-btn {
@@ -90,31 +104,32 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 0 30px rgba(180, 137, 64, 0.6);
-    transition: transform 0.3s ease, background 0.3s ease;
+    box-shadow: 0 0 30px rgba(180, 137, 64, 0.7);
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
   }
 
   .vwp-video-wrapper:hover .vwp-play-btn {
-    transform: scale(1.12);
-    background: #d4a556;
+    transform: scale(1.15);
+    background: #cba052;
+    box-shadow: 0 0 40px rgba(180, 137, 64, 0.9);
   }
 
   .vwp-play-btn svg {
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
     fill: #ffffff;
     margin-left: 4px;
   }
 
   .vwp-video-label {
-    margin-top: 1.2rem;
+    margin-top: 1.4rem;
     color: #ffffff;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-weight: 700;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    background: rgba(0, 0, 0, 0.7);
-    padding: 6px 16px;
+    background: rgba(0, 0, 0, 0.75);
+    padding: 7px 18px;
     border-radius: 20px;
     border: 1px solid rgba(180, 137, 64, 0.6);
   }
@@ -127,23 +142,31 @@
     color: #000000;
     padding: 6px 14px;
     border-radius: 4px;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 800;
     letter-spacing: 0.05em;
     text-transform: uppercase;
     z-index: 6;
   }
 
-  /* Product Card Styling */
+  /* Premium Dark Product Card Styling */
   .vwp-product-card {
-    background: #f2f2f2;
-    border-radius: 12px;
+    background: #000000;
+    border-radius: 10px;
     overflow: hidden;
-    border: 1px solid #e0e0e0;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(180, 137, 64, 0.25);
+    box-shadow: 0 10px 28px -4px rgba(180, 137, 64, 0.24), 0 0 20px 0 rgba(0, 0, 0, 0.4);
     position: relative;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .vwp-product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 36px -2px rgba(180, 137, 64, 0.38), 0 0 25px 0 rgba(0, 0, 0, 0.6);
   }
 
   .vwp-product-badge {
@@ -159,40 +182,46 @@
     text-transform: uppercase;
     letter-spacing: 0.05em;
     z-index: 5;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   }
 
   .vwp-product-image {
     width: 100%;
-    background: #f9f9f9;
-    padding: 2rem;
+    background: #050505;
+    padding: 1.5rem;
     text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .vwp-product-image img {
     max-width: 100%;
     height: auto;
-    object-fit: contain;
-    max-height: 260px;
-    border-radius: 8px;
+    object-fit: contain !important;
+    max-height: 250px;
   }
 
   .vwp-product-content {
-    padding: 2rem;
+    padding: 2rem 1.8rem;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
   }
 
   .vwp-product-title {
     font-size: 2.1rem;
     font-weight: 800;
-    color: #111111;
+    color: #ffffff;
     text-transform: uppercase;
     margin-bottom: 0.8rem;
     letter-spacing: 0.04em;
+    line-height: 1.2;
   }
 
   .vwp-product-desc {
-    font-size: 1.4rem;
-    color: #555555;
+    font-size: 1.35rem;
+    color: rgba(255, 255, 255, 0.72);
     line-height: 1.5;
     margin-bottom: 1.5rem;
   }
@@ -200,27 +229,30 @@
   .vwp-product-price {
     font-size: 2.6rem;
     font-weight: 800;
-    color: #111111;
+    color: #B48940;
     margin-bottom: 1.8rem;
   }
 
   .vwp-product-btn {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    background: #000000;
+    background: #B48940;
     color: #ffffff !important;
     font-weight: 800;
-    font-size: 1.5rem;
+    font-size: 1.45rem;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    padding: 1.4rem;
+    padding: 1.3rem;
     border-radius: 6px;
     text-decoration: none;
-    transition: opacity 0.3s ease;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
   }
 
   .vwp-product-btn:hover {
-    opacity: 0.85;
+    background: #cba052;
+    box-shadow: 0 4px 20px rgba(180, 137, 64, 0.5);
     color: #ffffff !important;
   }
 {%- endstyle -%}
