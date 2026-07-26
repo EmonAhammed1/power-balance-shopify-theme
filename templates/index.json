@@ -87,6 +87,61 @@
         "padding_bottom": 50
       }
     },
+    "hero_sub_ticker": {
+      "type": "horizontal-ticker",
+      "blocks": {
+        "badge-1": {
+          "type": "text",
+          "settings": {
+            "title": "<span class=\"ticker-badge-item\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"><rect x=\"5\" y=\"11\" width=\"14\" height=\"10\" rx=\"2\"/><path d=\"M8 11V7a4 4 0 0 1 8 0v4\"/><path d=\"m10 16 1.5 1.5 3-3\"/></svg> INSTANT DOWNLOAD</span> <span class=\"ticker-badge-divider\">|</span>"
+          }
+        },
+        "badge-2": {
+          "type": "text",
+          "settings": {
+            "title": "<span class=\"ticker-badge-item\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"><path d=\"M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z\"/><circle cx=\"12\" cy=\"10\" r=\"3\"/></svg> TRAIN ANYWHERE</span> <span class=\"ticker-badge-divider\">|</span>"
+          }
+        },
+        "badge-3": {
+          "type": "text",
+          "settings": {
+            "title": "<span class=\"ticker-badge-item\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"><circle cx=\"12\" cy=\"12\" r=\"2\"/><path d=\"M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83\"/></svg> BUILT ON SCIENCE</span> <span class=\"ticker-badge-divider\">|</span>"
+          }
+        },
+        "badge-4": {
+          "type": "text",
+          "settings": {
+            "title": "<span class=\"ticker-badge-item\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"><path d=\"M12 15a6 6 0 1 0 0-12 6 6 0 0 0 0 12z\"/><path d=\"m8.21 13.89-2.21 7.11 6-3 6 3-2.21-7.11\"/></svg> RESULTS THAT LAST</span> <span class=\"ticker-badge-divider\">|</span>"
+          }
+        }
+      },
+      "block_order": [
+        "badge-1",
+        "badge-2",
+        "badge-3",
+        "badge-4"
+      ],
+      "settings": {
+        "visibility": "always-display",
+        "speed": 1,
+        "direction": "normal",
+        "mobile_spacing": 40,
+        "desktop_spacing": 60,
+        "color_scheme": "custom",
+        "show_custom_bg": true,
+        "custom_colors_background": "#b48940",
+        "custom_colors_text": "#111111",
+        "mobile_text_size": 13,
+        "desktop_text_size": 15,
+        "italic_text": false,
+        "uppercase_text": true,
+        "bold_text": true,
+        "mobile_padding_top": 12,
+        "mobile_padding_bottom": 12,
+        "desktop_padding_top": 16,
+        "desktop_padding_bottom": 16
+      }
+    },
     "d2d3417b-e92f-428c-b221-5bceffb552be": {
       "type": "comparison-table",
       "blocks": {
@@ -425,6 +480,7 @@
   },
   "order": [
     "cfca4268-6358-426c-98ab-d292aeef11e5",
+    "hero_sub_ticker",
     "d2d3417b-e92f-428c-b221-5bceffb552be",
     "6aa09428-a417-429d-9159-a4e8afd49590",
     "0f1fc9e4-bc4c-4052-9747-62d1f8472caa",

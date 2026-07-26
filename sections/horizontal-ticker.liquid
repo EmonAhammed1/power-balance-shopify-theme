@@ -39,6 +39,24 @@
     color: #B48940;
     font-weight: 800;
   }
+  .horizontal-ticker-{{ section.id }} .ticker-badge-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.05rem;
+  }
+  .horizontal-ticker-{{ section.id }} .ticker-badge-item svg {
+    width: 1.8rem;
+    height: 1.8rem;
+    flex-shrink: 0;
+  }
+  .horizontal-ticker-{{ section.id }} .ticker-badge-divider {
+    display: inline-block;
+    margin-left: 2rem;
+    opacity: 0.35;
+    font-weight: 400;
+  }
   .horizontal-ticker-{{ section.id }}.color-custom {
     --color-background: {{ section.settings.custom_colors_background.red }}, {{ section.settings.custom_colors_background.green }}, {{ section.settings.custom_colors_background.blue }};
     --gradient-background: {% if section.settings.custom_gradient_background != blank %}{{ section.settings.custom_gradient_background }}{% else %}{{ section.settings.custom_colors_background }}{% endif %};
