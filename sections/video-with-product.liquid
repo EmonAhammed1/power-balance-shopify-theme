@@ -349,13 +349,26 @@
           {% endif %}
 
           {% if embed_src != blank %}
+            {% if section.settings.autoplay_video %}
+              {% if embed_src contains '?' %}
+                {% assign embed_src = embed_src | append: '&autoplay=1&mute=1&playsinline=1' %}
+              {% else %}
+                {% assign embed_src = embed_src | append: '?autoplay=1&mute=1&playsinline=1' %}
+              {% endif %}
+            {% endif %}
             <iframe
               src="{{ embed_src }}"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen
             ></iframe>
           {% elsif section.settings.mp4_video_url != blank %}
-            <video controls poster="{{ section.settings.video_poster | image_url: width: 1200 }}">
+            <video
+              controls
+              {% if section.settings.autoplay_video %}
+                autoplay loop muted playsinline
+              {% endif %}
+              poster="{{ section.settings.video_poster | image_url: width: 1200 }}"
+            >
               <source src="{{ section.settings.mp4_video_url }}" type="video/mp4">
             </video>
           {% else %}
@@ -532,6 +545,12 @@
         "vimeo"
       ],
       "label": "Embed Video URL (YouTube / Vimeo)"
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay_video",
+      "label": "Autoplay Video",
+      "default": true
     },
     {
       "type": "header",
