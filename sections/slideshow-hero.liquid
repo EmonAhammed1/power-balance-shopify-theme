@@ -64,6 +64,50 @@
       {% endif %}
     }
   }
+
+  .hero__features-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5rem 2.5rem;
+    margin-top: 3.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  .hero__feature-box {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .hero__feature-icon-wrapper {
+    width: 2.6rem;
+    height: 2.6rem;
+    flex-shrink: 0;
+    color: var(--hightlight-color, #B48940);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .hero__feature-icon-wrapper svg {
+    width: 100%;
+    height: 100%;
+  }
+  .hero__feature-label {
+    font-size: 1.15rem;
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: 0.05rem;
+    text-transform: uppercase;
+    color: rgb(var(--color-foreground));
+    white-space: pre-line;
+  }
+  @media screen and (max-width: 749px) {
+    .hero__features-row {
+      gap: 1.2rem 1.8rem;
+      justify-content: center;
+      margin-top: 2.5rem;
+    }
+  }
 {%- endstyle -%}
 
 <div
@@ -297,6 +341,55 @@
                         {%- endif -%}
                       </div>
                     {% endunless %}
+
+                    {% if block.settings.show_features %}
+                      <div class="hero__features-row">
+                        {% if block.settings.feature_1_text != blank %}
+                          <div class="hero__feature-box">
+                            <span class="hero__feature-icon-wrapper">
+                              {% if block.settings.feature_1_icon == 'clock' %}
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                              {% elsif block.settings.feature_1_icon == 'dumbbell' %}
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5l11 11"/><path d="M21 21l-1-1"/><path d="M3 3l1 1"/><path d="M18 22l4-4"/><path d="M2 6l4-4"/><path d="M3 10l7-7"/><path d="M14 21l7-7"/></svg>
+                              {% elsif block.settings.feature_1_icon == 'lifetime' %}
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 10"/><path d="m9 16 2 2 4-4"/></svg>
+                              {% elsif block.settings.feature_1_icon == 'shield' %}
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                              {% endif %}
+                            </span>
+                            <span class="hero__feature-label">{{ block.settings.feature_1_text }}</span>
+                          </div>
+                        {% endif %}
+                        {% if block.settings.feature_2_text != blank %}
+                          <div class="hero__feature-box">
+                            <span class="hero__feature-icon-wrapper">
+                              {% if block.settings.feature_2_icon == 'dumbbell' %}
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5l11 11"/><path d="M21 21l-1-1"/><path d="M3 3l1 1"/><path d="M18 22l4-4"/><path d="M2 6l4-4"/><path d="M3 10l7-7"/><path d="M14 21l7-7"/></svg>
+                              {% else %}
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                              {% endif %}
+                            </span>
+                            <span class="hero__feature-label">{{ block.settings.feature_2_text }}</span>
+                          </div>
+                        {% endif %}
+                        {% if block.settings.feature_3_text != blank %}
+                          <div class="hero__feature-box">
+                            <span class="hero__feature-icon-wrapper">
+                              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 10"/><path d="m9 16 2 2 4-4"/></svg>
+                            </span>
+                            <span class="hero__feature-label">{{ block.settings.feature_3_text }}</span>
+                          </div>
+                        {% endif %}
+                        {% if block.settings.feature_4_text != blank %}
+                          <div class="hero__feature-box">
+                            <span class="hero__feature-icon-wrapper">
+                              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                            </span>
+                            <span class="hero__feature-label">{{ block.settings.feature_4_text }}</span>
+                          </div>
+                        {% endif %}
+                      </div>
+                    {% endif %}
                   </div>
                 </div>
               </div>
@@ -841,6 +934,88 @@
           "id": "button_style_secondary_2",
           "default": false,
           "label": "t:sections.image-banner.blocks.buttons.settings.button_style_secondary_2.label"
+        },
+        {
+          "type": "header",
+          "content": "Feature Badges"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_features",
+          "label": "Show feature badges",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "feature_1_text",
+          "label": "Feature 1 text",
+          "default": "16-WEEK\nPROVEN SYSTEM"
+        },
+        {
+          "type": "select",
+          "id": "feature_1_icon",
+          "label": "Feature 1 icon",
+          "options": [
+            { "value": "clock", "label": "Clock" },
+            { "value": "dumbbell", "label": "Dumbbell" },
+            { "value": "lifetime", "label": "Lifetime Check" },
+            { "value": "shield", "label": "Shield Check" }
+          ],
+          "default": "clock"
+        },
+        {
+          "type": "text",
+          "id": "feature_2_text",
+          "label": "Feature 2 text",
+          "default": "TRAIN SMARTER\nNOT LONGER"
+        },
+        {
+          "type": "select",
+          "id": "feature_2_icon",
+          "label": "Feature 2 icon",
+          "options": [
+            { "value": "clock", "label": "Clock" },
+            { "value": "dumbbell", "label": "Dumbbell" },
+            { "value": "lifetime", "label": "Lifetime Check" },
+            { "value": "shield", "label": "Shield Check" }
+          ],
+          "default": "dumbbell"
+        },
+        {
+          "type": "text",
+          "id": "feature_3_text",
+          "label": "Feature 3 text",
+          "default": "LIFETIME\nACCESS"
+        },
+        {
+          "type": "select",
+          "id": "feature_3_icon",
+          "label": "Feature 3 icon",
+          "options": [
+            { "value": "clock", "label": "Clock" },
+            { "value": "dumbbell", "label": "Dumbbell" },
+            { "value": "lifetime", "label": "Lifetime Check" },
+            { "value": "shield", "label": "Shield Check" }
+          ],
+          "default": "lifetime"
+        },
+        {
+          "type": "text",
+          "id": "feature_4_text",
+          "label": "Feature 4 text",
+          "default": "MONEY BACK\nGUARANTEE"
+        },
+        {
+          "type": "select",
+          "id": "feature_4_icon",
+          "label": "Feature 4 icon",
+          "options": [
+            { "value": "clock", "label": "Clock" },
+            { "value": "dumbbell", "label": "Dumbbell" },
+            { "value": "lifetime", "label": "Lifetime Check" },
+            { "value": "shield", "label": "Shield Check" }
+          ],
+          "default": "shield"
         },
         {
           "type": "select",
