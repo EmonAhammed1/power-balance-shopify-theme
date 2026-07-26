@@ -44,7 +44,7 @@
     }
   {% endif %}
 
-  /* Solid Black Background & White Font Color for Footer */
+  /* Luxury Dark Charcoal Slate Footer (#0d0e12) */
   footer.footer,
   .footer,
   .footer__content-top,
@@ -60,15 +60,18 @@
   .footer-block div,
   .footer a,
   .footer-block__brand-info {
-    background-color: #000000 !important;
+    background-color: #0d0e12 !important;
     color: #ffffff !important;
+  }
+
+  footer.footer {
+    border-top: 1px solid rgba(180, 137, 64, 0.25) !important;
   }
 
   footer.footer a,
   .footer-block__details-content a,
   .footer__copyright a {
-    color: #ffffff !important;
-    opacity: 0.9;
+    color: rgba(255, 255, 255, 0.88) !important;
     transition: opacity 0.2s ease, color 0.2s ease;
   }
 
@@ -82,10 +85,11 @@
   .footer-block__heading {
     color: #ffffff !important;
     font-weight: 700 !important;
+    letter-spacing: 0.04em !important;
   }
 
   .footer__content-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.12) !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
   }
 {%- endstyle -%}
 
