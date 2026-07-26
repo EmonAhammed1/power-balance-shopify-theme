@@ -170,10 +170,33 @@
     min-width: 170px !important;
   }
 
+  /* Completely Remove Golden Bottom Bar / Cap / Pseudo Elements */
+  .comparison-table-{{ section.id }} .highlighted-cell::after,
+  .comparison-table-{{ section.id }} .highlighted-cell::before,
+  .comparison-table-{{ section.id }} th.highlighted-cell::after,
+  .comparison-table-{{ section.id }} th.highlighted-cell::before,
+  .comparison-table-{{ section.id }} td.highlighted-cell::after,
+  .comparison-table-{{ section.id }} td.highlighted-cell::before,
+  .comparison-table-{{ section.id }} tr:last-child td.highlighted-cell::after,
+  .comparison-table-{{ section.id }} tr:last-child td.highlighted-cell::before,
+  .comparison-table-{{ section.id }} .comparison-table__logo::after,
+  .comparison-table-{{ section.id }} .comparison-table__logo::before {
+    display: none !important;
+    content: none !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    height: 0 !important;
+    width: 0 !important;
+    opacity: 0 !important;
+  }
+
   .comparison-table-{{ section.id }} tr:last-child td.highlighted-cell {
     border-radius: 0 0 16px 16px !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.25) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.22) !important;
     box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5) !important;
+    background: rgba(255, 255, 255, 0.09) !important;
   }
 
   /* Other Cells */
