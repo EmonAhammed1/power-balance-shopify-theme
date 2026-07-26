@@ -254,9 +254,9 @@
         "title_highlight_color": "#b48940",
         "sub_title": "Proven 16-week systems designed to fit your lifestyle and get results.",
         "heading_size": "h1",
-        "video_poster": "shopify://shop_images/MEN_S_WORKOUT_PROGRAM.webp",
-        "mp4_video_url": "",
-        "video_url": "https://youtu.be/UIPvIYsjfpo?si=wpJflnijvLhHenL3",
+        "video_poster": "shopify://shop_images/Screenshot_2026-07-26_175239.png",
+        "mp4_video_url": "https://cdn.shopify.com/videos/c/o/v/d18dad802eb148a8ba9a81fb74945e66.mp4",
+        "video_url": "",
         "featured_product": "",
         "product_badge": "BEST VALUE",
         "product_image": "shopify://shop_images/COUPLES_TRANSFORMATION_BUNDLE.webp",
@@ -264,7 +264,7 @@
         "product_desc": "Get both Men's & Women's 16-week transformation programs and save big. Proven system designed for results.",
         "product_price": "$150",
         "button_label": "VIEW BUNDLE",
-        "product_link": "https://power-balance-training-program.myshopify.com/products/couples-transformation-bundle",
+        "product_link": "shopify://products/couples-transformation-bundle",
         "padding_top": 48,
         "padding_bottom": 84
       }
