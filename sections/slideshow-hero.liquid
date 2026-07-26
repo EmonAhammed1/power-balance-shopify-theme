@@ -288,12 +288,9 @@
                             height: image_height,
                             sizes: sizes,
                             widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840',
-                            class: 'hero-slide__background__mobile-media desktop-hidden'
-                        }}
+                        <div class="hero-slide__overlay desktop-hidden">&nbsp</div>
+                      {% endif %}
                     {% endif %}
-                  {% else %}
-                    {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
-                    <div class="hero-slide__overlay">&nbsp</div>
                   {% endif %}
                 </div>
                 <div class='hero-slide__content-container page-width{% if block.settings.full_page_width %} page-width--full{% endif %} section-{{ section.id }}-padding'>
