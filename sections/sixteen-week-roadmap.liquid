@@ -117,11 +117,19 @@
   }
 
   /* 5 Pillars Cards Grid */
+  .roadmap-slider-wrapper {
+    position: relative;
+    padding-top: 14px;
+    margin-top: -14px;
+  }
+
   .roadmap-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 1.4rem;
     margin-bottom: 2rem;
+    padding-top: 14px;
+    padding-bottom: 14px;
   }
 
   .roadmap-card {
@@ -137,7 +145,6 @@
     box-shadow: 0 14px 40px rgba(0, 0, 0, 0.7);
     transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
     position: relative;
-    overflow: hidden;
   }
 
   .roadmap-card:hover {
@@ -420,13 +427,21 @@
       right: 15px !important;
     }
 
+    .roadmap-slider-wrapper {
+      position: relative !important;
+      padding-top: 16px !important;
+      margin-top: -16px !important;
+    }
+
     .roadmap-grid {
       display: flex !important;
       overflow-x: auto !important;
       scroll-snap-type: x mandatory !important;
       scroll-behavior: smooth !important;
       gap: 1.2rem !important;
-      padding-bottom: 1rem !important;
+      padding-top: 16px !important;
+      padding-bottom: 16px !important;
+      margin-top: 0 !important;
       -webkit-overflow-scrolling: touch !important;
       scrollbar-width: none !important;
     }
