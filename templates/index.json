@@ -251,17 +251,20 @@
       "type": "video-with-product",
       "settings": {
         "title": "<strong>PROGRAMS BUILT FOR REAL LIFE</strong>",
-        "title_highlight_color": "#B48940",
+        "title_highlight_color": "#b48940",
         "sub_title": "Proven 16-week systems designed to fit your lifestyle and get results.",
         "heading_size": "h1",
         "video_poster": "shopify://shop_images/MEN_S_WORKOUT_PROGRAM.webp",
+        "mp4_video_url": "",
+        "video_url": "",
+        "featured_product": "",
         "product_badge": "BEST VALUE",
         "product_image": "shopify://shop_images/COUPLES_TRANSFORMATION_BUNDLE.webp",
         "product_title": "THE COMPLETE BUNDLE",
         "product_desc": "Get both Men's & Women's 16-week transformation programs and save big. Proven system designed for results.",
-        "product_price": "$79.99",
+        "product_price": "$150",
         "button_label": "VIEW BUNDLE",
-        "product_link": "/collections/couples-transformation-bundle",
+        "product_link": "https://power-balance-training-program.myshopify.com/products/couples-transformation-bundle",
         "padding_top": 48,
         "padding_bottom": 48
       }
