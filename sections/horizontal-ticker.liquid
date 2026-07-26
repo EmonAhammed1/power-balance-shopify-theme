@@ -35,6 +35,10 @@
     }
   }
 
+  .horizontal-ticker-{{ section.id }} .gold-text {
+    color: #B48940;
+    font-weight: 800;
+  }
   .horizontal-ticker-{{ section.id }}.color-custom {
     --color-background: {{ section.settings.custom_colors_background.red }}, {{ section.settings.custom_colors_background.green }}, {{ section.settings.custom_colors_background.blue }};
     --gradient-background: {% if section.settings.custom_gradient_background != blank %}{{ section.settings.custom_gradient_background }}{% else %}{{ section.settings.custom_colors_background }}{% endif %};
