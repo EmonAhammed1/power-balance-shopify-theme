@@ -534,6 +534,15 @@
         "custom_gradient_background": "",
         "custom_colors_text": "#121212"
       }
+    },
+    "risk_free_guarantee": {
+      "type": "risk-free-guarantee",
+      "settings": {
+        "button_text": "CLAIM YOUR 16-WEEK PROGRAM TODAY — $29",
+        "button_link": "/products/power-balance-program",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
     }
   },
   "order": [
@@ -543,6 +552,7 @@
     "video_with_product_programs",
     "philosophy_banner",
     "d2d3417b-e92f-428c-b221-5bceffb552be",
-    "image_slider_ccPqdB"
+    "image_slider_ccPqdB",
+    "risk_free_guarantee"
   ]
 }
