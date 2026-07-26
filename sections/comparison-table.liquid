@@ -67,6 +67,40 @@
     --color-foreground: {{ section.settings.custom_colors_others_text.red }}, {{ section.settings.custom_colors_others_text.green }}, {{ section.settings.custom_colors_others_text.blue }};
   }
 
+  /* Stacked Layout: Title & Text at Top, Table Below */
+  .content-and-comparison-table {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    gap: 2.5rem !important;
+  }
+
+  .content-container {
+    width: 100% !important;
+    max-width: 800px !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+
+  .content-container h2 {
+    font-size: 3.2rem !important;
+    font-weight: 800 !important;
+    color: #ffffff !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.04em !important;
+    text-align: center !important;
+    margin-bottom: 0.8rem !important;
+  }
+
+  .content-container .rte {
+    font-size: 1.7rem !important;
+    color: rgba(255, 255, 255, 0.78) !important;
+    line-height: 1.6 !important;
+    text-align: center !important;
+  }
+
   /* Beautiful Dark Card Container for Table */
   .comparison-table-container {
     background: #000000 !important;
@@ -75,6 +109,8 @@
     padding: 2.2rem 2.5rem !important;
     box-shadow: 0 14px 40px -4px rgba(180, 137, 64, 0.2), 0 0 25px rgba(0, 0, 0, 0.7) !important;
     width: 100% !important;
+    max-width: 920px !important;
+    margin: 0 auto !important;
   }
 
   .comparison-table-{{ section.id }} {
