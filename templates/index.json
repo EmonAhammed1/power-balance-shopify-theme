@@ -293,30 +293,60 @@
     "d2d3417b-e92f-428c-b221-5bceffb552be": {
       "type": "comparison-table",
       "blocks": {
-        "row_frqit4": {
+        "row_1": {
           "type": "row",
           "settings": {
-            "benefit": "<strong>Benefit</strong>",
+            "benefit": "Structured 16-Week Progressive Overload System",
             "us": true,
             "others": false,
             "others_2": false,
             "others_3": false
           }
         },
-        "row_a9Qa8J": {
+        "row_2": {
           "type": "row",
           "settings": {
-            "benefit": "<strong>Benefit</strong>",
+            "benefit": "Couples & Individual Specific Workout Programming",
             "us": true,
             "others": false,
             "others_2": false,
             "others_3": false
           }
         },
-        "row_NAEbjV": {
+        "row_3": {
           "type": "row",
           "settings": {
-            "benefit": "<strong>Benefit</strong>",
+            "benefit": "Step-by-Step Exercise Form & Technique Guides",
+            "us": true,
+            "others": false,
+            "others_2": false,
+            "others_3": false
+          }
+        },
+        "row_4": {
+          "type": "row",
+          "settings": {
+            "benefit": "Nutrition & Meal Integration System",
+            "us": true,
+            "others": false,
+            "others_2": false,
+            "others_3": false
+          }
+        },
+        "row_5": {
+          "type": "row",
+          "settings": {
+            "benefit": "One-Time Lifetime Access (No Monthly Fees)",
+            "us": true,
+            "others": false,
+            "others_2": false,
+            "others_3": false
+          }
+        },
+        "row_6": {
+          "type": "row",
+          "settings": {
+            "benefit": "Guaranteed Strength & Muscle Results",
             "us": true,
             "others": false,
             "others_2": false,
@@ -325,17 +355,20 @@
         }
       },
       "block_order": [
-        "row_frqit4",
-        "row_a9Qa8J",
-        "row_NAEbjV"
+        "row_1",
+        "row_2",
+        "row_3",
+        "row_4",
+        "row_5",
+        "row_6"
       ],
       "settings": {
         "display_id": false,
         "visibility": "always-display",
-        "title": "Comparison table",
+        "title": "WHY POWER BALANCE IS DIFFERENT",
         "title_highlight_color": "#b48940",
-        "heading_size": "h0",
-        "text": "<p>Talk about how and why is your brand better than the others.</p>",
+        "heading_size": "h1",
+        "text": "<p>See how our science-backed 16-week transformation systems compare to generic workout apps and standard routines.</p>",
         "button_label": "",
         "link": "",
         "button_style_secondary": false,
@@ -349,11 +382,11 @@
         "style": "centered",
         "corner_radius": 20,
         "number_of_competitors": 1,
-        "us_label": "[shop_name]",
+        "us_label": "POWER BALANCE",
         "us_label_size": 18,
         "logo_width": 90,
         "mobile_logo_width": 60,
-        "others_label": "Others",
+        "others_label": "OTHERS",
         "others_label_size": 18,
         "others_logo_width": 90,
         "others_mobile_logo_width": 60,
@@ -366,11 +399,11 @@
         "others_3_logo_width": 90,
         "others_3_mobile_logo_width": 60,
         "checkmark_style": "regular",
-        "checkmark_color": "#ffffff",
-        "checkmark_bg_color": "#53af01",
+        "checkmark_color": "#22C55E",
+        "checkmark_bg_color": "transparent",
         "x_style": "regular",
-        "x_color": "#121212",
-        "x_bg_color": "#dbdbdb",
+        "x_color": "#EF4444",
+        "x_bg_color": "transparent",
         "opposite_icon_colors": "original",
         "highlighted_color_scheme": "accent-1",
         "highlighted_separator_opacity": 0,
@@ -379,8 +412,8 @@
         "regular_separator_opacity": 10,
         "regular_overlay_opacity": 0,
         "minimalistic_border_opacity": 16,
-        "padding_top": 36,
-        "padding_bottom": 36,
+        "padding_top": 48,
+        "padding_bottom": 48,
         "custom_colors_background": "#ffffff",
         "custom_gradient_background": "",
         "custom_colors_text": "#2e2a39",
