@@ -1,0 +1,658 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  .roadmap-section-{{ section.id }} {
+    background-color: #000000;
+    color: #ffffff;
+    overflow: hidden;
+  }
+
+  .roadmap-container {
+    max-width: 1320px;
+    margin: 0 auto;
+  }
+
+  .roadmap-header {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 3.5rem auto;
+  }
+
+  .roadmap-title {
+    font-size: 3.6rem;
+    font-weight: 900;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    line-height: 1.1;
+    margin-bottom: 0.6rem;
+  }
+
+  .roadmap-title span {
+    color: #b48940;
+    display: block;
+    font-size: 3.8rem;
+  }
+
+  .roadmap-subtitle {
+    font-size: 1.7rem;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.5;
+  }
+
+  /* Timeline Top Track Line */
+  .roadmap-timeline-wrapper {
+    position: relative;
+    margin-bottom: 2rem;
+  }
+
+  .roadmap-timeline-track {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    position: relative;
+    margin-bottom: 1.5rem;
+  }
+
+  .roadmap-timeline-track::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 8%;
+    right: 8%;
+    height: 2px;
+    background: linear-gradient(90deg, #b48940 0%, #d4af37 50%, #b48940 100%);
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+
+  .roadmap-timeline-node {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .roadmap-node-label {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #b48940;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .roadmap-node-dot {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #000000;
+    border: 3px solid #b48940;
+    box-shadow: 0 0 10px rgba(180, 137, 64, 0.8);
+  }
+
+  /* 5 Pillars Cards Grid */
+  .roadmap-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.2rem;
+    margin-bottom: 3rem;
+  }
+
+  .roadmap-card {
+    background: rgba(18, 19, 24, 0.95);
+    border: 1px solid rgba(180, 137, 64, 0.25);
+    border-radius: 16px;
+    padding: 1.8rem 1.4rem 1.4rem 1.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .roadmap-card:hover {
+    border-color: #b48940;
+    transform: translateY(-4px);
+    box-shadow: 0 16px 45px rgba(180, 137, 64, 0.22);
+  }
+
+  .roadmap-card__icon-wrap {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    border: 2px solid #b48940;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.2rem auto;
+    background: rgba(180, 137, 64, 0.1);
+    color: #b48940;
+  }
+
+  .roadmap-card__icon-wrap svg {
+    width: 26px;
+    height: 26px;
+    fill: currentColor;
+  }
+
+  .roadmap-card__title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 0.03em;
+    line-height: 1.25;
+    margin-bottom: 1.2rem;
+    min-height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .roadmap-card__list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .roadmap-card__item {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.35;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+
+  .roadmap-card__check {
+    color: #22c55e;
+    font-size: 1.2rem;
+    font-weight: bold;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .roadmap-card__media {
+    margin-top: auto;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    min-height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.4);
+  }
+
+  .roadmap-card__media img {
+    width: 100%;
+    height: 110px;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Ring Progress Meter Inside Pillar 4 */
+  .roadmap-ring-meter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem 0;
+  }
+
+  .roadmap-ring-wrap {
+    position: relative;
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .roadmap-ring-val {
+    position: absolute;
+    font-size: 2rem;
+    font-weight: 800;
+    color: #ffffff;
+  }
+
+  .roadmap-ring-label {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 0.4rem;
+    text-align: center;
+  }
+
+  /* CTA Button in Pillar 5 */
+  .roadmap-cta-btn {
+    display: block;
+    width: 100%;
+    background: linear-gradient(135deg, #d4af37 0%, #b48940 100%);
+    color: #000000 !important;
+    font-size: 1.2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 1.1rem 0.6rem;
+    border-radius: 10px;
+    text-decoration: none;
+    letter-spacing: 0.03em;
+    box-shadow: 0 6px 20px rgba(180, 137, 64, 0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin-top: 0.8rem;
+  }
+
+  .roadmap-cta-btn:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 25px rgba(180, 137, 64, 0.6);
+  }
+
+  /* Bottom Benefits Bar (WHAT YOU'LL BUILD OVER 16 WEEKS) */
+  .roadmap-benefits-bar {
+    background: rgba(14, 15, 20, 0.9);
+    border: 1px solid rgba(180, 137, 64, 0.25);
+    border-radius: 16px;
+    padding: 2.2rem 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .roadmap-benefits-title {
+    font-size: 1.45rem;
+    font-weight: 800;
+    color: #b48940;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 0.12em;
+    margin-bottom: 2rem;
+  }
+
+  .roadmap-benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .roadmap-benefit-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0 0.4rem;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .roadmap-benefit-col:last-child {
+    border-right: none;
+  }
+
+  .roadmap-benefit-icon {
+    width: 36px;
+    height: 36px;
+    color: #b48940;
+  }
+
+  .roadmap-benefit-icon svg {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+  }
+
+  .roadmap-benefit-name {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .roadmap-benefit-desc {
+    font-size: 1.15rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.35;
+  }
+
+  /* Disclaimer Footer Note */
+  .roadmap-disclaimer {
+    background: rgba(10, 11, 15, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 1.2rem 1.8rem;
+    text-align: center;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.65);
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+  }
+
+  .roadmap-disclaimer-icon {
+    color: #b48940;
+    flex-shrink: 0;
+  }
+
+  /* 📱 MOBILE RESPONSIVENESS */
+  @media screen and (max-width: 1024px) {
+    .roadmap-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .roadmap-benefits-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem 1rem;
+    }
+
+    .roadmap-benefit-col {
+      border-right: none;
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    .roadmap-title {
+      font-size: 2.4rem;
+    }
+
+    .roadmap-title span {
+      font-size: 2.6rem;
+    }
+
+    .roadmap-subtitle {
+      font-size: 1.35rem;
+    }
+
+    .roadmap-timeline-track {
+      display: flex;
+      overflow-x: auto;
+      padding-bottom: 0.8rem;
+      justify-content: space-between;
+    }
+
+    .roadmap-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .roadmap-benefits-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .roadmap-disclaimer {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+{%- endstyle -%}
+
+<div class="roadmap-section-{{ section.id }} section-{{ section.id }}-padding">
+  <div class="page-width roadmap-container">
+    <!-- Header -->
+    <div class="roadmap-header">
+      <h2 class="roadmap-title">
+        TRACK YOUR PROGRESS
+        <span>IN 16 WEEKS</span>
+      </h2>
+      <div class="roadmap-subtitle">
+        Real progress comes from a proven system and consistent action.
+      </div>
+    </div>
+
+    <!-- Timeline Track Line -->
+    <div class="roadmap-timeline-wrapper">
+      <div class="roadmap-timeline-track">
+        <div class="roadmap-timeline-node">
+          <span class="roadmap-node-label">WEEK 1</span>
+          <div class="roadmap-node-dot"></div>
+        </div>
+        <div class="roadmap-timeline-node">
+          <span class="roadmap-node-label">WEEK 4</span>
+          <div class="roadmap-node-dot"></div>
+        </div>
+        <div class="roadmap-timeline-node">
+          <span class="roadmap-node-label">WEEK 8</span>
+          <div class="roadmap-node-dot"></div>
+        </div>
+        <div class="roadmap-timeline-node">
+          <span class="roadmap-node-label">WEEK 12</span>
+          <div class="roadmap-node-dot"></div>
+        </div>
+        <div class="roadmap-timeline-node">
+          <span class="roadmap-node-label">WEEK 16</span>
+          <div class="roadmap-node-dot"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5 Pillars Cards Grid -->
+    <div class="roadmap-grid">
+      <!-- Pillar 1: Week 1 -->
+      <div class="roadmap-card">
+        <div>
+          <div class="roadmap-card__icon-wrap">
+            <!-- Dumbbell Icon -->
+            <svg viewBox="0 0 24 24"><path d="M6 5v14M18 5v14M3 8v8M21 8v8M6 12h12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="roadmap-card__title">BUILD THE FOUNDATION</h3>
+          <ul class="roadmap-card__list">
+            <li class="roadmap-card__item"><span class="roadmap-card__check">✔</span> Learn proper exercise technique</li>
+            <li class="roadmap-card__item"><span class="roadmap-card__check">✔</span> Establish training consistency</li>
+            <li class="roadmap-card__item"><span class="roadmap-card__check">✔</span> Improve mobility and movement</li>
+            <li class="roadmap-card__item"><span class="roadmap-card__check">✔</span> Develop healthy habits</li>
+          </ul>
+        </div>
+        <div class="roadmap-card__media">
+          <img src="{{ 'fawwaz_alli_philosophy_bg.png' | asset_url }}" alt="Build Foundation" loading="lazy" width="300" height="110">
+        </div>
+      </div>
+
+      <!-- Pillar 2: Week 4 -->
+      <div class="roadmap-card">
+        <div>
+          <div class="roadmap-card__icon-wrap">
+            <!-- Trending Up Chart Icon -->
+            <svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8M14 7h7v7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </div>
+          <h3 class="roadmap-card__title">STRENGTH STARTS GROWING</h3>
+          <ul class="roadmap-card__list">
+            <li class="roadmap-card__item"><span class="roadmap-card__check">✔</span> Lift heavier with better control</li>
+            <li class="roadmap-card__item"><span class="roadmap-card__check">✔</span> Notice increased energy</li>
+            <li class="roadmap-card__item"><span class="roadmap-card__check">✔</span> Better workout performance</li>
+            <li class="roadmap-card__item"><span class="roadmap-card__check">✔</span> Improved recovery routine</li>
+          </ul>
+        </div>
+        <div class="roadmap-card__media">
+          <svg viewBox="0 0 200 100" style="width:100%; height:90px; padding:10px;">
+            <defs>
+              <linearGradient id="chartG" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#b48940" />
+                <stop offset="100%" stop-color="#f59e0b" />
+              </linearGradient>
+            </defs>
+            <path d="M 10 80 Q 40 70, 70 60 T 130 35 T 190 15" fill="none" stroke="url(#chartG)" stroke-width="4.5" stroke-linecap="round"/>
+            <circle cx="190" cy="15" r="5" fill="#f59e0b"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Pillar 3: Week 8 -->
+      <div class="roadmap-card">
+        <div>
+          <div class="roadmap-card__icon-wrap">
+            <!-- Target Focus Icon -->
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" fill="none"/><circle cx="12" cy="12" r="4" fill="currentColor"/></svg>
+          </div>
+          <h3 class="roadmap-card__title">PERFORMANCE UPGRADE</h3>
+          <ul class="roadmap-card__list">
+            <li class="roadmap-card__item"><span class="roadmap-card__check">✔</span> Progressive overload kicks in</li>
+            <li class="roadmap-card__item"><span class="roadmap-card__check">✔</span> Improved endurance</li>
+            <li class="roadmap-card__item"><span class="roadmap-card__check">✔</span> Better muscle engagement</li>
+            <li class="roadmap-card__item"><span class="roadmap-card__check">✔</span> Increased training confidence</li>
+          </ul>
+        </div>
+        <div class="roadmap-card__media">
+          <img src="{{ 'fawwaz_alli_philosophy_bg.png' | asset_url }}" alt="Performance Upgrade" loading="lazy" width="300" height="110">
+        </div>
+      </div>
+
+      <!-- Pillar 4: Week 12 -->
+      <div class="roadmap-card">
+        <div>
+          <div class="roadmap-card__icon-wrap">
+            <!-- Shield Star Icon -->
+            <svg viewBox="0 0 24 24"><path d="M12 2L4 5v6c0 5.5 3.8 10.7 8 12 4.2-1.3 8-6.5 8-12V5l-8-3z" stroke="currentColor" stroke-width="2" fill="none"/><polygon points="12 8 13.2 10.5 16 10.9 14 12.8 14.5 15.5 12 14.2 9.5 15.5 10 12.8 8 10.9 10.8 10.5" fill="currentColor"/></svg>
+          </div>
+          <h3 class="roadmap-card__title">VISIBLE PROGRESS</h3>
+          <ul class="roadmap-card__list">
+            <li class="roadmap-card__item"><span class="roadmap-card__check">✔</span> Stronger physique</li>
+            <li class="roadmap-card__item"><span class="roadmap-card__check">✔</span> Better movement quality</li>
+            <li class="roadmap-card__item"><span class="roadmap-card__check">✔</span> Higher work capacity</li>
+            <li class="roadmap-card__item"><span class="roadmap-card__check">✔</span> Consistent weekly routine</li>
+          </ul>
+        </div>
+        <div class="roadmap-card__media">
+          <div class="roadmap-ring-meter">
+            <div class="roadmap-ring-wrap">
+              <svg width="80" height="80" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="8"/>
+                <circle cx="50" cy="50" r="40" fill="none" stroke="#b48940" stroke-width="8" stroke-dasharray="251" stroke-dashoffset="62" stroke-linecap="round" transform="rotate(-90 50 50)"/>
+              </svg>
+              <div class="roadmap-ring-val">75%</div>
+            </div>
+            <div class="roadmap-ring-label">Program Completion</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pillar 5: Week 16 -->
+      <div class="roadmap-card">
+        <div>
+          <div class="roadmap-card__icon-wrap">
+            <!-- Trophy Icon -->
+            <svg viewBox="0 0 24 24"><path d="M6 4h12v4a6 6 0 01-12 0V4zM4 6H2a3 3 0 003 3M20 6h2a3 3 0 01-3 3M12 14v4M8 20h8" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="roadmap-card__title">TRANSFORMATION COMPLETE</h3>
+          <ul class="roadmap-card__list">
+            <li class="roadmap-card__item"><span class="roadmap-card__check">✔</span> Complete the full program</li>
+            <li class="roadmap-card__item"><span class="roadmap-card__check">✔</span> Improved strength</li>
+            <li class="roadmap-card__item"><span class="roadmap-card__check">✔</span> Better fitness habits</li>
+            <li class="roadmap-card__item"><span class="roadmap-card__check">✔</span> Ready for the next challenge</li>
+          </ul>
+        </div>
+        <div>
+          <div class="roadmap-card__media">
+            <img src="{{ 'fawwaz_alli_philosophy_bg.png' | asset_url }}" alt="Transformation Complete" loading="lazy" width="300" height="110">
+          </div>
+          <a href="#SectionAtcBtn-{{ section.id }}" class="roadmap-cta-btn">START YOUR TRANSFORMATION</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Benefits Bar -->
+    <div class="roadmap-benefits-bar">
+      <div class="roadmap-benefits-title">WHAT YOU'LL BUILD OVER 16 WEEKS</div>
+      <div class="roadmap-benefits-grid">
+        <div class="roadmap-benefit-col">
+          <div class="roadmap-benefit-icon">
+            <svg viewBox="0 0 24 24"><path d="M6 5v14M18 5v14M3 8v8M21 8v8M6 12h12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="roadmap-benefit-name">STRENGTH</div>
+          <div class="roadmap-benefit-desc">Build lean muscle and get stronger</div>
+        </div>
+        <div class="roadmap-benefit-col">
+          <div class="roadmap-benefit-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2c1.5 3 4 5.5 4 9a6 6 0 11-12 0c0-3.5 2.5-6 4-9z" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+          </div>
+          <div class="roadmap-benefit-name">ENDURANCE</div>
+          <div class="roadmap-benefit-desc">Improve stamina and work capacity</div>
+        </div>
+        <div class="roadmap-benefit-col">
+          <div class="roadmap-benefit-icon">
+            <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="roadmap-benefit-name">PERFORMANCE</div>
+          <div class="roadmap-benefit-desc">Move better and perform at your best</div>
+        </div>
+        <div class="roadmap-benefit-col">
+          <div class="roadmap-benefit-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 019 9c0 5-4.5 9-9 9s-9-4-9-9a9 9 0 019-9z" stroke="currentColor" stroke-width="2" fill="none"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <div class="roadmap-benefit-name">CONFIDENCE</div>
+          <div class="roadmap-benefit-desc">Feel stronger, inside and out</div>
+        </div>
+        <div class="roadmap-benefit-col">
+          <div class="roadmap-benefit-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" fill="none"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <div class="roadmap-benefit-name">DISCIPLINE</div>
+          <div class="roadmap-benefit-desc">Build habits that last a lifetime</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Disclaimer Note -->
+    <div class="roadmap-disclaimer">
+      <div class="roadmap-disclaimer-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24"><path d="M12 2L4 5v6c0 5.5 3.8 10.7 8 12 4.2-1.3 8-6.5 8-12V5l-8-3z" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+      </div>
+      <div>
+        Results vary based on consistency, nutrition, recovery, and individual effort.<br>
+        <strong>The Power Balance System provides the structure to help you train with purpose and build lasting habits.</strong>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "16-Week Progress Roadmap",
+  "settings": [
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 48
+    }
+  ],
+  "presets": [
+    {
+      "name": "16-Week Progress Roadmap"
+    }
+  ]
+}
+{% endschema %}
