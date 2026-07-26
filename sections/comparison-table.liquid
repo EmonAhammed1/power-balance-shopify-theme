@@ -199,6 +199,84 @@
     background: rgba(255, 255, 255, 0.09) !important;
   }
 
+  /* 📱 MOBILE RESPONSIVE OPTIMIZATION */
+  @media screen and (max-width: 749px) {
+    .content-and-comparison-table {
+      gap: 1.5rem !important;
+    }
+
+    .content-container h2 {
+      font-size: 2.2rem !important;
+      line-height: 1.25 !important;
+      margin-bottom: 0.6rem !important;
+    }
+
+    .content-container .rte {
+      font-size: 1.35rem !important;
+      line-height: 1.45 !important;
+    }
+
+    .comparison-table-container {
+      padding: 1.2rem 0.6rem !important;
+      border-radius: 14px !important;
+      overflow-x: hidden !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+
+    .comparison-table-{{ section.id }} {
+      table-layout: fixed !important;
+      width: 100% !important;
+    }
+
+    .comparison-table-{{ section.id }} td.comparison-table__row-name {
+      width: 48% !important;
+      font-size: 1.15rem !important;
+      padding: 0.9rem 0.5rem !important;
+      line-height: 1.35 !important;
+      text-align: left !important;
+      word-wrap: break-word !important;
+    }
+
+    .comparison-table-{{ section.id }} th.comparison-table__logo.highlighted-cell,
+    .comparison-table-{{ section.id }} th.highlighted-cell {
+      width: 32% !important;
+      min-width: unset !important;
+      font-size: 1.15rem !important;
+      padding: 0.9rem 0.4rem !important;
+      letter-spacing: 0 !important;
+      border-radius: 12px 12px 0 0 !important;
+    }
+
+    .comparison-table-{{ section.id }} td.highlighted-cell {
+      width: 32% !important;
+      min-width: unset !important;
+      padding: 0.9rem 0.4rem !important;
+    }
+
+    .comparison-table-{{ section.id }} th.comparison-table__others {
+      width: 20% !important;
+      min-width: unset !important;
+      font-size: 1.1rem !important;
+      padding: 0.9rem 0.4rem !important;
+      letter-spacing: 0 !important;
+    }
+
+    .comparison-table-{{ section.id }} td.regular-cell {
+      width: 20% !important;
+      padding: 0.9rem 0.4rem !important;
+    }
+
+    .comparison-table-{{ section.id }} tr:last-child td.highlighted-cell {
+      border-radius: 0 0 12px 12px !important;
+    }
+
+    .comparison-table-{{ section.id }} .comparison-table__icon svg {
+      width: 18px !important;
+      height: 18px !important;
+    }
+  }
+
   /* Other Cells */
   .comparison-table-{{ section.id }} td.regular-cell {
     padding: 1.4rem 1.8rem !important;
