@@ -152,6 +152,38 @@
     white-space: pre-line;
   }
   @media screen and (max-width: 749px) {
+    .hero-{{ section.id }} .hero-slide {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .hero-{{ section.id }} .hero-slide__background {
+      position: relative !important;
+      height: auto !important;
+      min-height: auto !important;
+    }
+    .hero-{{ section.id }} .hero-slide__background--has-mobile .hero-slide__background__mobile-media,
+    .hero-{{ section.id }} .hero-slide__background .hero-slide__background__desktop-media {
+      position: relative !important;
+      height: auto !important;
+      width: 100% !important;
+      max-height: 60vh;
+      object-fit: cover;
+    }
+    .hero-{{ section.id }} .hero-slide__overlay.desktop-hidden {
+      display: none !important;
+    }
+    .hero-{{ section.id }} .hero-slide__content-container {
+      position: relative !important;
+      min-height: auto !important;
+      padding-top: 3.5rem !important;
+      padding-bottom: 4.5rem !important;
+      background-color: #0b0b0b;
+      z-index: 2;
+    }
+    .hero-{{ section.id }} .hero-slide__content {
+      margin: 0 auto;
+    }
     .hero__features-row {
       gap: 1.4rem 2rem;
       justify-content: center;
