@@ -162,8 +162,18 @@
       height: auto !important;
       min-height: auto !important;
     }
-    .hero-{{ section.id }} .hero-slide__background--has-mobile .hero-slide__background__mobile-media,
-    .hero-{{ section.id }} .hero-slide__background .hero-slide__background__desktop-media {
+    .hero-{{ section.id }} .hero-slide__background--has-mobile .hero-slide__background__desktop-media {
+      display: none !important;
+    }
+    .hero-{{ section.id }} .hero-slide__background--has-mobile .hero-slide__background__mobile-media {
+      display: block !important;
+      position: relative !important;
+      height: auto !important;
+      width: 100% !important;
+      max-height: 60vh;
+      object-fit: cover;
+    }
+    .hero-{{ section.id }} .hero-slide__background:not(.hero-slide__background--has-mobile) .hero-slide__background__desktop-media {
       position: relative !important;
       height: auto !important;
       width: 100% !important;
@@ -320,7 +330,7 @@
                           height: image_height,
                           sizes: sizes,
                           widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840',
-                          class: 'hero-slide__background__desktop-media'
+                          class: 'hero-slide__background__desktop-media{% if has_mobile_bg %} mobile-hidden{% endif %}'
                       }}
                       <div class="hero-slide__overlay{% if has_mobile_bg %} mobile-hidden{% endif %}">&nbsp</div>
                     {% endif %}
