@@ -28,6 +28,29 @@
     {% endif %}
     --color-foreground: {{ section.settings.custom_colors_text.red }}, {{ section.settings.custom_colors_text.green }}, {{ section.settings.custom_colors_text.blue }};
   }
+
+  /* Compact Video & Image Slide Height */
+  .section-{{ section.id }}-padding .image-slide__image,
+  .section-{{ section.id }}-padding .image-slide__image video,
+  .section-{{ section.id }}-padding .image-slide__image iframe,
+  .section-{{ section.id }}-padding .image-slide__image img,
+  .section-{{ section.id }}-padding .internal-video {
+    max-height: 440px !important;
+    object-fit: cover !important;
+    border-radius: 14px !important;
+    overflow: hidden !important;
+  }
+  @media screen and (max-width: 749px) {
+    .section-{{ section.id }}-padding .image-slide__image,
+    .section-{{ section.id }}-padding .image-slide__image video,
+    .section-{{ section.id }}-padding .image-slide__image iframe,
+    .section-{{ section.id }}-padding .image-slide__image img,
+    .section-{{ section.id }}-padding .internal-video {
+      max-height: 360px !important;
+      object-fit: cover !important;
+      border-radius: 12px !important;
+    }
+  }
   {% if section.settings.custom_mobile_image_background != blank %}
     @media screen and (max-width: 740px) {
       .color-scheme-{{ section.id }}.color-custom {
