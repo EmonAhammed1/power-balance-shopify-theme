@@ -383,6 +383,43 @@
 
   /* 📱 MOBILE RESPONSIVE SLIDER */
   @media screen and (max-width: 768px) {
+    .roadmap-timeline-track {
+      display: flex !important;
+      overflow-x: auto !important;
+      gap: 1rem !important;
+      padding-bottom: 0.8rem !important;
+      scrollbar-width: none !important;
+      justify-content: flex-start !important;
+      -webkit-overflow-scrolling: touch !important;
+      margin-bottom: 1.8rem !important;
+      position: relative !important;
+    }
+    .roadmap-timeline-track::-webkit-scrollbar {
+      display: none !important;
+    }
+    .roadmap-timeline-node {
+      flex: 0 0 auto !important;
+      min-width: 85px !important;
+      gap: 0.7rem !important;
+    }
+    .roadmap-node-label {
+      white-space: nowrap !important;
+      font-size: 1.3rem !important;
+      letter-spacing: 0.05em !important;
+      word-spacing: normal !important;
+      padding: 0.2rem 0.6rem !important;
+    }
+    .roadmap-node-dot {
+      width: 18px !important;
+      height: 18px !important;
+      border-width: 3px !important;
+    }
+    .roadmap-timeline-track::before {
+      bottom: 9px !important;
+      left: 15px !important;
+      right: 15px !important;
+    }
+
     .roadmap-grid {
       display: flex !important;
       overflow-x: auto !important;
@@ -403,6 +440,25 @@
       max-width: 88% !important;
       flex: 0 0 88% !important;
       scroll-snap-align: center !important;
+      padding: 1.4rem 1.2rem 1.2rem 1.2rem !important;
+    }
+
+    .roadmap-card__icon-wrap {
+      margin: 0 auto 1rem auto !important;
+      width: 52px !important;
+      height: 52px !important;
+    }
+
+    .roadmap-card__icon-wrap svg {
+      width: 26px !important;
+      height: 26px !important;
+    }
+
+    .roadmap-card__title {
+      font-size: 1.55rem !important;
+      min-height: 3.6rem !important;
+      margin-bottom: 1rem !important;
+      word-spacing: 0.12em !important;
     }
 
     .roadmap-mobile-controls {
@@ -481,13 +537,6 @@
 
     .roadmap-subtitle {
       font-size: 1.5rem;
-    }
-
-    .roadmap-timeline-track {
-      display: flex;
-      overflow-x: auto;
-      padding-bottom: 0.8rem;
-      justify-content: space-between;
     }
 
     .roadmap-benefits-grid {
