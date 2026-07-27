@@ -33,18 +33,23 @@
     }
   {% endif %}
   .newsletter {
-    margin-top: 4rem !important;
-    margin-bottom: 6rem !important;
+    max-width: 780px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: 3rem !important;
+    margin-bottom: 5rem !important;
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
   }
   .newsletter__wrapper {
-    background: rgba(18, 18, 18, 0.9) !important;
+    background: rgba(18, 18, 18, 0.92) !important;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1.5px solid rgba(180, 137, 64, 0.45) !important;
     border-radius: 20px !important;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
-    padding-top: 5rem !important;
-    padding-bottom: 5rem !important;
+    padding: 3.5rem 2.5rem !important;
+    max-width: 100% !important;
   }
   .newsletter .title-with-highlight,
   .newsletter h2,
@@ -53,25 +58,25 @@
     color: #ffffff !important;
     font-weight: 800 !important;
     letter-spacing: 0.05em !important;
-    margin-bottom: 1.5rem !important;
+    margin-bottom: 1.2rem !important;
   }
   .newsletter__subheading,
   .newsletter__subheading p {
     color: rgba(255, 255, 255, 0.85) !important;
-    font-size: 1.6rem !important;
+    font-size: 1.5rem !important;
     line-height: 1.5 !important;
-    margin-bottom: 2.5rem !important;
+    margin-bottom: 2rem !important;
   }
   .newsletter-form__field-wrapper .field {
-    margin-bottom: 1.5rem !important;
+    margin-bottom: 1.2rem !important;
   }
   .newsletter-form__field-wrapper .field__input {
-    background: rgba(0, 0, 0, 0.7) !important;
+    background: rgba(0, 0, 0, 0.75) !important;
     border: 1.5px solid rgba(180, 137, 64, 0.5) !important;
     color: #ffffff !important;
     border-radius: 10px !important;
     font-size: 1.5rem !important;
-    padding: 1.5rem 2rem !important;
+    padding: 1.4rem 2rem !important;
     height: auto !important;
   }
   .newsletter-form__field-wrapper .field__label {
@@ -83,6 +88,8 @@
   }
   .newsletter button[type="submit"],
   .newsletter .newsletter__solid-btn,
+  .newsletter .button--primary,
+  .newsletter .button--secondary,
   .newsletter .field__button,
   .newsletter .newsletter-form__button {
     background: #b48940 !important;
@@ -96,15 +103,21 @@
     border: none !important;
     padding: 1.4rem 3rem !important;
     transition: all 0.3s ease !important;
-    box-shadow: 0 6px 20px rgba(180, 137, 64, 0.3) !important;
+    box-shadow: 0 6px 20px rgba(180, 137, 64, 0.35) !important;
     cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    margin-top: 1rem !important;
   }
   .newsletter button[type="submit"]:hover,
   .newsletter .newsletter__solid-btn:hover {
     background: #c99c4c !important;
     background-color: #c99c4c !important;
+    color: #ffffff !important;
     transform: translateY(-2px) !important;
-    box-shadow: 0 10px 25px rgba(180, 137, 64, 0.5) !important;
+    box-shadow: 0 10px 25px rgba(180, 137, 64, 0.55) !important;
   }
 {%- endstyle -%}
 
@@ -175,7 +188,7 @@
                     id="Subscribe"
                     aria-label="{{ 'newsletter.button_label' | t }}"
                   >
-                    {{ section.settings.button_label }}
+                    {% if section.settings.button_label != blank %}{{ section.settings.button_label }}{% else %}SUBSCRIBE NOW{% endif %}
                   </button>
                 {% endif %}
                 {%- if form.errors -%}
