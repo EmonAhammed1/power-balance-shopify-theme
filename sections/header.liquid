@@ -286,6 +286,10 @@
         <nav class="header__inline-menu">
           <ul class="list-menu list-menu--inline" role="list">
             {%- for link in section.settings.menu.links -%}
+              {%- assign display_link_title = link.title | escape -%}
+              {%- if link.title == 'Catalog' or link.title == 'catalog' or link.title == 'CATALOG' -%}
+                {%- assign display_link_title = 'Programs' -%}
+              {%- endif -%}
               <li>
                 {%- if link.links != blank -%}
                   {% if section.settings.products_mega_menu_links contains link.title %}
@@ -294,7 +298,7 @@
                     <header-menu>
                       <details id="Details-HeaderMenu-{{ forloop.index }}">
                         <summary class="header__menu-item header__menu-item--main list-menu__item link focus-inset">
-                          <span {%- if link.child_active %} class="header__active-menu-item"{% endif %}>{{ link.title | escape }}</span>
+                          <span {%- if link.child_active %} class="header__active-menu-item"{% endif %}>{{ display_link_title }}</span>
                           {% render 'icon-caret' %}
                         </summary>
                         <ul id="HeaderMenu-MenuList-{{ forloop.index }}" class="header__submenu list-menu list-menu--disclosure gradient caption-large motion-reduce global-settings-popup" role="list" tabindex="-1">
@@ -329,7 +333,7 @@
                   {% endif %}
                 {%- else -%}
                   <a href="{{ link.url }}" class="header__menu-item header__menu-item--main list-menu__item link link--text focus-inset"{% if link.current %} aria-current="page"{% endif %}>
-                    <span {%- if section.settings.highlight_active_link and link.current %} class="header__active-menu-item-v2 color-{{ section.settings.highlighted_link_color_scheme }}"{% endif %}>{{ link.title | escape }}</span>
+                    <span {%- if section.settings.highlight_active_link and link.current %} class="header__active-menu-item-v2 color-{{ section.settings.highlighted_link_color_scheme }}"{% endif %}>{{ display_link_title }}</span>
                   </a>
                 {%- endif -%}
               </li>
@@ -340,6 +344,10 @@
         <nav class="header__inline-menu">
           <ul class="list-menu list-menu--inline" role="list">
             {%- for link in section.settings.menu.links -%}
+              {%- assign display_link_title = link.title | escape -%}
+              {%- if link.title == 'Catalog' or link.title == 'catalog' or link.title == 'CATALOG' -%}
+                {%- assign display_link_title = 'Programs' -%}
+              {%- endif -%}
               <li>
                 {%- if link.links != blank -%}
                   {% if section.settings.products_mega_menu_links contains link.title %}
@@ -356,7 +364,7 @@
                               class="header__active-menu-item"
                             {% endif %}
                           >
-                            {{- link.title | escape -}}
+                            {{ display_link_title }}
                           </span>
                           {% render 'icon-caret' %}
                         </summary>
@@ -420,7 +428,7 @@
                         class="header__active-menu-item-v2 color-{{ section.settings.highlighted_link_color_scheme }}"
                       {% endif %}
                     >
-                      {{- link.title | escape -}}
+                      {{ display_link_title }}
                     </span>
                   </a>
                 {%- endif -%}
