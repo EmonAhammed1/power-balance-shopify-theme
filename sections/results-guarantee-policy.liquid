@@ -1,0 +1,386 @@
+{%- style -%}
+  .guarantee-policy-container {
+    background-color: #000000;
+    color: #ffffff;
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    min-height: 80vh;
+  }
+
+  .guarantee-policy-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .guarantee-policy-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .guarantee-policy-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(180, 137, 64, 0.15);
+    border: 1px solid rgba(180, 137, 64, 0.5);
+    color: #f3d38c;
+    padding: 8px 22px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+
+  .guarantee-policy-title {
+    font-family: 'Bebas Neue', 'Anton', sans-serif !important;
+    font-size: clamp(3.5rem, 5vw, 5rem);
+    font-weight: 400;
+    color: #ffffff;
+    line-height: 1.1;
+    margin: 0 0 1.2rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .guarantee-policy-title span {
+    color: #b48940;
+  }
+
+  .guarantee-policy-subtitle {
+    font-size: 1.6rem;
+    color: #94a3b8;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .policy-box-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .policy-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1.5px solid rgba(180, 137, 64, 0.3);
+    border-radius: 16px;
+    padding: 3rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: border-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .policy-card:hover {
+    border-color: rgba(180, 137, 64, 0.7);
+    transform: translateY(-2px);
+  }
+
+  .policy-card-header {
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 1.2rem;
+  }
+
+  .policy-card-icon {
+    width: 46px;
+    height: 46px;
+    background: rgba(180, 137, 64, 0.2);
+    border: 1px solid rgba(180, 137, 64, 0.5);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #b48940;
+    flex-shrink: 0;
+  }
+
+  .policy-card-icon svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+  }
+
+  .policy-card-heading {
+    font-family: 'Bebas Neue', 'Anton', sans-serif !important;
+    font-size: 2.6rem !important;
+    font-weight: 400 !important;
+    color: #b48940 !important;
+    margin: 0 !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important;
+    line-height: 1.1 !important;
+  }
+
+  .policy-card-body {
+    color: #e2e8f0;
+    font-size: 1.55rem;
+    line-height: 1.7;
+  }
+
+  .policy-card-body p {
+    margin: 0 0 1rem 0;
+  }
+
+  .policy-card-body p:last-child {
+    margin-bottom: 0;
+  }
+
+  .policy-list {
+    margin: 1rem 0 0 0;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  .policy-list li {
+    position: relative;
+    padding-left: 2.8rem;
+    margin-bottom: 1.2rem;
+    color: #cbd5e1;
+    font-size: 1.5rem;
+    line-height: 1.6;
+  }
+
+  .policy-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: 0.1rem;
+    width: 20px;
+    height: 20px;
+    background: rgba(180, 137, 64, 0.2);
+    border: 1px solid #b48940;
+    color: #f3d38c;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .policy-contact-cta {
+    background: linear-gradient(135deg, rgba(180, 137, 64, 0.2) 0%, rgba(0,0,0,0.8) 100%);
+    border: 1.5px solid rgba(180, 137, 64, 0.6);
+    border-radius: 20px;
+    padding: 3.5rem 2rem;
+    text-align: center;
+    margin-top: 4rem;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+  }
+
+  .policy-contact-cta h3 {
+    font-family: 'Bebas Neue', 'Anton', sans-serif !important;
+    font-size: 3rem !important;
+    color: #ffffff !important;
+    margin: 0 0 1rem 0 !important;
+    letter-spacing: 0.06em !important;
+  }
+
+  .policy-contact-cta p {
+    color: #cbd5e1;
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+  }
+
+  .policy-contact-btn {
+    display: inline-block;
+    background: #b48940;
+    color: #ffffff !important;
+    font-family: 'Bebas Neue', 'Anton', sans-serif !important;
+    font-size: 2rem;
+    letter-spacing: 0.08em;
+    padding: 1.2rem 3.5rem;
+    border-radius: 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(180, 137, 64, 0.4);
+  }
+
+  .policy-contact-btn:hover {
+    background: #c99c4c;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(180, 137, 64, 0.6);
+  }
+
+  @media screen and (max-width: 749px) {
+    .policy-card {
+      padding: 2rem 1.5rem;
+    }
+    .policy-card-heading {
+      font-size: 2.2rem !important;
+    }
+  }
+{%- endstyle -%}
+
+<div class="guarantee-policy-container">
+  <div class="guarantee-policy-inner">
+    
+    <!-- Page Header -->
+    <div class="guarantee-policy-header">
+      <div class="guarantee-policy-badge">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="#f3d38c"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+        POWER BALANCE OFFICIAL POLICY
+      </div>
+      <h1 class="guarantee-policy-title">RESULTS GUARANTEE & <span>REFUND POLICY</span></h1>
+      <p class="guarantee-policy-subtitle">
+        We are 100% committed to your body transformation. Review our full guidelines, requirements, and evidence criteria for our 30-Day Money-Back Guarantee below.
+      </p>
+    </div>
+
+    <!-- Policy Cards Grid -->
+    <div class="policy-box-grid">
+      
+      <!-- 1. Our Commitment -->
+      <div class="policy-card">
+        <div class="policy-card-header">
+          <div class="policy-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+          </div>
+          <h2 class="policy-card-heading">Our Commitment</h2>
+        </div>
+        <div class="policy-card-body">
+          <p>
+            We stand behind the quality of the Power Balance system. Because results depend on consistent execution, nutrition, recovery, and individual factors, refunds are available only after a documented good-faith effort to complete the program.
+          </p>
+        </div>
+      </div>
+
+      <!-- 2. Eligibility Requirements -->
+      <div class="policy-card">
+        <div class="policy-card-header">
+          <div class="policy-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          </div>
+          <h2 class="policy-card-heading">Eligibility Requirements</h2>
+        </div>
+        <div class="policy-card-body">
+          <p>To be considered for a refund under our guarantee, all of the following criteria must be satisfied:</p>
+          <ul class="policy-list">
+            <li>Complete the full 16-week program (or the minimum review period specified at purchase, not less than 8 consecutive weeks).</li>
+            <li>Complete every scheduled workout unless prevented by illness or injury.</li>
+            <li>Follow the nutrition guidance throughout the review period.</li>
+            <li>Contact Power Balance support if you encounter obstacles and allow a reasonable opportunity for coaching assistance before requesting a refund.</li>
+            <li>Submit your request within 7 calendar days after completing the applicable review period.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 3. Required Evidence -->
+      <div class="policy-card">
+        <div class="policy-card-header">
+          <div class="policy-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+          </div>
+          <h2 class="policy-card-heading">Required Evidence</h2>
+        </div>
+        <div class="policy-card-body">
+          <p>Your refund submission request must include the following documentation:</p>
+          <ul class="policy-list">
+            <li>Original proof of purchase (Order ID & Receipt).</li>
+            <li>Daily workout log with dates, exercises, sets, reps, and weights used.</li>
+            <li>Daily nutrition log.</li>
+            <li>Weekly body-weight records.</li>
+            <li>Before photos and progress photos taken every two weeks under similar lighting/conditions.</li>
+            <li>Body measurements (recommended: waist, hips, chest, arms, and thighs).</li>
+            <li>A signed declaration that the submitted information is accurate and complete.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 4. Review Process -->
+      <div class="policy-card">
+        <div class="policy-card-header">
+          <div class="policy-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+          </div>
+          <h2 class="policy-card-heading">Review Process</h2>
+        </div>
+        <div class="policy-card-body">
+          <p>
+            Each request is individually reviewed by our support team. Missing or incomplete documentation, material deviations from the program, or evidence that the program was not substantially followed may result in denial. Decisions are made after evaluating the documentation submitted.
+          </p>
+        </div>
+      </div>
+
+      <!-- 5. Non-Refundable Circumstances -->
+      <div class="policy-card">
+        <div class="policy-card-header">
+          <div class="policy-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+          </div>
+          <h2 class="policy-card-heading">Non-Refundable Circumstances</h2>
+        </div>
+        <div class="policy-card-body">
+          <p>
+            Refunds are generally not available because of a change of mind, lack of time, failure to complete the required documentation, or failure to complete the minimum participation period.
+          </p>
+        </div>
+      </div>
+
+      <!-- 6. Consumer Rights -->
+      <div class="policy-card">
+        <div class="policy-card-header">
+          <div class="policy-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+          </div>
+          <h2 class="policy-card-heading">Consumer Rights</h2>
+        </div>
+        <div class="policy-card-body">
+          <p>
+            Nothing in this policy limits or excludes any non-waivable rights or remedies that apply under the consumer protection laws governing your purchase.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Contact Support CTA -->
+    <div class="policy-contact-cta">
+      <h3>HAVE QUESTIONS ABOUT OUR GUARANTEE?</h3>
+      <p>Our 24/7 Support team is here to assist you with any questions or program guidance.</p>
+      <a href="/pages/contact" class="policy-contact-btn">CONTACT HELP DESK</a>
+    </div>
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Results Guarantee Policy",
+  "settings": [
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 64
+    }
+  ],
+  "presets": [
+    {
+      "name": "Results Guarantee Policy"
+    }
+  ]
+}
+{% endschema %}
