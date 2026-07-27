@@ -102,7 +102,7 @@
   }
 
   .color-scheme-{{ section.id }} {
-    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0.88) 100%), url('{{ 'comparison_bg.png' | asset_url }}') !important;
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.62) 0%, rgba(0, 0, 0, 0.78) 100%), url('{{ 'comparison_bg.png' | asset_url }}') !important;
     background-position: center center !important;
     background-size: cover !important;
     background-repeat: no-repeat !important;
@@ -110,15 +110,15 @@
     position: relative !important;
   }
 
-  /* Beautiful Dark Card Container for Table */
+  /* Beautiful Transparent Frosted Glass Card Container for Table */
   .comparison-table-container {
-    background: rgba(13, 14, 18, 0.85) !important;
-    backdrop-filter: blur(16px) saturate(180%) !important;
-    -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
-    border: 1px solid rgba(180, 137, 64, 0.4) !important;
-    border-radius: 20px !important;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.02) 100%) !important;
+    backdrop-filter: blur(28px) saturate(200%) !important;
+    -webkit-backdrop-filter: blur(28px) saturate(200%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+    border-radius: 24px !important;
     padding: 2.5rem 2.5rem !important;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.15) !important;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6), inset 0 1.5px 1.5px rgba(255, 255, 255, 0.35) !important;
     width: 100% !important;
     max-width: 950px !important;
     margin: 0 auto !important;
