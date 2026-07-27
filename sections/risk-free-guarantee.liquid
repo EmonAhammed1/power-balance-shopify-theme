@@ -5,7 +5,11 @@
   }
 
   .guarantee-container-{{ section.id }} {
-    background: linear-gradient(180deg, rgba(13, 14, 18, 0.82) 0%, rgba(13, 14, 18, 0.92) 100%), url('{{ 'guarantee_bg.png' | asset_url }}') center/cover no-repeat;
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.92) 100%), url('{{ 'guarantee_bg.png' | asset_url }}') !important;
+    background-position: center center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
     border: 1px solid rgba(180, 137, 64, 0.4);
     border-radius: 20px;
     padding: 3.5rem 2rem;
