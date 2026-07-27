@@ -497,8 +497,8 @@
         "title": "REAL RESULTS FROM REAL MEMBERS",
         "title_highlight_color": "#b48940",
         "heading_size": "h1",
-        "desktop_slide_height": 580,
-        "mobile_slide_height": 500,
+        "desktop_slide_height": 650,
+        "mobile_slide_height": 350,
         "color_scheme": "inverse",
         "type": "loop",
         "drag": "enabled",
@@ -530,7 +530,7 @@
         "mobile_arrows_position": "sides",
         "padding_top": 36,
         "padding_bottom": 36,
-        "custom_colors_background": "#FFFFFF",
+        "custom_colors_background": "#ffffff",
         "custom_gradient_background": "",
         "custom_colors_text": "#121212"
       }
@@ -565,12 +565,18 @@
       "settings": {
         "display_id": false,
         "visibility": "always-display",
+        "button_type": "solid",
+        "button_label": "Sign up",
+        "button_style_secondary": false,
         "color_scheme": "inverse",
         "full_width": false,
-        "button_type": "solid",
-        "button_style_secondary": false,
         "padding_top": 48,
-        "padding_bottom": 48
+        "padding_bottom": 48,
+        "custom_colors_background": "#ffffff",
+        "custom_gradient_background": "",
+        "custom_colors_text": "#2e2a39",
+        "custom_colors_solid_button_background": "#dd1d1d",
+        "custom_colors_solid_button_text": "#ffffff"
       }
     },
     "risk_free_guarantee": {
