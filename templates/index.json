@@ -535,6 +535,44 @@
         "custom_colors_text": "#121212"
       }
     },
+    "homepage_subscription": {
+      "type": "newsletter",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "title": "JOIN THE POWER BALANCE VIP CLUB",
+            "title_highlight_color": "#b48940",
+            "heading_size": "h1"
+          }
+        },
+        "paragraph": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Subscribe to get exclusive 16-week training tips, early access to new programs & instant VIP discounts.</p>"
+          }
+        },
+        "email_form": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "heading",
+        "paragraph",
+        "email_form"
+      ],
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "color_scheme": "inverse",
+        "full_width": false,
+        "button_type": "solid",
+        "button_style_secondary": false,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
     "risk_free_guarantee": {
       "type": "risk-free-guarantee",
       "settings": {
@@ -553,6 +591,7 @@
     "philosophy_banner",
     "d2d3417b-e92f-428c-b221-5bceffb552be",
     "image_slider_ccPqdB",
+    "homepage_subscription",
     "risk_free_guarantee"
   ]
 }
