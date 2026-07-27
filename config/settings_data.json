@@ -17,6 +17,7 @@
     "secondary_logo": "shopify://shop_images/logo_1.webp",
     "logo_width": 170,
     "mobile_logo_width": 130,
+    "favicon": "shopify://shop_images/favicon.png",
     "colors_solid_button_labels": "#ffffff",
     "colors_accent_1": "#B48940",
     "gradient_accent_1": "",
