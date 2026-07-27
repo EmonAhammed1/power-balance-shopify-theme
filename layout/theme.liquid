@@ -307,6 +307,23 @@
         height: 100%;
       }
 
+      @media screen and (min-width: 990px) {
+        .title-with-highlight,
+        .guarantee-title,
+        .contact-hero-title,
+        .contact-faq-title,
+        .roadmap-title,
+        .philosophy-title,
+        .title-wrapper .title,
+        .title-wrapper h2 {
+          font-size: clamp(3.2rem, 5vw, 4.5rem) !important;
+          font-weight: 900 !important;
+          letter-spacing: 0.03em !important;
+          line-height: 1.15 !important;
+          text-transform: uppercase !important;
+        }
+      }
+
       body {
         display: grid;
         grid-template-rows: auto auto 1fr auto;
