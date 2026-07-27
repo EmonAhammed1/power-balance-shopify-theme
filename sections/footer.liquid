@@ -97,6 +97,48 @@
     line-height: 1.1 !important;
   }
 
+  .footer .newsletter__solid-btn,
+  .footer button[type="submit"] {
+    background: #b48940 !important;
+    background-color: #b48940 !important;
+    color: #ffffff !important;
+    font-family: 'Bebas Neue', 'Anton', sans-serif !important;
+    font-size: 2.1rem !important;
+    font-weight: 400 !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important;
+    border-radius: 10px !important;
+    border: none !important;
+    padding: 1.2rem 2.5rem !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 6px 20px rgba(180, 137, 64, 0.4) !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    margin-top: 1rem !important;
+  }
+
+  .footer .newsletter__solid-btn:after,
+  .footer .newsletter__solid-btn:before,
+  .footer button[type="submit"]:after,
+  .footer button[type="submit"]:before {
+    display: none !important;
+    content: none !important;
+    background: none !important;
+    box-shadow: none !important;
+  }
+
+  .footer .newsletter__solid-btn:hover,
+  .footer button[type="submit"]:hover {
+    background: #c99c4c !important;
+    background-color: #c99c4c !important;
+    color: #ffffff !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 10px 25px rgba(180, 137, 64, 0.6) !important;
+  }
+
   .footer__content-bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
   }
@@ -368,7 +410,7 @@
                             id="Subscribe"
                             aria-label="{{ 'newsletter.button_label' | t }}"
                           >
-                            {{ block.settings.button_label }}
+                            {% if block.settings.button_label != blank %}{{ block.settings.button_label }}{% else %}SIGN UP{% endif %}
                           </button>
                         {% endif %}
                         {%- if form.posted_successfully? -%}
