@@ -169,11 +169,11 @@
     min-width: 120px !important;
   }
 
-  /* Ultra-Rich Gold Badge Header for POWER BALANCE Column */
+  /* Clean Solid Gold Badge Header for POWER BALANCE Column (No Glow) */
   .comparison-table-{{ section.id }} th.comparison-table__logo,
   .comparison-table-{{ section.id }} th.highlighted-cell,
   .comparison-table-{{ section.id }} th:nth-child(2) {
-    background: linear-gradient(135deg, #b48940 0%, #d4a755 100%) !important;
+    background: #b48940 !important;
     background-color: #b48940 !important;
     color: #ffffff !important;
     font-weight: 800 !important;
@@ -181,9 +181,9 @@
     border-radius: 16px 16px 0 0 !important;
     padding: 1.6rem 2.2rem !important;
     letter-spacing: 0.06em !important;
-    border: 1.5px solid rgba(243, 211, 140, 0.8) !important;
-    border-bottom: 1px solid rgba(180, 137, 64, 0.4) !important;
-    box-shadow: 0 10px 30px rgba(180, 137, 64, 0.5), inset 0 1px 1.5px rgba(255, 255, 255, 0.6) !important;
+    border: none !important;
+    box-shadow: none !important;
+    filter: none !important;
     min-width: 170px !important;
   }
 
@@ -277,9 +277,12 @@
       padding: 0.9rem 0.4rem !important;
       letter-spacing: 0 !important;
       border-radius: 12px 12px 0 0 !important;
-      background: linear-gradient(135deg, #b48940 0%, #d4a755 100%) !important;
+      background: #b48940 !important;
       background-color: #b48940 !important;
       color: #ffffff !important;
+      box-shadow: none !important;
+      filter: none !important;
+      border: none !important;
     }
 
     .comparison-table-{{ section.id }} td.highlighted-cell {
