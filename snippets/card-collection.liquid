@@ -13,9 +13,18 @@
 {% endcomment %}
 
 {%- liquid
+  assign card_target_url = card_collection.url
+  if custom_link != blank
+    assign card_target_url = custom_link
+  elsif card_product != blank
+    assign card_target_url = card_product.url
+  endif
+
   assign featured_image = card_collection.featured_image
   if custom_image and custom_image != blank
     assign featured_image = custom_image
+  elsif featured_image == nil and card_product and card_product.featured_media
+    assign featured_image = card_product.featured_media
   endif
   assign ratio = 1
   if featured_image and media_aspect_ratio == 'portrait'
@@ -118,10 +127,10 @@
         <div class="card__information">
           <h3 class="card__heading">
             <a
-              {% if card_collection == blank %}
+              {% if card_target_url == blank %}
                 role="link" aria-disabled="true"
               {% else %}
-                href="{{ card_collection.url }}"
+                href="{{ card_target_url }}"
               {% endif %}
               class="full-unstyled-link"
             >
@@ -129,6 +138,8 @@
                 {{ custom_title }}
               {%- elsif card_collection.title != blank -%}
                 {{- card_collection.title | escape -}}
+              {%- elsif card_product.title != blank -%}
+                {{- card_product.title | escape -}}
               {%- else -%}
                 {{ 'onboarding.collection_title' | t }}
               {%- endif -%}
@@ -157,10 +168,10 @@
         <div class="card__information">
           <h3 class="card__heading">
             <a
-              {% if card_collection == blank %}
+              {% if card_target_url == blank %}
                 role="link" aria-disabled="true"
               {% else %}
-                href="{{ card_collection.url }}"
+                href="{{ card_target_url }}"
               {% endif %}
               class="full-unstyled-link"
             >
@@ -168,6 +179,8 @@
                 {{ custom_title }}
               {%- elsif card_collection.title != blank -%}
                 {{- card_collection.title | escape -}}
+              {%- elsif card_product.title != blank -%}
+                {{- card_product.title | escape -}}
               {%- else -%}
                 {{ 'onboarding.collection_title' | t }}
               {%- endif -%}
@@ -192,10 +205,10 @@
           {%- endif -%}
           {% if section.settings.cards_cta_label != blank %}
             <a
-              {% if card_collection == blank %}
+              {% if card_target_url == blank %}
                 role="link" aria-disabled="true"
               {% else %}
-                href="{{ card_collection.url }}"
+                href="{{ card_target_url }}"
               {% endif %}
               class="collection-card__cta button button--{{ section.settings.cards_cta_style }}{% if section.settings.cards_cta_full_width %} button--full-width{% endif %}"
             >
