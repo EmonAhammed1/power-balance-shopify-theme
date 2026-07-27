@@ -463,8 +463,8 @@
           "settings": {
             "column": "col_1",
             "visibility": "always-display",
-            "heading": "Custom columns",
-            "title_highlight_color": "#6d388b",
+            "heading": "THE 16-WEEK HYBRID SYSTEM",
+            "title_highlight_color": "#b48940",
             "heading_size": "h1",
             "alignment": "center",
             "mobile_alignment": "mobile-center",
@@ -477,7 +477,7 @@
           "settings": {
             "column": "col_1",
             "visibility": "always-display",
-            "text": "<p>Use the flexible grid system to create any layout. Each block can be placed in any of the columns.</p>",
+            "text": "<p>Engineered for maximum hypertrophy, explosive power, and peak physical conditioning.</p>",
             "text_style": "body",
             "alignment": "center",
             "mobile_alignment": "mobile-center",
@@ -497,8 +497,8 @@
             "icon_color": "accent-1",
             "icon_heading_size": "h3",
             "icon_text_alignment": "left",
-            "title": "Icon with text",
-            "text": "<p>Pair text with an icon to focus on your chosen product, collection, or blog post</p>",
+            "title": "PROGRESSIVE OVERLOAD SYSTEM",
+            "text": "<p>Scientifically structured week-by-week volume & weight progression formulas.</p>",
             "margin_top": 20,
             "margin_bottom": 30
           }
@@ -515,8 +515,8 @@
             "icon_color": "accent-1",
             "icon_heading_size": "h3",
             "icon_text_alignment": "left",
-            "title": "Icon with text",
-            "text": "<p>Pair text with an icon to focus on your chosen product, collection, or blog post</p>",
+            "title": "FORM & EXECUTION GUIDES",
+            "text": "<p>Step-by-step exercise cues to maximize target muscle activation & safety.</p>",
             "margin_top": 20,
             "margin_bottom": 20
           }
@@ -546,8 +546,8 @@
             "icon_color": "accent-1",
             "icon_heading_size": "h3",
             "icon_text_alignment": "left",
-            "title": "Icon with text",
-            "text": "<p>Pair text with an icon to focus on your chosen product, collection, or blog post</p>",
+            "title": "TAILORED NUTRITION STRATEGY",
+            "text": "<p>Caloric & macronutrient frameworks built for rapid body recomposition.</p>",
             "margin_top": 20,
             "margin_bottom": 30
           }
@@ -564,8 +564,8 @@
             "icon_color": "accent-1",
             "icon_heading_size": "h3",
             "icon_text_alignment": "left",
-            "title": "Icon with text",
-            "text": "<p>Pair text with an icon to focus on your chosen product, collection, or blog post</p>",
+            "title": "LIFETIME DIGITAL ACCESS",
+            "text": "<p>Downloadable interactive PDF guides accessible instantly on all devices.</p>",
             "margin_top": 20,
             "margin_bottom": 20
           }

@@ -256,7 +256,7 @@
                           }}
                         </div>
                       {% else %}
-                        {{ 'image' | placeholder_svg_tag: 'placeholder-svg placeholder' }}
+                        <img src="{{ 'custom_columns_center.png' | asset_url }}" alt="Power Balance Transformation System" style="width: 100%; height: auto; border-radius: 20px; border: 1.5px solid rgba(180, 137, 64, 0.4); box-shadow: 0 20px 45px rgba(0,0,0,0.7);" loading="lazy">
                       {% endif %}
                     </div>
                   {% when 'video' %}
