@@ -19,6 +19,30 @@
 {% endcomment %}
 
 {%- if card_product and card_product != empty -%}
+  {%- style -%}
+    .card__heading,
+    .card__heading a,
+    .card-wrapper .card__heading,
+    .product-card-wrapper .card__heading,
+    .card-information .card__heading {
+      font-family: 'Bebas Neue', 'Anton', sans-serif !important;
+      font-size: clamp(1.9rem, 2.2vw, 2.4rem) !important;
+      font-weight: 400 !important;
+      letter-spacing: 0.06em !important;
+      line-height: 1.2 !important;
+      text-transform: uppercase !important;
+      color: #ffffff !important;
+      text-align: center !important;
+      margin-top: 0.8rem !important;
+      margin-bottom: 0.6rem !important;
+    }
+
+    .card__heading a:hover,
+    .card-wrapper .card__heading a:hover {
+      color: #b48940 !important;
+    }
+  {%- endstyle -%}
+
   {%- liquid
     assign ratio = 1
     if card_product.featured_media and media_aspect_ratio == 'portrait'
