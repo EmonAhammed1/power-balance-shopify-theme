@@ -5,13 +5,13 @@
   }
 
   .guarantee-container-{{ section.id }} {
-    background: linear-gradient(185deg, #0d0e12 0%, #13151c 100%);
-    border: 1px solid rgba(180, 137, 64, 0.35);
+    background: linear-gradient(180deg, rgba(13, 14, 18, 0.82) 0%, rgba(13, 14, 18, 0.92) 100%), url('{{ 'guarantee_bg.png' | asset_url }}') center/cover no-repeat;
+    border: 1px solid rgba(180, 137, 64, 0.4);
     border-radius: 20px;
     padding: 3.5rem 2rem;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.15);
   }
 
   .guarantee-container-{{ section.id }}::before {
@@ -96,18 +96,22 @@
   }
 
   .guarantee-card {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(180, 137, 64, 0.3);
-    border-radius: 14px;
-    padding: 2.2rem 1.5rem;
-    text-align: center;
-    transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+    background: rgba(255, 255, 255, 0.04) !important;
+    backdrop-filter: blur(16px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+    border: 1px solid rgba(180, 137, 64, 0.35) !important;
+    border-radius: 16px !important;
+    padding: 2.2rem 1.5rem !important;
+    text-align: center !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.15) !important;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, background 0.35s ease, box-shadow 0.35s ease !important;
   }
 
   .guarantee-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(180, 137, 64, 0.7);
-    background: rgba(180, 137, 64, 0.12);
+    transform: translateY(-6px) scale(1.02) !important;
+    border-color: rgba(180, 137, 64, 0.85) !important;
+    background: rgba(180, 137, 64, 0.15) !important;
+    box-shadow: 0 16px 40px rgba(180, 137, 64, 0.25), inset 0 1px 2px rgba(255, 255, 255, 0.3) !important;
   }
 
   .guarantee-icon-wrap {
