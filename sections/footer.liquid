@@ -252,28 +252,15 @@
                     {%- if block.settings.menu != blank -%}
                       <ul class="footer-block__details-content list-unstyled">
                         {%- for link in block.settings.menu.links -%}
-                          {%- unless link.url contains 'results-guarantee' or link.url contains 'refund-policy' or link.title contains 'Guarantee' or link.title contains 'Refund' -%}
-                            <li>
-                              <a
-                                href="{{ link.url }}"
-                                class="link link--text list-menu__item list-menu__item--link{% if link.active %} list-menu__item--active{% endif %}"
-                              >
-                                {{ link.title }}
-                              </a>
-                            </li>
-                          {%- endunless -%}
+                          <li>
+                            <a
+                              href="{{ link.url }}"
+                              class="link link--text list-menu__item list-menu__item--link{% if link.active %} list-menu__item--active{% endif %}"
+                            >
+                              {{ link.title }}
+                            </a>
+                          </li>
                         {%- endfor -%}
-                        {%- if block.settings.menu.links.size < 4 -%}
-                          <li><a href="/" class="link link--text list-menu__item list-menu__item--link">Home</a></li>
-                          <li><a href="/products/power-balance-program" class="link link--text list-menu__item list-menu__item--link">16-Week Program</a></li>
-                          <li><a href="/#philosophy_banner" class="link link--text list-menu__item list-menu__item--link">Our Philosophy</a></li>
-                          <li><a href="/collections/all" class="link link--text list-menu__item list-menu__item--link">All Programs</a></li>
-                        {%- endif -%}
-                        <li>
-                          <a href="/pages/results-guarantee" class="link link--text list-menu__item list-menu__item--link">
-                            Results Guarantee & Refund Policy
-                          </a>
-                        </li>
                       </ul>
                     {%- endif -%}
                   {%- when 'brand_information' -%}
