@@ -88,6 +88,7 @@
   }
   .newsletter button[type="submit"],
   .newsletter .newsletter__solid-btn,
+  .newsletter .button,
   .newsletter .button--primary,
   .newsletter .button--secondary,
   .newsletter .field__button,
@@ -95,29 +96,48 @@
     background: #b48940 !important;
     background-color: #b48940 !important;
     color: #000000 !important;
-    font-weight: 800 !important;
-    font-size: 1.6rem !important;
+    font-family: 'Bebas Neue', 'Anton', sans-serif !important;
+    font-size: 2.2rem !important;
+    font-weight: 400 !important;
     letter-spacing: 0.08em !important;
-    border-radius: 10px !important;
     text-transform: uppercase !important;
+    border-radius: 10px !important;
     border: none !important;
-    padding: 1.4rem 3rem !important;
+    padding: 1.2rem 3rem !important;
     transition: all 0.3s ease !important;
-    box-shadow: 0 6px 20px rgba(180, 137, 64, 0.35) !important;
+    box-shadow: 0 6px 20px rgba(180, 137, 64, 0.4) !important;
     cursor: pointer !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     width: 100% !important;
     margin-top: 1rem !important;
+    position: relative !important;
+    z-index: 1 !important;
   }
+
+  .newsletter button[type="submit"]:after,
+  .newsletter button[type="submit"]:before,
+  .newsletter .newsletter__solid-btn:after,
+  .newsletter .newsletter__solid-btn:before,
+  .newsletter .button:after,
+  .newsletter .button:before,
+  .newsletter .button--secondary:after,
+  .newsletter .button--secondary:before {
+    display: none !important;
+    content: none !important;
+    background: none !important;
+    box-shadow: none !important;
+  }
+
   .newsletter button[type="submit"]:hover,
-  .newsletter .newsletter__solid-btn:hover {
+  .newsletter .newsletter__solid-btn:hover,
+  .newsletter .button:hover {
     background: #c99c4c !important;
     background-color: #c99c4c !important;
     color: #ffffff !important;
     transform: translateY(-2px) !important;
-    box-shadow: 0 10px 25px rgba(180, 137, 64, 0.55) !important;
+    box-shadow: 0 10px 25px rgba(180, 137, 64, 0.6) !important;
   }
 {%- endstyle -%}
 
