@@ -1,0 +1,191 @@
+{%- style -%}
+  .contact-faq-section-{{ section.id }} {
+    background-color: #0d0e12;
+    color: #ffffff;
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  .contact-faq-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .contact-faq-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .contact-faq-title {
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-weight: 900;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    margin-bottom: 0.8rem;
+  }
+
+  .contact-faq-title span {
+    color: #b48940;
+  }
+
+  .contact-faq-subtext {
+    font-size: 1.2rem;
+    color: #94a3b8;
+  }
+
+  .contact-faq-item {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(180, 137, 64, 0.3);
+    border-radius: 14px;
+    margin-bottom: 1.2rem;
+    overflow: hidden;
+    transition: border-color 0.3s ease;
+  }
+
+  .contact-faq-item:hover {
+    border-color: rgba(180, 137, 64, 0.7);
+  }
+
+  .contact-faq-question {
+    width: 100%;
+    padding: 1.5rem 1.8rem;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  .contact-faq-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: rgba(180, 137, 64, 0.2);
+    border: 1px solid rgba(180, 137, 64, 0.5);
+    color: #f3d38c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    line-height: 1;
+    transition: transform 0.3s ease, background 0.3s ease;
+    flex-shrink: 0;
+  }
+
+  .contact-faq-item.active .contact-faq-icon {
+    transform: rotate(45deg);
+    background: #b48940;
+    color: #ffffff;
+  }
+
+  .contact-faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.35s ease;
+    padding: 0 1.8rem;
+    color: #cbd5e1;
+    font-size: 1.15rem;
+    line-height: 1.6;
+  }
+
+  .contact-faq-item.active .contact-faq-answer {
+    max-height: 300px;
+    padding: 0 1.8rem 1.5rem 1.8rem;
+  }
+{%- endstyle -%}
+
+<div class="contact-faq-section-{{ section.id }}">
+  <div class="contact-faq-inner">
+    <div class="contact-faq-header">
+      <h2 class="contact-faq-title">FREQUENTLY ASKED <span>QUESTIONS</span></h2>
+      <p class="contact-faq-subtext">Find quick answers to common questions about the Power Balance 16-Week Program.</p>
+    </div>
+
+    <div class="contact-faq-list">
+      <!-- FAQ Item 1 -->
+      <div class="contact-faq-item">
+        <button class="contact-faq-question" type="button" onclick="this.parentElement.classList.toggle('active')">
+          <span>How do I access my 16-Week Program after purchase?</span>
+          <span class="contact-faq-icon">+</span>
+        </button>
+        <div class="contact-faq-answer">
+          Immediately after completing your checkout, you will receive instant digital download links on screen and via email. You can view the full PDF guides and HD exercise execution videos on your smartphone, tablet, or desktop computer.
+        </div>
+      </div>
+
+      <!-- FAQ Item 2 -->
+      <div class="contact-faq-item">
+        <button class="contact-faq-question" type="button" onclick="this.parentElement.classList.toggle('active')">
+          <span>Is the 16-Week Program suitable for both men and women?</span>
+          <span class="contact-faq-icon">+</span>
+        </button>
+        <div class="contact-faq-answer">
+          Yes! The Power Balance system includes dedicated, tailored progressive overload programming for both men and women, focusing on building lean aesthetic muscle and burning body fat.
+        </div>
+      </div>
+
+      <!-- FAQ Item 3 -->
+      <div class="contact-faq-item">
+        <button class="contact-faq-question" type="button" onclick="this.parentElement.classList.toggle('active')">
+          <span>What is the 30-Day Risk-Free Guarantee?</span>
+          <span class="contact-faq-icon">+</span>
+        </button>
+        <div class="contact-faq-answer">
+          We stand behind the Power Balance Training Program 100%. If you follow the program for 30 days and see zero progress, simply reach out to support@powerbalance.com for a full, hassle-free refund.
+        </div>
+      </div>
+
+      <!-- FAQ Item 4 -->
+      <div class="contact-faq-item">
+        <button class="contact-faq-question" type="button" onclick="this.parentElement.classList.toggle('active')">
+          <span>How quickly does customer support respond?</span>
+          <span class="contact-faq-icon">+</span>
+        </button>
+        <div class="contact-faq-answer">
+          Our priority support desk operates 24/7. Most customer inquiries are answered within 1 to 2 hours.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Contact FAQ Accordion",
+  "settings": [
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 64
+    }
+  ],
+  "presets": [
+    {
+      "name": "Contact FAQ Accordion"
+    }
+  ]
+}
+{% endschema %}
