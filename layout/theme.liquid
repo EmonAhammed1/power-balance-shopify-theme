@@ -308,14 +308,14 @@
       }
 
       @media screen and (min-width: 990px) {
-        .title-with-highlight,
+        .title-with-highlight:not(.hero__heading),
         .guarantee-title,
         .contact-hero-title,
         .contact-faq-title,
         .roadmap-title,
         .philosophy-title,
-        .title-wrapper .title,
-        .title-wrapper h2 {
+        .title-wrapper .title:not(.hero__heading),
+        .title-wrapper h2:not(.hero__heading) {
           font-size: clamp(3.2rem, 5vw, 4.5rem) !important;
           font-weight: 900 !important;
           letter-spacing: 0.03em !important;
