@@ -428,19 +428,24 @@
                       </div>
                       
                       <!-- Social Media Follow Links under Brand Mission Text -->
+                      {% assign insta_url = settings.social_instagram_link | default: 'https://www.instagram.com/aztaalli?igsh=azM0cWoxNHBiMGlo&utm_source=qr' %}
+                      {% assign tiktok_url = settings.social_tiktok_link | default: 'https://www.tiktok.com/@azta_alli?_r=1&_t=ZS-98Qgl7kPcZB' %}
+
                       <div class="footer__social-follow-card">
                         <span class="footer__social-follow-title">FOLLOW US ON:</span>
                         <div class="footer__social-follow-list">
-                          {%- if settings.social_instagram_link != blank -%}
-                            <a href="{{ settings.social_instagram_link }}" target="_blank" rel="noopener" class="footer__social-follow-item instagram-item" aria-label="Instagram">
-                              {% render 'icon-instagram' %}
-                            </a>
-                          {%- endif -%}
-                          {%- if settings.social_tiktok_link != blank -%}
-                            <a href="{{ settings.social_tiktok_link }}" target="_blank" rel="noopener" class="footer__social-follow-item tiktok-item" aria-label="TikTok">
-                              {% render 'icon-tiktok' %}
-                            </a>
-                          {%- endif -%}
+                          <a href="{{ insta_url }}" target="_blank" rel="noopener" class="footer__social-follow-item instagram-item" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="footer-social-icon">
+                              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                          </a>
+                          <a href="{{ tiktok_url }}" target="_blank" rel="noopener" class="footer__social-follow-item tiktok-item" aria-label="TikTok">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#ffffff" class="footer-social-icon">
+                              <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 1 1-5.2-1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V6.02a6.4 6.4 0 0 0-1-.08A6.34 6.34 0 0 0 3 12.28a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.53a8.18 8.18 0 0 0 4.78 1.52V6.6a4.85 4.85 0 0 1-0.87.09z"/>
+                            </svg>
+                          </a>
                         </div>
                       </div>
                     </div>
