@@ -137,6 +137,62 @@
     color: #f3d38c !important;
     font-size: 1.4rem !important;
   }
+
+  /* Social Media Connect Bar on Contact Page */
+  .contact-social-bar {
+    max-width: 800px;
+    margin: 3.5rem auto 0 auto;
+    padding: 2.2rem 2rem;
+    background: linear-gradient(135deg, rgba(180, 137, 64, 0.15) 0%, rgba(180, 137, 64, 0.04) 100%);
+    border: 1px solid rgba(180, 137, 64, 0.4);
+    border-radius: 16px;
+    text-align: center;
+  }
+
+  .contact-social-title {
+    font-family: 'Bebas Neue', 'Anton', sans-serif !important;
+    font-size: 2.4rem !important;
+    color: #b48940 !important;
+    letter-spacing: 0.08em !important;
+    margin: 0 0 1.5rem 0 !important;
+    text-transform: uppercase !important;
+  }
+
+  .contact-social-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .contact-social-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #000000;
+    border: 1.5px solid rgba(180, 137, 64, 0.6);
+    color: #ffffff !important;
+    padding: 1.1rem 2.2rem;
+    border-radius: 50px;
+    font-size: 1.35rem;
+    font-weight: 700;
+    text-decoration: none !important;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  }
+
+  .contact-social-btn:hover {
+    background: #b48940;
+    border-color: #b48940;
+    color: #000000 !important;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(180, 137, 64, 0.4);
+  }
+
+  .contact-social-btn svg {
+    flex-shrink: 0;
+  }
 {%- endstyle -%}
 
 <div class="contact-hero-container-{{ section.id }}">
@@ -185,6 +241,32 @@
       <p class="contact-hero-card-desc">
         100% Risk-Free Commitment. Follow the 16-week program with total peace of mind.
       </p>
+    </div>
+  </div>
+
+  <!-- Social Media Connect Bar on Contact Page -->
+  <div class="contact-social-bar">
+    <h3 class="contact-social-title">FOLLOW & CONNECT WITH US ON SOCIAL MEDIA</h3>
+    <div class="contact-social-buttons">
+      {%- if settings.social_instagram_link != blank -%}
+        <a href="{{ settings.social_instagram_link }}" target="_blank" rel="noopener" class="contact-social-btn instagram-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+          <span>Instagram (@aztaalli)</span>
+        </a>
+      {%- endif -%}
+
+      {%- if settings.social_tiktok_link != blank -%}
+        <a href="{{ settings.social_tiktok_link }}" target="_blank" rel="noopener" class="contact-social-btn tiktok-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 1 1-5.2-1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V6.02a6.4 6.4 0 0 0-1-.08A6.34 6.34 0 0 0 3 12.28a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.53a8.18 8.18 0 0 0 4.78 1.52V6.6a4.85 4.85 0 0 1-0.87.09z"/>
+          </svg>
+          <span>TikTok (@azta_alli)</span>
+        </a>
+      {%- endif -%}
     </div>
   </div>
 </div>
