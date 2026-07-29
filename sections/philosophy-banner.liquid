@@ -213,8 +213,9 @@
     min-width: 100% !important;
     min-height: 100% !important;
     object-fit: {{ section.settings.video_fit | default: 'cover' }} !important;
-    transform: translate(-50%, -50%) scale(1.02) !important;
+    transform: translate(-50%, -50%) {% if section.settings.video_controls == false %}scale(1.02){% else %}scale(1){% endif %} !important;
     border: none !important;
+    pointer-events: auto !important;
   }
 
   .philosophy-right-overlay {
