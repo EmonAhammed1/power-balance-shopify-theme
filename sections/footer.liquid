@@ -227,19 +227,12 @@
     .footer-block__details-content {
       text-align: left !important;
     }
-  /* Social Follow in Bottom Footer Bar */
-  .footer__content-bottom-wrapper {
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    flex-wrap: wrap !important;
-    gap: 1.5rem !important;
-  }
-
-  .footer__social-follow-bottom {
+  /* Social Follow in Left Brand Mission Column */
+  .footer__social-follow-card {
     display: flex !important;
     align-items: center !important;
     gap: 1rem !important;
+    margin-top: 1.8rem !important;
   }
 
   .footer__social-follow-title {
@@ -256,6 +249,7 @@
 
   .footer__social-follow-list {
     display: flex !important;
+    flex-direction: row !important;
     align-items: center !important;
     gap: 0.75rem !important;
   }
@@ -276,6 +270,7 @@
     text-decoration: none !important;
     overflow: hidden !important;
     flex-shrink: 0 !important;
+    box-sizing: border-box !important;
   }
 
   .footer__social-follow-item.instagram-item {
@@ -286,7 +281,7 @@
 
   .footer__social-follow-item.tiktok-item {
     background: #000000 !important;
-    border: 1px solid #25F4EE !important;
+    border: 1.5px solid #25F4EE !important;
     box-shadow: 0 0 10px rgba(37, 244, 238, 0.4) !important;
   }
 
@@ -294,7 +289,8 @@
     transform: translateY(-3px) scale(1.1) !important;
   }
 
-  .footer__social-follow-item svg {
+  .footer__social-follow-item svg,
+  .footer__social-follow-item svg.icon {
     width: 18px !important;
     height: 18px !important;
     max-width: 18px !important;
@@ -303,16 +299,18 @@
     min-height: 18px !important;
     fill: currentColor !important;
     display: block !important;
+    margin: 0 !important;
   }
 
-  @media screen and (max-width: 749px) {
-    .footer__content-bottom-wrapper {
-      flex-direction: column !important;
+  @media screen and (max-width: 989px) {
+    .footer-block-image {
+      align-items: center !important;
       text-align: center !important;
-      justify-content: center !important;
+      width: 100% !important;
     }
-    .footer__social-follow-bottom {
+    .footer__social-follow-card {
       justify-content: center !important;
+      margin: 1.5rem auto 0 auto !important;
     }
   }
 {%- endstyle -%}
@@ -427,6 +425,23 @@
                       {%- endif -%}
                       <div class="footer-brand-mission-text" style="margin-top: 1.2rem; font-size: 1.05rem; color: rgba(255, 255, 255, 0.8); line-height: 1.6; max-width: 320px;">
                         Power Balance is a premier 16-week strength and body transformation program designed for men and women to build lean muscle, burn fat, and master progressive overload.
+                      </div>
+                      
+                      <!-- Social Media Follow Links under Brand Mission Text -->
+                      <div class="footer__social-follow-card">
+                        <span class="footer__social-follow-title">FOLLOW US ON:</span>
+                        <div class="footer__social-follow-list">
+                          {%- if settings.social_instagram_link != blank -%}
+                            <a href="{{ settings.social_instagram_link }}" target="_blank" rel="noopener" class="footer__social-follow-item instagram-item" aria-label="Instagram">
+                              {% render 'icon-instagram' %}
+                            </a>
+                          {%- endif -%}
+                          {%- if settings.social_tiktok_link != blank -%}
+                            <a href="{{ settings.social_tiktok_link }}" target="_blank" rel="noopener" class="footer__social-follow-item tiktok-item" aria-label="TikTok">
+                              {% render 'icon-tiktok' %}
+                            </a>
+                          {%- endif -%}
+                        </div>
                       </div>
                     </div>
                   {%- when 'featured_product' -%}
@@ -718,23 +733,6 @@
       </div>
     </div>
     <div class="footer__content-bottom-wrapper page-width{% if section.settings.enable_country_selector == false and section.settings.enable_language_selector == false %} footer__content-bottom-wrapper--center{% endif %}">
-      <!-- Social Media Follow Links -->
-      <div class="footer__social-follow-bottom">
-        <span class="footer__social-follow-title">FOLLOW US ON</span>
-        <div class="footer__social-follow-list">
-          {%- if settings.social_instagram_link != blank -%}
-            <a href="{{ settings.social_instagram_link }}" target="_blank" rel="noopener" class="footer__social-follow-item instagram-item" aria-label="Instagram">
-              {% render 'icon-instagram' %}
-            </a>
-          {%- endif -%}
-          {%- if settings.social_tiktok_link != blank -%}
-            <a href="{{ settings.social_tiktok_link }}" target="_blank" rel="noopener" class="footer__social-follow-item tiktok-item" aria-label="TikTok">
-              {% render 'icon-tiktok' %}
-            </a>
-          {%- endif -%}
-        </div>
-      </div>
-
       <div class="footer__copyright caption">
         <small class="copyright__content">
           &copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: routes.root_url -}}
