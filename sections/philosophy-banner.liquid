@@ -159,140 +159,153 @@
   }
 
   /* Right Quote & Image/Video Banner */
-  .philosophy-right {
-    position: relative;
-    min-height: {{ section.settings.desktop_media_height | default: 400 }}px;
-    background-size: cover;
-    background-position: center top;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 3rem 2.5rem;
-    border-left: 1px solid rgba(180, 137, 64, 0.2);
-    overflow: hidden;
+  .philosophy-container-{{ section.id }} {
+    min-height: {{ section.settings.desktop_section_height | default: 520 }}px !important;
   }
 
-  {% if section.settings.desktop_media_ratio == 'portrait' %}
-    @media screen and (min-width: 990px) {
-      .philosophy-right { aspect-ratio: 4 / 5 !important; min-height: 480px !important; }
-    }
-  {% elsif section.settings.desktop_media_ratio == 'landscape' %}
-    @media screen and (min-width: 990px) {
-      .philosophy-right { aspect-ratio: 16 / 9 !important; min-height: 280px !important; }
-    }
-  {% elsif section.settings.desktop_media_ratio == 'square' %}
-    @media screen and (min-width: 990px) {
-      .philosophy-right { aspect-ratio: 1 / 1 !important; min-height: 380px !important; }
-    }
-  {% elsif section.settings.desktop_media_ratio == 'full' %}
-    @media screen and (min-width: 990px) {
-      .philosophy-right { height: 100% !important; min-height: 100% !important; }
-    }
-  {% endif %}
-
-  .philosophy-video-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: 0;
+  .philosophy-right-{{ section.id }} {
+    position: relative !important;
+    width: 100% !important;
+    min-height: {{ section.settings.desktop_media_height | default: 450 }}px !important;
+    background-size: cover !important;
+    background-position: center top !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-end !important;
+    padding: 3.5rem 3rem !important;
+    border-left: 1px solid rgba(180, 137, 64, 0.2) !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
   }
 
-  .philosophy-video-bg video,
-  .philosophy-video-bg iframe {
-    width: 100%;
-    height: 100%;
+  @media screen and (min-width: 990px) {
+    {% if section.settings.desktop_media_ratio == 'portrait' %}
+      .philosophy-right-{{ section.id }} { aspect-ratio: 4 / 5 !important; min-height: 520px !important; }
+    {% elsif section.settings.desktop_media_ratio == 'landscape' %}
+      .philosophy-right-{{ section.id }} { aspect-ratio: 16 / 9 !important; min-height: 320px !important; }
+    {% elsif section.settings.desktop_media_ratio == 'square' %}
+      .philosophy-right-{{ section.id }} { aspect-ratio: 1 / 1 !important; min-height: 420px !important; }
+    {% elsif section.settings.desktop_media_ratio == 'full' %}
+      .philosophy-right-{{ section.id }} { height: 100% !important; min-height: 100% !important; }
+    {% elsif section.settings.desktop_media_ratio == 'custom' %}
+      .philosophy-right-{{ section.id }} { height: {{ section.settings.desktop_media_height }}px !important; min-height: {{ section.settings.desktop_media_height }}px !important; }
+    {% endif %}
+  }
+
+  .philosophy-video-bg-{{ section.id }} {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    overflow: hidden !important;
+    z-index: 0 !important;
+  }
+
+  .philosophy-video-bg-{{ section.id }} video,
+  .philosophy-video-bg-{{ section.id }} iframe,
+  .philosophy-video-bg-{{ section.id }} .video-tag {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-width: 100% !important;
+    min-height: 100% !important;
     object-fit: {{ section.settings.video_fit | default: 'cover' }} !important;
-    pointer-events: none;
-    border: none;
-    transform: scale(1.03);
+    transform: translate(-50%, -50%) scale(1.02) !important;
+    pointer-events: none !important;
+    border: none !important;
   }
 
   .philosophy-right-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.85) 100%);
-    z-index: 1;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.85) 100%) !important;
+    z-index: 1 !important;
   }
 
   .philosophy-quote-wrapper {
-    position: relative;
-    z-index: 2;
+    position: relative !important;
+    z-index: 2 !important;
   }
 
   .philosophy-quote-text {
-    font-size: 2.5rem;
-    font-weight: 800;
-    color: #ffffff;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    line-height: 1.3;
-    margin: 0 0 1.2rem 0;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+    font-size: 2.5rem !important;
+    font-weight: 800 !important;
+    color: #ffffff !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.04em !important;
+    line-height: 1.3 !important;
+    margin: 0 0 1.2rem 0 !important;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8) !important;
   }
 
   .philosophy-quote-author {
-    font-family: 'Caveat', cursive, sans-serif;
-    font-size: 4.2rem;
-    color: #B48940;
-    font-weight: 700;
-    margin: 0;
-    letter-spacing: 0.02em;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
-    transform: rotate(-3deg);
-    display: inline-block;
+    font-family: 'Caveat', cursive, sans-serif !important;
+    font-size: 4.2rem !important;
+    color: #B48940 !important;
+    font-weight: 700 !important;
+    margin: 0 !important;
+    letter-spacing: 0.02em !important;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8) !important;
+    transform: rotate(-3deg) !important;
+    display: inline-block !important;
   }
 
   @media screen and (max-width: 989px) {
+    .philosophy-container-{{ section.id }} {
+      min-height: auto !important;
+    }
     .philosophy-text-col {
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      text-align: center !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
     }
     .philosophy-title {
-      font-size: 2.4rem;
-      text-align: center;
+      font-size: 2.4rem !important;
+      text-align: center !important;
     }
     .philosophy-desc {
-      font-size: 1.55rem;
-      text-align: center;
+      font-size: 1.55rem !important;
+      text-align: center !important;
     }
     .philosophy-btn {
-      font-size: 1.35rem;
-      padding: 1.1rem 2.5rem;
-      align-self: center;
-      margin: 0 auto;
+      font-size: 1.35rem !important;
+      padding: 1.1rem 2.5rem !important;
+      align-self: center !important;
+      margin: 0 auto !important;
     }
     .philosophy-pillar-heading {
-      font-size: 1.45rem;
+      font-size: 1.45rem !important;
     }
     .philosophy-pillar-sub {
-      font-size: 1.25rem;
+      font-size: 1.25rem !important;
     }
     .philosophy-quote-text {
-      font-size: 2.0rem;
+      font-size: 2.0rem !important;
     }
     .philosophy-quote-author {
-      font-size: 3.4rem;
+      font-size: 3.4rem !important;
     }
-    .philosophy-right {
-      min-height: {{ section.settings.mobile_media_height | default: 320 }}px !important;
-      border-left: none;
-      border-top: 1px solid rgba(180, 137, 64, 0.2);
+    .philosophy-right-{{ section.id }} {
+      min-height: {{ section.settings.mobile_media_height | default: 340 }}px !important;
+      border-left: none !important;
+      border-top: 1px solid rgba(180, 137, 64, 0.2) !important;
     }
 
     {% if section.settings.mobile_media_ratio == 'portrait' %}
-      .philosophy-right { aspect-ratio: 4 / 5 !important; min-height: 400px !important; }
+      .philosophy-right-{{ section.id }} { aspect-ratio: 4 / 5 !important; min-height: 420px !important; }
     {% elsif section.settings.mobile_media_ratio == 'landscape' %}
-      .philosophy-right { aspect-ratio: 16 / 9 !important; min-height: 220px !important; }
+      .philosophy-right-{{ section.id }} { aspect-ratio: 16 / 9 !important; min-height: 240px !important; }
     {% elsif section.settings.mobile_media_ratio == 'square' %}
-      .philosophy-right { aspect-ratio: 1 / 1 !important; min-height: 320px !important; }
+      .philosophy-right-{{ section.id }} { aspect-ratio: 1 / 1 !important; min-height: 340px !important; }
+    {% elsif section.settings.mobile_media_ratio == 'custom' %}
+      .philosophy-right-{{ section.id }} { height: {{ section.settings.mobile_media_height }}px !important; min-height: {{ section.settings.mobile_media_height }}px !important; }
     {% endif %}
   }
 
@@ -407,13 +420,13 @@
         {% assign bg_image_url = section.settings.right_image | image_url: width: 1000 %}
       {% endif %}
 
-      <div class="philosophy-right" {% if section.settings.right_video == blank and section.settings.right_video_url == blank %}style="background-image: url('{{ bg_image_url }}');"{% endif %}>
+      <div class="philosophy-right philosophy-right-{{ section.id }}" {% if section.settings.right_video == blank and section.settings.right_video_url == blank %}style="background-image: url('{{ bg_image_url }}');"{% endif %}>
         {% if section.settings.right_video != blank %}
-          <div class="philosophy-video-bg">
+          <div class="philosophy-video-bg philosophy-video-bg-{{ section.id }}">
             {{ section.settings.right_video | video_tag: autoplay: true, loop: true, muted: true, controls: false, playsinline: true }}
           </div>
         {% elsif section.settings.right_video_url != blank %}
-          <div class="philosophy-video-bg">
+          <div class="philosophy-video-bg philosophy-video-bg-{{ section.id }}">
             {% if section.settings.right_video_url.type == 'youtube' %}
               <iframe src="https://www.youtube.com/embed/{{ section.settings.right_video_url.id }}?autoplay=1&mute=1&loop=1&playlist={{ section.settings.right_video_url.id }}&controls=0&showinfo=0&autohide=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             {% elsif section.settings.right_video_url.type == 'vimeo' %}
@@ -529,6 +542,16 @@
     {
       "type": "header",
       "content": "Right Quote & Media (Image or Video)"
+    },
+    {
+      "type": "range",
+      "id": "desktop_section_height",
+      "min": 400,
+      "max": 900,
+      "step": 10,
+      "unit": "px",
+      "label": "Overall Section Height (Desktop)",
+      "default": 540
     },
     {
       "type": "image_picker",
