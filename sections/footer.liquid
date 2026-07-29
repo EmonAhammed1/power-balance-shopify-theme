@@ -290,16 +290,20 @@
   }
 
   .footer__social-follow-item svg,
-  .footer__social-follow-item svg.icon {
-    width: 18px !important;
-    height: 18px !important;
-    max-width: 18px !important;
-    max-height: 18px !important;
-    min-width: 18px !important;
-    min-height: 18px !important;
-    fill: currentColor !important;
+  .footer__social-follow-item svg.icon,
+  .footer__social-follow-item svg path {
+    width: 20px !important;
+    height: 20px !important;
+    max-width: 20px !important;
+    max-height: 20px !important;
+    min-width: 20px !important;
+    min-height: 20px !important;
+    fill: #ffffff !important;
+    color: #ffffff !important;
     display: block !important;
     margin: 0 !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
   @media screen and (max-width: 989px) {
@@ -435,16 +439,10 @@
                         <span class="footer__social-follow-title">FOLLOW US ON:</span>
                         <div class="footer__social-follow-list">
                           <a href="{{ insta_url }}" target="_blank" rel="noopener" class="footer__social-follow-item instagram-item" aria-label="Instagram">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="footer-social-icon">
-                              <path fill="#ffffff" d="M224.1 141c-45.8 0-83 37.2-83 83s37.2 83 83 83 83-37.2 83-83-37.2-83-83-83zm0 136.6c-29.6 0-53.6-24-53.6-53.6s24-53.6 53.6-53.6 53.6 24 53.6 53.6-24 53.6-53.6-53.6zm124.7-140.9c0 10.7-8.7 19.3-19.3 19.3-10.7 0-19.3-8.7-19.3-19.3s8.7-19.3 19.3-19.3c10.7 0 19.3 8.7 19.3 19.3zm43.7 22.4c-1.6-34.4-9.5-64.9-34.8-90.2-25.3-25.3-55.8-33.1-90.2-34.8-35.5-2-141.8-2-177.3 0-34.4 1.6-64.9 9.5-90.2 34.8-25.3 25.3-33.1 55.8-34.8 90.2-2 35.5-2 141.8 0 177.3 1.6 34.4 9.5 64.9 34.8 90.2 25.3 25.3 55.8 33.1 90.2 34.8 35.5 2 141.8 2 177.3 0 34.4-1.6 64.9-9.5 90.2-34.8 25.3-25.3 33.1-55.8 34.8-90.2 2-35.6 2-141.8 0-177.3zm-46.2 222.9c-7.5 18.9-22 33.4-40.9 40.9-29.9 11.9-101.2 9.2-132.6 9.2s-102.7 2.6-132.6-9.2c-18.9-7.5-33.4-22-40.9-40.9-11.9-29.9-9.2-101.2-9.2-132.6s-2.6-102.7 9.2-132.6c7.5-18.9 22-33.4 40.9-40.9 29.9-11.9 101.2-9.2 132.6-9.2s102.7-2.6 132.6 9.2c18.9 7.5 33.4 22 40.9 40.9 11.9 29.9 9.2 101.2 9.2 132.6s2.7 102.7-9.2 132.6z"/>
-                            </svg>
+                            {% render 'icon-instagram' %}
                           </a>
                           <a href="{{ tiktok_url }}" target="_blank" rel="noopener" class="footer__social-follow-item tiktok-item" aria-label="TikTok">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="footer-social-icon">
-                              <path fill="#25F4EE" d="M448 209.91a210.06 210.06 0 0 1-122.77-39.25V349.38A162.55 162.55 0 1 1 185 188.31V278.2a74.62 74.62 0 1 0 52.23 71.18V0l88 0a121.18 121.18 0 0 0 1.86 22.17A122.18 122.18 0 0 0 381 102.39a121.43 121.43 0 0 0 67 20z" transform="translate(-10, -4)" opacity="0.9"/>
-                              <path fill="#FE2C55" d="M448 209.91a210.06 210.06 0 0 1-122.77-39.25V349.38A162.55 162.55 0 1 1 185 188.31V278.2a74.62 74.62 0 1 0 52.23 71.18V0l88 0a121.18 121.18 0 0 0 1.86 22.17A122.18 122.18 0 0 0 381 102.39a121.43 121.43 0 0 0 67 20z" transform="translate(6, 4)" opacity="0.9"/>
-                              <path fill="#ffffff" d="M448 209.91a210.06 210.06 0 0 1-122.77-39.25V349.38A162.55 162.55 0 1 1 185 188.31V278.2a74.62 74.62 0 1 0 52.23 71.18V0l88 0a121.18 121.18 0 0 0 1.86 22.17A122.18 122.18 0 0 0 381 102.39a121.43 121.43 0 0 0 67 20z"/>
-                            </svg>
+                            {% render 'icon-tiktok' %}
                           </a>
                         </div>
                       </div>
