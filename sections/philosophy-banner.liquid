@@ -423,14 +423,28 @@
       <div class="philosophy-right philosophy-right-{{ section.id }}" {% if section.settings.right_video == blank and section.settings.right_video_url == blank %}style="background-image: url('{{ bg_image_url }}');"{% endif %}>
         {% if section.settings.right_video != blank %}
           <div class="philosophy-video-bg philosophy-video-bg-{{ section.id }}">
-            {{ section.settings.right_video | video_tag: autoplay: true, loop: true, muted: true, controls: false, playsinline: true }}
+            {{ section.settings.right_video | video_tag: autoplay: section.settings.video_autoplay, loop: section.settings.video_loop, muted: true, controls: section.settings.video_controls, playsinline: true }}
           </div>
         {% elsif section.settings.right_video_url != blank %}
           <div class="philosophy-video-bg philosophy-video-bg-{{ section.id }}">
+            {% liquid
+              assign yt_autoplay = 0
+              if section.settings.video_autoplay
+                assign yt_autoplay = 1
+              endif
+              assign yt_loop = 0
+              if section.settings.video_loop
+                assign yt_loop = 1
+              endif
+              assign yt_controls = 0
+              if section.settings.video_controls
+                assign yt_controls = 1
+              endif
+            %}
             {% if section.settings.right_video_url.type == 'youtube' %}
-              <iframe src="https://www.youtube.com/embed/{{ section.settings.right_video_url.id }}?autoplay=1&mute=1&loop=1&playlist={{ section.settings.right_video_url.id }}&controls=0&showinfo=0&autohide=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+              <iframe src="https://www.youtube.com/embed/{{ section.settings.right_video_url.id }}?autoplay={{ yt_autoplay }}&mute=1&loop={{ yt_loop }}&playlist={{ section.settings.right_video_url.id }}&controls={{ yt_controls }}&showinfo=0&autohide=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             {% elsif section.settings.right_video_url.type == 'vimeo' %}
-              <iframe src="https://player.vimeo.com/video/{{ section.settings.right_video_url.id }}?autoplay=1&muted=1&loop=1&background=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+              <iframe src="https://player.vimeo.com/video/{{ section.settings.right_video_url.id }}?autoplay={{ yt_autoplay }}&muted=1&loop={{ yt_loop }}&background={% if yt_controls == 1 %}0{% else %}1{% endif %}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             {% endif %}
           </div>
         {% endif %}
@@ -568,6 +582,24 @@
       "id": "right_video_url",
       "label": "Right Video URL (YouTube / Vimeo)",
       "accept": ["youtube", "vimeo"]
+    },
+    {
+      "type": "checkbox",
+      "id": "video_autoplay",
+      "label": "Enable Video Autoplay",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "video_loop",
+      "label": "Enable Infinite Loop",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "video_controls",
+      "label": "Show Video Controls",
+      "default": false
     },
     {
       "type": "select",
