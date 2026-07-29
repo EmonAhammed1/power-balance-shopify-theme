@@ -157,6 +157,8 @@
           "type": "featured_collection",
           "settings": {
             "collection": "",
+            "product": "mens-workout-program",
+            "custom_link": "",
             "custom_image": "shopify://shop_images/MEN_S_WORKOUT_PROGRAM.webp",
             "custom_title": "MEN'S WORKOUT PROGRAM"
           }
@@ -165,6 +167,8 @@
           "type": "featured_collection",
           "settings": {
             "collection": "",
+            "product": "womens-workout-program",
+            "custom_link": "",
             "custom_image": "shopify://shop_images/WOMEN_S_WORKOUT_PROGRAM.webp",
             "custom_title": "WOMEN'S WORKOUT PROGRAM"
           }
@@ -173,6 +177,8 @@
           "type": "featured_collection",
           "settings": {
             "collection": "",
+            "product": "couples-transformation-bundle",
+            "custom_link": "",
             "custom_image": "shopify://shop_images/COUPLES_TRANSFORMATION_BUNDLE.webp",
             "custom_title": "COUPLES TRANSFORMATION BUNDLE"
           }

@@ -22,20 +22,9 @@
             "margin_bottom": 0
           }
         },
-        "a6eb81db-40e4-43e0-972f-32db010a4a56": {
-          "type": "rating_stars",
-          "settings": {
-            "rating": 4.4,
-            "star_color": "#ffcc00",
-            "bg_stars_style": "full",
-            "bg_star_color": "#ececec",
-            "label": "(xxxx Reviews)",
-            "size": 16,
-            "alignment": "flex-start",
-            "scroll_id": "",
-            "margin_top": 0,
-            "margin_bottom": 9
-          }
+        "judge_me_reviews_preview_badge_7fqWcy": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
         },
         "description": {
           "type": "description",
@@ -337,7 +326,7 @@
       },
       "block_order": [
         "title",
-        "a6eb81db-40e4-43e0-972f-32db010a4a56",
+        "judge_me_reviews_preview_badge_7fqWcy",
         "description",
         "price",
         "5fcc0428-e768-4cb7-bea3-eb0274198dd1",
@@ -745,6 +734,27 @@
         "custom_colors_solid_button_background": "#dd1d1d",
         "custom_colors_solid_button_text": "#ffffff"
       }
+    },
+    "1785140456da23df36": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_4XCUrW": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "real_data",
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_4XCUrW"
+      ],
+      "settings": {
+        "display_id": false,
+        "include_margins": true
+      }
     }
   },
   "order": [
@@ -753,6 +763,7 @@
     "image_slider_nMmYLr",
     "related-products",
     "8beb6911-28c6-482c-976a-e5421ad3e8df",
-    "power_balance_subscription"
+    "power_balance_subscription",
+    "1785140456da23df36"
   ]
 }

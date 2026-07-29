@@ -534,7 +534,34 @@
         }
       }
     },
-    "content_for_index": []
+    "content_for_index": [],
+    "blocks": {
+      "14060646107696862457": {
+        "type": "shopify://apps/judge-me-reviews/blocks/judgeme_core/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+        "disabled": false,
+        "settings": {}
+      },
+      "10442425118044963076": {
+        "type": "shopify://apps/smartassistant/blocks/chat_widget/019facb4-28c6-771f-b444-3ab9306cb069",
+        "disabled": false,
+        "settings": {
+          "position": "bottom-right",
+          "telegram_username": "nvagebot",
+          "whatsapp_number": "15556555180",
+          "messenger_username": "",
+          "logo_url": "",
+          "header_title": "Live Chat Support",
+          "header_subtitle": "We usually reply in a few minutes",
+          "form_heading": "Welcome to Support!",
+          "form_subheading": "Please enter your details below to start chatting with us.",
+          "widget_width": 380,
+          "widget_height": 540,
+          "bottom_offset": 24,
+          "side_offset": 24,
+          "primary_color": "#008060"
+        }
+      }
+    }
   },
   "presets": {
     "Default": {
