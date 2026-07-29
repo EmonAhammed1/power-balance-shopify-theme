@@ -214,7 +214,6 @@
     min-height: 100% !important;
     object-fit: {{ section.settings.video_fit | default: 'cover' }} !important;
     transform: translate(-50%, -50%) scale(1.02) !important;
-    pointer-events: none !important;
     border: none !important;
   }
 
@@ -226,11 +225,13 @@
     height: 100% !important;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.85) 100%) !important;
     z-index: 1 !important;
+    pointer-events: none !important;
   }
 
   .philosophy-quote-wrapper {
     position: relative !important;
     z-index: 2 !important;
+    pointer-events: none !important;
   }
 
   .philosophy-quote-text {
