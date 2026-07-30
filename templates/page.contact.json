@@ -11,6 +11,37 @@
   "sections": {
     "contact_hero": {
       "type": "contact-hero",
+      "blocks": {
+        "card_1": {
+          "type": "feature_card",
+          "settings": {
+            "icon": "email",
+            "title": "Priority Email Support",
+            "description": "<p>Direct Help Desk:<br><strong>yourmail@gmail.com</strong><br>Average Response Time: &lt; 2 Hours</p>"
+          }
+        },
+        "card_2": {
+          "type": "feature_card",
+          "settings": {
+            "icon": "download",
+            "title": "Instant Digital Delivery",
+            "description": "<p>Immediate PDF & Video Access right after checkout on Mobile, Tablet & Desktop.</p>"
+          }
+        },
+        "card_3": {
+          "type": "feature_card",
+          "settings": {
+            "icon": "guarantee",
+            "title": "30-Day Money Back Guarantee",
+            "description": "<p>100% Risk-Free Commitment. Follow the 16-week program with total peace of mind.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "card_1",
+        "card_2",
+        "card_3"
+      ],
       "settings": {
         "padding_top": 48,
         "padding_bottom": 36
@@ -97,6 +128,42 @@
     },
     "contact_faq": {
       "type": "contact-faq",
+      "blocks": {
+        "faq_1": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How do I access my 16-Week Program after purchase?",
+            "answer": "<p>Immediately after completing your checkout, you will receive instant digital download links on screen and via email. You can view the full PDF guides and HD exercise execution videos on your smartphone, tablet, or desktop computer.</p>"
+          }
+        },
+        "faq_2": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is the 16-Week Program suitable for both men and women?",
+            "answer": "<p>Yes! The Power Balance system includes dedicated, tailored progressive overload programming for both men and women, focusing on building lean aesthetic muscle and burning body fat.</p>"
+          }
+        },
+        "faq_3": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What is the 30-Day Risk-Free Guarantee?",
+            "answer": "<p>We stand behind the Power Balance Training Program 100%. If you follow the program for 30 days and see zero progress, simply reach out to yourmail@gmail.com for a full, hassle-free refund.</p>"
+          }
+        },
+        "faq_4": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How quickly does customer support respond?",
+            "answer": "<p>Our priority support desk operates 24/7. Most customer inquiries are answered within 1 to 2 hours.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4"
+      ],
       "settings": {
         "padding_top": 36,
         "padding_bottom": 64
