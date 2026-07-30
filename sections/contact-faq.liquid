@@ -108,54 +108,26 @@
 <div class="contact-faq-section-{{ section.id }}">
   <div class="contact-faq-inner">
     <div class="contact-faq-header">
-      <h2 class="contact-faq-title">FREQUENTLY ASKED <span>QUESTIONS</span></h2>
-      <p class="contact-faq-subtext">Find quick answers to common questions about the Power Balance 16-Week Program.</p>
+      {% if section.settings.title != blank %}
+      <h2 class="contact-faq-title">{{ section.settings.title }}</h2>
+      {% endif %}
+      {% if section.settings.subtext != blank %}
+      <p class="contact-faq-subtext">{{ section.settings.subtext }}</p>
+      {% endif %}
     </div>
 
     <div class="contact-faq-list">
-      <!-- FAQ Item 1 -->
-      <div class="contact-faq-item">
-        <button class="contact-faq-question" type="button" onclick="this.parentElement.classList.toggle('active')">
-          <span>How do I access my 16-Week Program after purchase?</span>
-          <span class="contact-faq-icon">+</span>
-        </button>
-        <div class="contact-faq-answer">
-          Immediately after completing your checkout, you will receive instant digital download links on screen and via email. You can view the full PDF guides and HD exercise execution videos on your smartphone, tablet, or desktop computer.
+      {% for block in section.blocks %}
+        <div class="contact-faq-item" {{ block.shopify_attributes }}>
+          <button class="contact-faq-question" type="button" onclick="this.parentElement.classList.toggle('active')">
+            <span>{{ block.settings.question }}</span>
+            <span class="contact-faq-icon">+</span>
+          </button>
+          <div class="contact-faq-answer">
+            {{ block.settings.answer }}
+          </div>
         </div>
-      </div>
-
-      <!-- FAQ Item 2 -->
-      <div class="contact-faq-item">
-        <button class="contact-faq-question" type="button" onclick="this.parentElement.classList.toggle('active')">
-          <span>Is the 16-Week Program suitable for both men and women?</span>
-          <span class="contact-faq-icon">+</span>
-        </button>
-        <div class="contact-faq-answer">
-          Yes! The Power Balance system includes dedicated, tailored progressive overload programming for both men and women, focusing on building lean aesthetic muscle and burning body fat.
-        </div>
-      </div>
-
-      <!-- FAQ Item 3 -->
-      <div class="contact-faq-item">
-        <button class="contact-faq-question" type="button" onclick="this.parentElement.classList.toggle('active')">
-          <span>What is the 30-Day Risk-Free Guarantee?</span>
-          <span class="contact-faq-icon">+</span>
-        </button>
-        <div class="contact-faq-answer">
-          We stand behind the Power Balance Training Program 100%. If you follow the program for 30 days and see zero progress, simply reach out to yourmail@gmail.com for a full, hassle-free refund.
-        </div>
-      </div>
-
-      <!-- FAQ Item 4 -->
-      <div class="contact-faq-item">
-        <button class="contact-faq-question" type="button" onclick="this.parentElement.classList.toggle('active')">
-          <span>How quickly does customer support respond?</span>
-          <span class="contact-faq-icon">+</span>
-        </button>
-        <div class="contact-faq-answer">
-          Our priority support desk operates 24/7. Most customer inquiries are answered within 1 to 2 hours.
-        </div>
-      </div>
+      {% endfor %}
     </div>
   </div>
 </div>
@@ -164,6 +136,19 @@
 {
   "name": "Contact FAQ Accordion",
   "settings": [
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Heading",
+      "default": "FREQUENTLY ASKED <span>QUESTIONS</span>",
+      "info": "Use <span> tags to highlight text in gold."
+    },
+    {
+      "type": "textarea",
+      "id": "subtext",
+      "label": "Subtext",
+      "default": "Find quick answers to common questions about the Power Balance 16-Week Program."
+    },
     {
       "type": "range",
       "id": "padding_top",
@@ -185,9 +170,59 @@
       "default": 64
     }
   ],
+  "blocks": [
+    {
+      "type": "faq_item",
+      "name": "FAQ Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "How do I access my 16-Week Program after purchase?"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer",
+          "default": "<p>Immediately after completing your checkout, you will receive instant digital download links on screen and via email. You can view the full PDF guides and HD exercise execution videos on your smartphone, tablet, or desktop computer.</p>"
+        }
+      ]
+    }
+  ],
   "presets": [
     {
-      "name": "Contact FAQ Accordion"
+      "name": "Contact FAQ Accordion",
+      "blocks": [
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "How do I access my 16-Week Program after purchase?",
+            "answer": "<p>Immediately after completing your checkout, you will receive instant digital download links on screen and via email. You can view the full PDF guides and HD exercise execution videos on your smartphone, tablet, or desktop computer.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is the 16-Week Program suitable for both men and women?",
+            "answer": "<p>Yes! The Power Balance system includes dedicated, tailored progressive overload programming for both men and women, focusing on building lean aesthetic muscle and burning body fat.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "What is the 30-Day Risk-Free Guarantee?",
+            "answer": "<p>We stand behind the Power Balance Training Program 100%. If you follow the program for 30 days and see zero progress, simply reach out to yourmail@gmail.com for a full, hassle-free refund.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "How quickly does customer support respond?",
+            "answer": "<p>Our priority support desk operates 24/7. Most customer inquiries are answered within 1 to 2 hours.</p>"
+          }
+        }
+      ]
     }
   ]
 }

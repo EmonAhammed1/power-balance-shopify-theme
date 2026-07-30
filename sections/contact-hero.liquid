@@ -215,78 +215,116 @@
 
 <div class="contact-hero-container-{{ section.id }}">
   <div class="contact-hero-header">
+    {% if section.settings.badge_text != blank %}
     <div class="contact-hero-badge">
       <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-      24/7 CUSTOMER SUPPORT & ASSISTANCE
+      {{ section.settings.badge_text }}
     </div>
-    <h1 class="contact-hero-title">WE ARE HERE TO HELP YOU <span>TRANSFORM</span></h1>
+    {% endif %}
+    {% if section.settings.title != blank %}
+    <h1 class="contact-hero-title">{{ section.settings.title }}</h1>
+    {% endif %}
+    {% if section.settings.subtext != blank %}
     <p class="contact-hero-subtext">
-      Have questions about the 16-Week Power Balance Training Program, instant digital downloads, or custom workout assistance? Our dedicated support team is available 24/7 to assist you.
+      {{ section.settings.subtext }}
     </p>
+    {% endif %}
   </div>
 
   <div class="contact-hero-grid">
-    <!-- Card 1: Email Support -->
-    <div class="contact-hero-card">
-      <div class="contact-hero-icon-wrap">
-        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+    {% for block in section.blocks %}
+      <div class="contact-hero-card" {{ block.shopify_attributes }}>
+        <div class="contact-hero-icon-wrap">
+          {% if block.settings.icon == 'email' %}
+            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          {% elsif block.settings.icon == 'download' %}
+            <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+          {% elsif block.settings.icon == 'guarantee' %}
+            <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+          {% endif %}
+        </div>
+        <h3 class="contact-hero-card-title">{{ block.settings.title }}</h3>
+        <p class="contact-hero-card-desc">
+          {{ block.settings.description }}
+        </p>
       </div>
-      <h3 class="contact-hero-card-title">Priority Email Support</h3>
-      <p class="contact-hero-card-desc">
-        Direct Help Desk:<br>
-        <strong>yourmail@gmail.com</strong><br>
-        Average Response Time: &lt; 2 Hours
-      </p>
-    </div>
-
-    <!-- Card 2: Instant Access -->
-    <div class="contact-hero-card">
-      <div class="contact-hero-icon-wrap">
-        <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
-      </div>
-      <h3 class="contact-hero-card-title">Instant Digital Delivery</h3>
-      <p class="contact-hero-card-desc">
-        Immediate PDF & Video Access right after checkout on Mobile, Tablet & Desktop.
-      </p>
-    </div>
-
-    <!-- Card 3: 30-Day Guarantee -->
-    <div class="contact-hero-card">
-      <div class="contact-hero-icon-wrap">
-        <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
-      </div>
-      <h3 class="contact-hero-card-title">30-Day Money Back Guarantee</h3>
-      <p class="contact-hero-card-desc">
-        100% Risk-Free Commitment. Follow the 16-week program with total peace of mind.
-      </p>
-    </div>
+    {% endfor %}
   </div>
 
+  {% if section.settings.show_social %}
   <!-- Social Media Connect Bar on Contact Page -->
   <div class="contact-social-bar">
-    <h3 class="contact-social-title">FOLLOW & CONNECT WITH US ON SOCIAL MEDIA</h3>
+    <h3 class="contact-social-title">{{ section.settings.social_title }}</h3>
     <div class="contact-social-buttons">
       {%- if settings.social_instagram_link != blank -%}
         <a href="{{ settings.social_instagram_link }}" target="_blank" rel="noopener" class="contact-social-btn instagram-btn">
           {% render 'icon-instagram' %}
-          <span>Instagram (@aztaalli)</span>
+          <span>{{ section.settings.social_instagram_text }}</span>
         </a>
       {%- endif -%}
 
       {%- if settings.social_tiktok_link != blank -%}
         <a href="{{ settings.social_tiktok_link }}" target="_blank" rel="noopener" class="contact-social-btn tiktok-btn">
           {% render 'icon-tiktok' %}
-          <span>TikTok (@azta_alli)</span>
+          <span>{{ section.settings.social_tiktok_text }}</span>
         </a>
       {%- endif -%}
     </div>
   </div>
+  {% endif %}
 </div>
 
 {% schema %}
 {
   "name": "Contact Hero & Cards",
   "settings": [
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Badge Text",
+      "default": "24/7 CUSTOMER SUPPORT & ASSISTANCE"
+    },
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Heading",
+      "default": "WE ARE HERE TO HELP YOU <span>TRANSFORM</span>",
+      "info": "Use <span> tags to highlight text in gold."
+    },
+    {
+      "type": "textarea",
+      "id": "subtext",
+      "label": "Subtext",
+      "default": "Have questions about the 16-Week Power Balance Training Program, instant digital downloads, or custom workout assistance? Our dedicated support team is available 24/7 to assist you."
+    },
+    {
+      "type": "header",
+      "content": "Social Bar"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_social",
+      "label": "Show Social Media Bar",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "social_title",
+      "label": "Social Bar Title",
+      "default": "FOLLOW & CONNECT WITH US ON SOCIAL MEDIA"
+    },
+    {
+      "type": "text",
+      "id": "social_instagram_text",
+      "label": "Instagram Button Text",
+      "default": "Instagram (@aztaalli)"
+    },
+    {
+      "type": "text",
+      "id": "social_tiktok_text",
+      "label": "TikTok Button Text",
+      "default": "TikTok (@azta_alli)"
+    },
     {
       "type": "range",
       "id": "padding_top",
@@ -308,9 +346,67 @@
       "default": 36
     }
   ],
+  "blocks": [
+    {
+      "type": "feature_card",
+      "name": "Feature Card",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "email", "label": "Email" },
+            { "value": "download", "label": "Download" },
+            { "value": "guarantee", "label": "Guarantee/Shield" }
+          ],
+          "default": "email"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Card Title",
+          "default": "Priority Email Support"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Card Description",
+          "default": "<p>Direct Help Desk:<br><strong>yourmail@gmail.com</strong><br>Average Response Time: < 2 Hours</p>"
+        }
+      ]
+    }
+  ],
   "presets": [
     {
-      "name": "Contact Hero & Cards"
+      "name": "Contact Hero & Cards",
+      "blocks": [
+        {
+          "type": "feature_card",
+          "settings": {
+            "icon": "email",
+            "title": "Priority Email Support",
+            "description": "<p>Direct Help Desk:<br><strong>yourmail@gmail.com</strong><br>Average Response Time: &lt; 2 Hours</p>"
+          }
+        },
+        {
+          "type": "feature_card",
+          "settings": {
+            "icon": "download",
+            "title": "Instant Digital Delivery",
+            "description": "<p>Immediate PDF & Video Access right after checkout on Mobile, Tablet & Desktop.</p>"
+          }
+        },
+        {
+          "type": "feature_card",
+          "settings": {
+            "icon": "guarantee",
+            "title": "30-Day Money Back Guarantee",
+            "description": "<p>100% Risk-Free Commitment. Follow the 16-week program with total peace of mind.</p>"
+          }
+        }
+      ]
     }
   ]
 }
